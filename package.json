@@ -1,0 +1,27 @@
+{
+  "name": "crossdock-test",
+  "version": "1.0.0",
+  "description": "Crossdock Test",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brenthmiras/crossdock-test.git"
+  },
+  "keywords": [
+    "express",
+    "mysql",
+    "boilerplate"
+  ],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/brenthmiras/crossdock-test/issues"
+  },
+  "homepage": "https://github.com/brenthmiras/crossdock-test#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "supertest": "^2.0.0"
+  }
+}
