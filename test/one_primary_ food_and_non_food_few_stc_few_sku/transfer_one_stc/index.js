@@ -1,7 +1,7 @@
 const config = require('../../../config');
 
 
-const request = require('supertest')(config.BASE_URL);
+const request = require('supertest')(config.S2_URL);
 const chai = require('chai');
 
 let token;
