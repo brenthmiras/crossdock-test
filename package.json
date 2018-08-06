@@ -19,8 +19,12 @@
     "url": "https://github.com/brenthmiras/crossdock-test/issues"
   },
   "homepage": "https://github.com/brenthmiras/crossdock-test#readme",
-  "dependencies": {},
+  "dependencies": {
+    "chai-http": "^4.0.0",
+    "fs": "0.0.1-security"
+  },
   "devDependencies": {
+    "async": "^2.6.1",
     "chai": "^3.5.0",
     "supertest": "^2.0.0"
   }
