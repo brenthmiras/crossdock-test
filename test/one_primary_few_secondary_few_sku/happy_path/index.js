@@ -1,6 +1,8 @@
-const request = require('supertest');
-const chai = require('chai');
 const config = require('../../../config');
+
+
+const request = require('supertest')(config.BASE_URL);
+const chai = require('chai');
 
 let token;
 
@@ -8,8 +10,7 @@ describe('POST /auth/login', function () {
     it('should be able to login', function (done) {
         // Pass
         this.timeout(20000);
-        
-        request(config.BASE_URL)
+        request
             .post('/auth/login')
             .type('json')
             .set('Content-Type', 'application/json')
@@ -22,44 +23,45 @@ describe('POST /auth/login', function () {
                 chai.expect(result.header).to.have.property('x-access-token');
 
                 token = result.header['x-access-token'];
+
                 done();
-            })
+            });
 
     });
 });
 
 describe('Order management', function () {
-    require( './order_management')(token);
+    require( './order_management')(token, request);
 });
 
 describe('Resource plan', function () {
-    require('./resource_plan')(token);
+    require('./resource_plan')(token, request);
 });
 
 describe('Inbound', function () {
-    require('./item_movement/inbound')(token);
+    require('./item_movement/inbound')(token, request);
 });
 
 describe('Putaway', function () {
-    require('./item_movement/putaway')(token);
+    require('./item_movement/putaway')(token, request);
 });
 
 describe('Sorting', function () {
-    require('./item_movement/sorting')(token);
+    require('./item_movement/sorting')(token, request);
 });
 
 describe('Outbound', function () {
-    require('./item_movement/outbound')(token);
+    require('./item_movement/outbound')(token, request);
 });
 
 describe('Loading', function () {
-    require('./item_movement/loading')(token);
+    require('./item_movement/loading')(token, request);
 });
 
 describe('Reports', function () {
-    require('./reports')(token);
+    require('./reports')(token, request);
 });
 
 describe('Dashboard', function () {
-    require('./dashboard')(token);
+    require('./dashboard')(token, request);
 });

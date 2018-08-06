@@ -1,11 +1,11 @@
-const request = require('supertest');
 const chai = require('chai');
 
-module.exports = function(token) {
+module.exports = function(token, request) {
 
     describe('POST /prealert', function () {
         it('should be successful', function () {
             // Pass
+
         });
     });
 
