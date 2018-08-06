@@ -26,6 +26,6 @@
   "devDependencies": {
     "async": "^2.6.1",
     "chai": "^3.5.0",
-    "supertest": "^2.0.0"
+    "supertest": "^2.0.1"
   }
 }
