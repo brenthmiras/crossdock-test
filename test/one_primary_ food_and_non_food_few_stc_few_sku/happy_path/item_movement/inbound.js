@@ -1,4 +1,3 @@
-const config = require('../../../../config');
 const chai = require('chai');
 
 module.exports = function (token, request) {
@@ -9,10 +8,6 @@ module.exports = function (token, request) {
             request
                 .get('/inbound')
                 .set('x-access-token', token)
-                .send({
-                    "email": "admin@cdi.com",
-                    "password": "secret"
-                })
                 .expect(200, function (err, result) {
 
                     chai.expect(result.body.data).to.have.property('items');
@@ -44,22 +39,22 @@ module.exports = function (token, request) {
 };
 
 function inbound(source_container_location, source_container, destination_container, material_id, quantity) {
-        it('it should be successful', function (done) {
-            // Pass
-            request
-                .post('/item/receive')
-                .set('x-access-token', token)
-                .type('json')
-                .send({
-                    'source_container_location': source_container_location,
-                    'source_container': source_container,
-                    'destination_container': destination_container,
-                    'material_id': material_id,
-                    'quantity': quantity
-                })
-                .expect(200, function (err, result) {
-                    chai.expect(result.body.data).to.have.property('items');
-                    done();
-                });
-        });
+    it('it should be successful', function (done) {
+        // Pass
+        request
+            .post('/item/receive')
+            .set('x-access-token', token)
+            .type('json')
+            .send({
+                'source_container_location': source_container_location,
+                'source_container': source_container,
+                'destination_container': destination_container,
+                'material_id': material_id,
+                'quantity': quantity
+            })
+            .expect(200, function (err, result) {
+                chai.expect(result.body.data).to.have.property('items');
+                done();
+            });
+    });
 }
