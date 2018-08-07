@@ -43,10 +43,10 @@ function putaway(o) {
                 grid = result.body.data.items[0].staging_subgrid;
                 done();
             });
-
+                
     });
 
-    it('it should be successful', function (done) {
+    it('it should putaway '+o.destination_container+' successfully', function (done) {
         request
             .post('/item/putaway')
             .set('x-access-token', token)

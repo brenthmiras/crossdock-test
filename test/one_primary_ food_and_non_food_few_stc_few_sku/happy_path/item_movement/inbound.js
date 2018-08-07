@@ -23,7 +23,7 @@ module.exports = function (token, request) {
                                     v.quantity -= v.pallet_max_case;
                                 }
                                 if(v.quantity > 0){
-                                    inbound(v.inbound_document_number, 'MAX999', 'ZEU' + ('' + (i + counter++)).padStart(9, '0'), v.material_id, v.quantity);
+                                    inbound(v.inbound_document_number, 'MAX999', 'ZEU' + ('' + (i + counter)).padStart(9, '0'), v.material_id, v.quantity);
                                 }
                             }else{
                                 inbound(v.inbound_document_number, 'MAX999', 'ZEU' + ('' + (i+counter)).padStart(9, '0'), v.material_id, v.quantity);
@@ -39,7 +39,7 @@ module.exports = function (token, request) {
 };
 
 function inbound(source_container_location, source_container, destination_container, material_id, quantity) {
-    it('it should be successful', function (done) {
+    it('it should receive '+destination_container+' successfully', function (done) {
         // Pass
         request
             .post('/item/receive')
