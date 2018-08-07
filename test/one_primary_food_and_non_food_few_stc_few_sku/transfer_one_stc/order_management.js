@@ -71,4 +71,18 @@ module.exports = function(token, request) {
             expect(cutoff_done).to.equal(0)
         });
     });
+
+    describe('POST /test/prealert-cutoff', function () {
+        it('should be successful', function (done) {
+            request
+            .post('/test/prealert-cutoff')
+            .set('Content-Type', 'multipart/form-data')
+            .set('x-access-token', token)
+            .send()
+            .end(function(err, res) {
+                expect(res.status).to.equal(200);
+                done();
+            });
+        });
+    });
 }
