@@ -1,12 +1,28 @@
-const request = require('supertest');
 const chai = require('chai');
-const config = require('../../../config');
+const expect = chai.expect;
 
 module.exports = function (token, request) {
+    describe('GET /shipment-primary/recommendation', function () {
+        let result;
 
-    describe('GET /customer-primaries/:id/shipments', function () {
+        before('Fire http request', function (done) {
+            request
+            .get('/shipment-primary/recommendation')
+            .set('x-access-token', token)
+            .send()
+            .end(function(err, res) {
+                result = res;
+                done();
+            });
+        });
+        
         it('should be successful', function () {
-            // Pass
+            expect(result.status).to.equal(200);
+        });
+
+        it('should contain 5 recommendations', function () {
+            const rows = result.body.data.items;
+            expect(rows.length).to.equal(5);
         });
     });
 };
