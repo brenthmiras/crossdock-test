@@ -4,9 +4,11 @@ const config = require('../../../config');
 const should = require('chai').should();
 const async = require('async');
 const moment = require('moment');
+
 module.exports = function (token, request) {
     let items = [];
     describe('Primary Shipment Plan', function () {
+        this.timeout(20000);
         it('should get all primaries id', function (done) {
             request
                 .get('/shipment-primary/recommendation')
@@ -28,7 +30,6 @@ module.exports = function (token, request) {
         });
   
         it('should confirm primary shipment recommendation', function (done) {
-            this.timeout(20000);
             async.eachSeries(items, confirm_shipment, () => {
                 console.log('confirmed');
                 done();

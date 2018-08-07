@@ -1,10 +1,6 @@
-const chai = require('chai');
-const chaiHttp = require("chai-http");
-const {readFileSync} = require("fs");
 
 module.exports = function(token, request) {
 
-    chai.use(chaiHttp);
 
     describe('POST /prealert', function () {
         it('File upload in prealert', function () { 

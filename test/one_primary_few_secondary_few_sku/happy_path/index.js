@@ -24,9 +24,10 @@ describe('POST /auth/login', function () {
 
                 token = result.header['x-access-token'];
                 console.log(token);
-                describe('Order management', function () {
-                    require('./order_management')(token, request);
-                });
+
+                // describe('Order management', function () {
+                //     require('./order_management')(token, request);
+                // });
 
                 // describe('Resource plan', function () {
                 //     require('./resource_plan')(token, request);
@@ -40,9 +41,9 @@ describe('POST /auth/login', function () {
                 //     require('./item_movement/putaway')(token, request);
                 // });
 
-                // describe('Primary shipment plan', function () {
-                //     require('./primary_shipment_plan')(token, request);
-                // });
+                describe('Primary shipment plan', function () {
+                    require('./primary_shipment_plan')(token, request);
+                });
 
                 describe('Secondary plan', function () {
                     require('./secondary_shipment_plan')(token, request);
