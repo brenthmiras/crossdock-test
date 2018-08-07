@@ -2,15 +2,14 @@ const chai = require('chai');
 
 module.exports = function (token, request) {
 
-    describe('GET /inbound', function () {
-
+    describe('POST /item/putaway', function () {
         it('it should putaway ZEU000000000 successfully', function (done) {
             request
                 .post('/item/putaway')
                 .set('x-access-token', token)
                 .send({
                     'source_container': 'ZEU000000000',
-                    'destination_container_location': 'undefined'
+                    'destination_container_location': 'GSTG-A01'
                 })
                 .expect(200, function (err, result) {
                     done();
@@ -25,7 +24,7 @@ module.exports = function (token, request) {
                 .set('x-access-token', token)
                 .send({
                     'source_container': 'ZEU000000001',
-                    'destination_container_location': 'undefined'
+                    'destination_container_location': 'GSTG-A01'
                 })
                 .expect(200, function (err, result) {
                     done();
@@ -40,7 +39,7 @@ module.exports = function (token, request) {
                 .set('x-access-token', token)
                 .send({
                     'source_container': 'ZEU000000002',
-                    'destination_container_location': 'undefined'
+                    'destination_container_location': 'GSTG-A01'
                 })
                 .expect(200, function (err, result) {
                     done();
@@ -55,7 +54,7 @@ module.exports = function (token, request) {
                 .set('x-access-token', token)
                 .send({
                     'source_container': 'ZEU000000003',
-                    'destination_container_location': 'undefined'
+                    'destination_container_location': 'GSTG-A01'
                 })
                 .expect(200, function (err, result) {
                     done();
@@ -70,7 +69,7 @@ module.exports = function (token, request) {
                 .set('x-access-token', token)
                 .send({
                     'source_container': 'ZEU000000004',
-                    'destination_container_location': 'undefined'
+                    'destination_container_location': 'GSTG-A01'
                 })
                 .expect(200, function (err, result) {
                     done();
@@ -85,7 +84,7 @@ module.exports = function (token, request) {
                 .set('x-access-token', token)
                 .send({
                     'source_container': 'ZEU000000005',
-                    'destination_container_location': 'undefined'
+                    'destination_container_location': 'GSTG-B01'
                 })
                 .expect(200, function (err, result) {
                     done();
@@ -100,7 +99,7 @@ module.exports = function (token, request) {
                 .set('x-access-token', token)
                 .send({
                     'source_container': 'ZEU000000006',
-                    'destination_container_location': 'undefined'
+                    'destination_container_location': 'GSTG-B01'
                 })
                 .expect(200, function (err, result) {
                     done();
@@ -115,7 +114,7 @@ module.exports = function (token, request) {
                 .set('x-access-token', token)
                 .send({
                     'source_container': 'ZEU000000007',
-                    'destination_container_location': 'undefined'
+                    'destination_container_location': 'GSTG-B01'
                 })
                 .expect(200, function (err, result) {
                     done();
@@ -130,7 +129,7 @@ module.exports = function (token, request) {
                 .set('x-access-token', token)
                 .send({
                     'source_container': 'ZEU000000008',
-                    'destination_container_location': 'undefined'
+                    'destination_container_location': 'GSTG-B01'
                 })
                 .expect(200, function (err, result) {
                     done();
@@ -145,7 +144,7 @@ module.exports = function (token, request) {
                 .set('x-access-token', token)
                 .send({
                     'source_container': 'ZEU000000009',
-                    'destination_container_location': 'undefined'
+                    'destination_container_location': 'GSTG-B01'
                 })
                 .expect(200, function (err, result) {
                     done();
@@ -160,7 +159,7 @@ module.exports = function (token, request) {
                 .set('x-access-token', token)
                 .send({
                     'source_container': 'ZEU000000010',
-                    'destination_container_location': 'undefined'
+                    'destination_container_location': 'GSTG-A01'
                 })
                 .expect(200, function (err, result) {
                     done();
@@ -175,7 +174,7 @@ module.exports = function (token, request) {
                 .set('x-access-token', token)
                 .send({
                     'source_container': 'ZEU000000011',
-                    'destination_container_location': 'undefined'
+                    'destination_container_location': 'GSTG-A01'
                 })
                 .expect(200, function (err, result) {
                     done();
@@ -190,7 +189,7 @@ module.exports = function (token, request) {
                 .set('x-access-token', token)
                 .send({
                     'source_container': 'ZEU000000012',
-                    'destination_container_location': 'undefined'
+                    'destination_container_location': 'GSTG-A01'
                 })
                 .expect(200, function (err, result) {
                     done();
@@ -205,7 +204,7 @@ module.exports = function (token, request) {
                 .set('x-access-token', token)
                 .send({
                     'source_container': 'ZEU000000013',
-                    'destination_container_location': 'undefined'
+                    'destination_container_location': 'GSTG-A01'
                 })
                 .expect(200, function (err, result) {
                     done();
@@ -220,13 +219,14 @@ module.exports = function (token, request) {
                 .set('x-access-token', token)
                 .send({
                     'source_container': 'ZEU000000014',
-                    'destination_container_location': 'undefined'
+                    'destination_container_location': 'GSTG-A01'
                 })
                 .expect(200, function (err, result) {
                     done();
                 });
 
         });
+
 
 
     });
