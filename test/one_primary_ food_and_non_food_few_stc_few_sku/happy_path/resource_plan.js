@@ -71,21 +71,6 @@ module.exports = function (token, request) {
         });
 
 
-        it('it should get assign GRC-004 successfully', function (done) {
-
-            request
-                .put('/grid-plan/' + 'ZEU-A01-01')
-                .set('x-access-token', token)
-                .send({
-                    'rollcage': 'GRC-004'
-                })
-                .expect(200, function (err, result) {
-                    done();
-                });
-
-        });
-
-
         it('it should get assign GRC-005 successfully', function (done) {
 
             request
@@ -146,21 +131,6 @@ module.exports = function (token, request) {
         });
 
 
-        it('it should get assign GRC-009 successfully', function (done) {
-
-            request
-                .put('/grid-plan/' + 'ZEU-C01-01')
-                .set('x-access-token', token)
-                .send({
-                    'rollcage': 'GRC-009'
-                })
-                .expect(200, function (err, result) {
-                    done();
-                });
-
-        });
-
-
         it('it should get assign GRC-010 successfully', function (done) {
 
             request
@@ -198,21 +168,6 @@ module.exports = function (token, request) {
                 .set('x-access-token', token)
                 .send({
                     'rollcage': 'GRC-012'
-                })
-                .expect(200, function (err, result) {
-                    done();
-                });
-
-        });
-
-
-        it('it should get assign GRC-013 successfully', function (done) {
-
-            request
-                .put('/grid-plan/' + 'ZEU-A01-02')
-                .set('x-access-token', token)
-                .send({
-                    'rollcage': 'GRC-013'
                 })
                 .expect(200, function (err, result) {
                     done();

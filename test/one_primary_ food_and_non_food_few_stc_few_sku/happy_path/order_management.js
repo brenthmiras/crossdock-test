@@ -21,6 +21,20 @@ module.exports = function(token, request) {
         });
     });
 
+    describe('POST /test/prealert-cutoff', function () {
+        this.timeout(20000);
+        it('should be successful', function (done) {
+            request
+            .post('/test/prealert-cutoff')
+            .set('x-access-token', token)
+            .end(function(err, res) {
+                expect(res.status).to.equal(200);
+                done();
+            });
+        });
+    });
+
+
     describe('POST /postalerts', function () {
         this.timeout(20000);
         it('should be successful', function (done) {
