@@ -38,6 +38,14 @@ describe('POST /test/reset', function () {
                 require('./order_management')(token, request);
             });
 
+            describe('Primary shipment plan', function () {
+                require('./primary_shipment_plan')(token, request);
+            });
+
+            describe('Secondary plan', function () {
+                require('./secondary_shipment_plan')(token, request);
+            });
+
             describe('Resource plan', function () {
                 require('./resource_plan')(token, request);
             });
@@ -48,14 +56,6 @@ describe('POST /test/reset', function () {
 
             describe('Putaway', function () {
                 require('./item_movement/putaway')(token, request);
-            });
-
-            describe('Primary shipment plan', function () {
-                require('./primary_shipment_plan')(token, request);
-            });
-
-            describe('Secondary plan', function () {
-                require('./secondary_shipment_plan')(token, request);
             });
 
             describe('Inbound', function () {
