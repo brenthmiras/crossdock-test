@@ -3,7 +3,7 @@ const chai = require('chai');
 const config = require('../../../config');
 const should = require('chai').should();
 const async = require('async');
-
+const moment = require('moment');
 module.exports = function (token, request) {
     let items = [];
     describe('GET /customer-primaries/shipments', function () {
@@ -22,6 +22,7 @@ module.exports = function (token, request) {
                     res.body.data.items.forEach(res => {
                         items.push(res)
                     });
+                    console.log('done getting data from customer-primaries/shipments');
                     done();
                 });
         });
@@ -29,7 +30,11 @@ module.exports = function (token, request) {
 
     describe('POST customer-primaries/:id/shipments', function () {
         it('should confirm primary shipment recommendation', function (done) {
-            async.eachSeries(items, confirm_shipment, done)
+            this.timeout(20000);
+            async.eachSeries(items, confirm_shipment, () => {
+                console.log('confirmed all shipments');
+                done();
+            });
         });
 
         function confirm_shipment(row, callback) {
@@ -37,13 +42,7 @@ module.exports = function (token, request) {
                 if (err) throw err;
                 return callback();
             }
-            // console.log({
-            //         'truck_type' : row.truck_type, 
-            //         'category' : row.category, 
-            //         'quantity' : row.quantity, 
-            //         'rdd' : row.required_delivery_date, 
-            //         'created_date' : row.created_date
-            // });
+     
             request
                 .post(`/customer-primaries/${row.customer_primary_id}/shipments`)
                 .type('json')
@@ -53,8 +52,8 @@ module.exports = function (token, request) {
                     truck_type: `${row.truck_type}`,
                     category: `${row.category}`,
                     quantity: `${row.quantity}`,
-                    required_delivery_date: `${row.required_delivery_date}`,
-                    created_date: `${row.created_date}`
+                    required_delivery_date: `${moment(row.required_delivery_date).format('YYYY-MM-DD')}`,
+                    created_date: `${moment(row.created_date).format('YYYY-MM-DD')}`
                 }])
                 .expect(200)
                 .end((err, res) => {
@@ -69,7 +68,10 @@ module.exports = function (token, request) {
 
     describe('GET /customer-primaries/:id/shipments', function () {
         it('should get all confirmed primary shipments', function (done) {
-            async.each(items, customer_primary_by_id, done)
+            async.each(items, customer_primary_by_id, () => {
+                console.log('get all confirmed shioments');
+                done();
+            });
         });
         function customer_primary_by_id(row, callback) {
             function send_callback(err, result, args, last_query) {
