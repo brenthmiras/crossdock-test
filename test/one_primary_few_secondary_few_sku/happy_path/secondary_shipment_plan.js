@@ -6,8 +6,7 @@ const async = require('async');
 const moment = require('moment')
 
 module.exports = function (token, request) {
-    let items = [],
-        date = moment().format('YYYY-MM-DD');
+    const date = moment().format('YYYY-MM-DD');
     describe('GET /shipment-secondaries/recommendation', function () {
         it('should get all secondary shipments recommendation', function (done) {
             request
@@ -22,28 +21,17 @@ module.exports = function (token, request) {
                     res.body.should.have.property('success', true);
                     res.body.should.have.property('data');
                     res.body.data.items.forEach(i => {
-                        items.push(i);
+                        insert_customer_secondaries(i);
                 });
                 done();
             });
         });
     });
 
-    describe('POST /customer-secondaries/:id/shipments', function () {
-        it('should confirm all secondary shipments', function (done) {
-            this.timeout(20000);
-            async.each(items, confirm_secondary_shipment, () => {
-                console.log('confirmed');
-                done();
-            });
-        });
-
-        function confirm_secondary_shipment(row, callback) {
-            function send_callback(err, result) {
-                if(err) throw err;
-                return callback();
-            }
-            request
+    function insert_customer_secondaries(row) {
+        describe('POST /customer-secondaries/:id/shipments', function () {
+            it(`should confirm cluster_name ${row.cluster_name}`, function (done) {
+                request
                 .post(`/customer-secondaries/${row.cluster_name}/shipments`)
                 .type('json')
                 .set('Content-Type', 'application/json')
@@ -60,26 +48,17 @@ module.exports = function (token, request) {
                     should.not.exist(err);
                     should.exist(res);
                     res.body.should.have.property('success', true);
-                    send_callback();
+                    done();
+                    retrieve_secondary_shipment_route(row);
+                });
             });
-        }
-    });
-
-     describe('GET /routes/:id/shipments', function() {
-        it('retrieve secondary shipment per route', function (done) {
-            this.timeout(20000);
-            async.each(items, retrieve_by_route, () => {
-                console.log('done retrieveing shipment by route');
-                done();
-            });
-        }); 
-
-        function retrieve_by_route(row, callback) {
-            function send_callback(err, result) {
-                if(err) throw err;
-                return callback();
-            }
-            request
+        });
+    }
+    
+    function retrieve_secondary_shipment_route(row){
+        describe(`GET /routes/${row.cluster_name}/shipments`, function() {
+            it('retrieve secondary shipment per route', function (done) {
+                request
                 .get(`/routes/${row.cluster_name}/shipments?category=${row.category}&date=${date}`)
                 .type('json')
                 .set('Content-Type', 'application/json')
@@ -90,10 +69,33 @@ module.exports = function (token, request) {
                     should.exist(res);
                     res.body.should.have.property('success', true);
                     res.body.should.have.property('data');
-                    send_callback();
+                    done();
+                    finalize_priority(row);
                 });
-        }
-    });
-};
+            });
+        });
+    }
 
+    // function finalize_priority(row) {
+    //     describe('PUT customer-secondaries/:id/priority', function () {
+    //         it('finalize shipment secondary', function () {
+    //             request
+    //             .put(`/customer-secondaries/${row.customer_secondary_id}/priority`)
+    //             .type('json')
+    //             .set('Content-Type', 'application/json')
+    //             .set('x-access-token', token)
+    //             .send({
+    //                 shipment_secondary_id: 
+    //             })
+    //             .expect(200)
+    //             .end((err,res) => {
+    //                 should.not.exist(err);
+    //                 should.exist(res);
+    //                 res.body.should.have.property('success', true);
+    //                 res.body.should.have.property('data');
+    //             });
+    //         });
+    //     });
+    // }
+};
 

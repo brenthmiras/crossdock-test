@@ -40,9 +40,9 @@ describe('POST /auth/login', function () {
                 //     require('./item_movement/putaway')(token, request);
                 // });
 
-                describe('Primary shipment plan', function () {
-                    require('./primary_shipment_plan')(token, request);
-                });
+                // describe('Primary shipment plan', function () {
+                //     require('./primary_shipment_plan')(token, request);
+                // });
 
                 describe('Secondary plan', function () {
                     require('./secondary_shipment_plan')(token, request);

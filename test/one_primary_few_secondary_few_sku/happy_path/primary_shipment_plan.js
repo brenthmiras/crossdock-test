@@ -6,7 +6,7 @@ const async = require('async');
 const moment = require('moment');
 module.exports = function (token, request) {
     let items = [];
-    describe('GET /customer-primaries/shipments', function () {
+    describe('Primary Shipment Plan', function () {
         it('should get all primaries id', function (done) {
             request
                 .get('/shipment-primary/recommendation')
@@ -26,13 +26,11 @@ module.exports = function (token, request) {
                     done();
                 });
         });
-    });
-
-    describe('POST customer-primaries/:id/shipments', function () {
+  
         it('should confirm primary shipment recommendation', function (done) {
             this.timeout(20000);
             async.eachSeries(items, confirm_shipment, () => {
-                console.log('confirmed all shipments');
+                console.log('confirmed');
                 done();
             });
         });
@@ -63,13 +61,10 @@ module.exports = function (token, request) {
                     send_callback();
                 })
         }
-    });
 
-
-    describe('GET /customer-primaries/:id/shipments', function () {
         it('should get all confirmed primary shipments', function (done) {
             async.each(items, customer_primary_by_id, () => {
-                console.log('get all confirmed shioments');
+                console.log('retrieved all confirmed shipments');
                 done();
             });
         });
@@ -98,7 +93,7 @@ module.exports = function (token, request) {
                     res.body.data.items[0].should.have.property('created');
                     res.body.data.items[0].should.have.property('booking_id');
                     send_callback();
-                });
+            });
         }
     });
 };
