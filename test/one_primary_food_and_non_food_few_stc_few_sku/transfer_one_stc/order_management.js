@@ -46,4 +46,29 @@ module.exports = function(token, request) {
             expect(rows.length).to.equal(1);
         });
     });
+
+    describe('GET /last_cutoff', function () {
+        let result;
+
+        before('Fire http request', function (done) {
+            request
+            .get('/last_cutoff')
+            .set('Content-Type', 'multipart/form-data')
+            .set('x-access-token', token)
+            .send()
+            .end(function(err, res) {
+                result = res;
+                done();
+            });
+        });
+        
+        it('should be successful', function () {
+            expect(result.status).to.equal(200);
+        });
+
+        it('should have not been done', function () {
+            const cutoff_done = result.body.data.cutoff_today;
+            expect(cutoff_done).to.equal(0)
+        });
+    });
 }
