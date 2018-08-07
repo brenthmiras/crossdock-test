@@ -1,6 +1,5 @@
-const request = require('supertest');
 const chai = require('chai');
-const config = require('../../../config');
+const expect = chai.expect;
 
 module.exports = function (token, request) {
 
@@ -191,5 +190,18 @@ module.exports = function (token, request) {
         });
 
 
-    })
+    });
+
+    describe('GET /grids?type=LOADING', function () {
+        it('should be successful', function (done) {
+            request
+            .get('/grids?type=LOADING')
+            .set('x-access-token', token)
+            .send()
+            .end(function(err, res) {
+                expect(res.status).to.equal(200);
+                done();
+            });
+        });
+    });
 };
