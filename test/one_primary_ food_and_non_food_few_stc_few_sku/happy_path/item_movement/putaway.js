@@ -3,61 +3,231 @@ const chai = require('chai');
 module.exports = function (token, request) {
 
     describe('GET /inbound', function () {
-        it('it should not be empty', function (done) {
-            // Pass
+
+        it('it should putaway ZEU000000000 successfully', function (done) {
             request
-                .get('/inbound')
+                .post('/item/putaway')
                 .set('x-access-token', token)
+                .send({
+                    'source_container': 'ZEU000000000',
+                    'destination_container_location': 'undefined'
+                })
                 .expect(200, function (err, result) {
-
-                    chai.expect(result.body.data).to.have.property('items');
-                    chai.expect(result.body.data.items.length).to.be.greaterThan(0);
-
-                    let counter = 0;
-                    describe('POST /item/receive', function () {
-                        result.body.data.items.forEach((v, i, a) => {
-
-                            v.pallets.forEach((_v, _i, _a) => {
-                                putaway(_v);
-                            });
-                            
-                        });
-                    });
-
                     done();
                 });
+
         });
+
+
+        it('it should putaway ZEU000000001 successfully', function (done) {
+            request
+                .post('/item/putaway')
+                .set('x-access-token', token)
+                .send({
+                    'source_container': 'ZEU000000001',
+                    'destination_container_location': 'undefined'
+                })
+                .expect(200, function (err, result) {
+                    done();
+                });
+
+        });
+
+
+        it('it should putaway ZEU000000002 successfully', function (done) {
+            request
+                .post('/item/putaway')
+                .set('x-access-token', token)
+                .send({
+                    'source_container': 'ZEU000000002',
+                    'destination_container_location': 'undefined'
+                })
+                .expect(200, function (err, result) {
+                    done();
+                });
+
+        });
+
+
+        it('it should putaway ZEU000000003 successfully', function (done) {
+            request
+                .post('/item/putaway')
+                .set('x-access-token', token)
+                .send({
+                    'source_container': 'ZEU000000003',
+                    'destination_container_location': 'undefined'
+                })
+                .expect(200, function (err, result) {
+                    done();
+                });
+
+        });
+
+
+        it('it should putaway ZEU000000004 successfully', function (done) {
+            request
+                .post('/item/putaway')
+                .set('x-access-token', token)
+                .send({
+                    'source_container': 'ZEU000000004',
+                    'destination_container_location': 'undefined'
+                })
+                .expect(200, function (err, result) {
+                    done();
+                });
+
+        });
+
+
+        it('it should putaway ZEU000000005 successfully', function (done) {
+            request
+                .post('/item/putaway')
+                .set('x-access-token', token)
+                .send({
+                    'source_container': 'ZEU000000005',
+                    'destination_container_location': 'undefined'
+                })
+                .expect(200, function (err, result) {
+                    done();
+                });
+
+        });
+
+
+        it('it should putaway ZEU000000006 successfully', function (done) {
+            request
+                .post('/item/putaway')
+                .set('x-access-token', token)
+                .send({
+                    'source_container': 'ZEU000000006',
+                    'destination_container_location': 'undefined'
+                })
+                .expect(200, function (err, result) {
+                    done();
+                });
+
+        });
+
+
+        it('it should putaway ZEU000000007 successfully', function (done) {
+            request
+                .post('/item/putaway')
+                .set('x-access-token', token)
+                .send({
+                    'source_container': 'ZEU000000007',
+                    'destination_container_location': 'undefined'
+                })
+                .expect(200, function (err, result) {
+                    done();
+                });
+
+        });
+
+
+        it('it should putaway ZEU000000008 successfully', function (done) {
+            request
+                .post('/item/putaway')
+                .set('x-access-token', token)
+                .send({
+                    'source_container': 'ZEU000000008',
+                    'destination_container_location': 'undefined'
+                })
+                .expect(200, function (err, result) {
+                    done();
+                });
+
+        });
+
+
+        it('it should putaway ZEU000000009 successfully', function (done) {
+            request
+                .post('/item/putaway')
+                .set('x-access-token', token)
+                .send({
+                    'source_container': 'ZEU000000009',
+                    'destination_container_location': 'undefined'
+                })
+                .expect(200, function (err, result) {
+                    done();
+                });
+
+        });
+
+
+        it('it should putaway ZEU000000010 successfully', function (done) {
+            request
+                .post('/item/putaway')
+                .set('x-access-token', token)
+                .send({
+                    'source_container': 'ZEU000000010',
+                    'destination_container_location': 'undefined'
+                })
+                .expect(200, function (err, result) {
+                    done();
+                });
+
+        });
+
+
+        it('it should putaway ZEU000000011 successfully', function (done) {
+            request
+                .post('/item/putaway')
+                .set('x-access-token', token)
+                .send({
+                    'source_container': 'ZEU000000011',
+                    'destination_container_location': 'undefined'
+                })
+                .expect(200, function (err, result) {
+                    done();
+                });
+
+        });
+
+
+        it('it should putaway ZEU000000012 successfully', function (done) {
+            request
+                .post('/item/putaway')
+                .set('x-access-token', token)
+                .send({
+                    'source_container': 'ZEU000000012',
+                    'destination_container_location': 'undefined'
+                })
+                .expect(200, function (err, result) {
+                    done();
+                });
+
+        });
+
+
+        it('it should putaway ZEU000000013 successfully', function (done) {
+            request
+                .post('/item/putaway')
+                .set('x-access-token', token)
+                .send({
+                    'source_container': 'ZEU000000013',
+                    'destination_container_location': 'undefined'
+                })
+                .expect(200, function (err, result) {
+                    done();
+                });
+
+        });
+
+
+        it('it should putaway ZEU000000014 successfully', function (done) {
+            request
+                .post('/item/putaway')
+                .set('x-access-token', token)
+                .send({
+                    'source_container': 'ZEU000000014',
+                    'destination_container_location': 'undefined'
+                })
+                .expect(200, function (err, result) {
+                    done();
+                });
+
+        });
+
+
     });
-
-};
-
-
-function putaway(o) {
-    let grid;
-    it('it should get /materials/barcode/'+o.destination_container+' successfully', function (done) {
-
-        request
-            .get('/materials/barcode/' + o.destination_container)
-            .set('x-access-token', token)
-            .expect(200, function (err, result) {
-                grid = result.body.data.items[0].staging_subgrid;
-                done();
-            });
-                
-    });
-
-    it('it should putaway '+o.destination_container+' successfully', function (done) {
-        request
-            .post('/item/putaway')
-            .set('x-access-token', token)
-            .send({
-                'source_container': o.destination_container,
-                'destination_container_location': grid
-            })
-            .expect(200, function (err, result) {
-                done();
-            });
-
-    });
-
 };

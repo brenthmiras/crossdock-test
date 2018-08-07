@@ -57,10 +57,6 @@ describe('POST /test/reset', function () {
             describe('Putaway', function () {
                 require('./item_movement/putaway')(token, request);
             });
-
-            describe('Inbound', function () {
-                require('./item_movement/inbound')(token, request);
-            });
             describe('Sorting', function () {
                 require('./item_movement/sorting')(token, request);
             });
