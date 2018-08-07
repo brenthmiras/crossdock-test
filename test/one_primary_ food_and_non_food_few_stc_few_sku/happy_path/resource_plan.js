@@ -204,4 +204,17 @@ module.exports = function (token, request) {
             });
         });
     });
+
+    describe('GET /shipment-secondaries', function () {
+        it('should be successful', function (done) {
+            request
+            .get('/shipment-secondaries')
+            .set('x-access-token', token)
+            .send()
+            .end(function(err, res) {
+                expect(res.status).to.equal(200);
+                done();
+            });
+        });
+    });
 };
