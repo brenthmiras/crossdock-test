@@ -44,9 +44,9 @@ describe('POST /auth/login', function () {
                     require('./primary_shipment_plan')(token, request);
                 });
 
-                // describe('Secondary plan', function () {
-                //     require('./secondary_shipment_plan')(token, request);
-                // });
+                describe('Secondary plan', function () {
+                    require('./secondary_shipment_plan')(token, request);
+                });
 
                 // describe('Inbound', function () {
                 //     require('./item_movement/inbound')(token, request);
