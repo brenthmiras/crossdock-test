@@ -14,7 +14,6 @@ module.exports = function (token, request) {
                 .expect(200, function (err, result) {
                     done();
                 });
-
         });
 
 
@@ -29,7 +28,6 @@ module.exports = function (token, request) {
                 .expect(200, function (err, result) {
                     done();
                 });
-
         });
 
 
@@ -226,8 +224,5 @@ module.exports = function (token, request) {
         //         });
 
         // });
-
-
-
     });
 };

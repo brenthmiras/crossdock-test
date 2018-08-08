@@ -5,7 +5,7 @@ module.exports = function (token, request) {
     describe('GET /customer-primaries/:id/shipments', function () {
 
 
-        it('it should sort ZEU900000001 successfully', function (done) {
+        it('it should sort ZEU9000000001 successfully', function (done) {
 
             request
                 .post('/item/sort')
@@ -17,8 +17,7 @@ module.exports = function (token, request) {
                     "sku": "302091",
                     "ship_to_code": "STC-000000531"
                 })
-                .expect(200, function (err, result) {
-                    
+                .expect(200, function (err, result) {                
                     done();
                 });
 
@@ -37,13 +36,11 @@ module.exports = function (token, request) {
                     "sku": "302091",
                     "ship_to_code": "STC-000000534"
                 })
-                .expect(200, function (err, result) {
-                    
+                .expect(200, function (err, result) {  
                     done();
                 });
 
         });
-
 
         // it('it should sort ZEU000000000 successfully', function (done) {
 
@@ -581,10 +578,5 @@ module.exports = function (token, request) {
         //         });
 
         // });
-
-
-
-
-
     });
 };
