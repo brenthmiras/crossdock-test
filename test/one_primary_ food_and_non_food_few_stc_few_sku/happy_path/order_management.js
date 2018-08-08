@@ -1,7 +1,7 @@
 const chai = require('chai');
 const expect = chai.expect;
 
-module.exports = function(token, request) {
+module.exports = function (token, request) {
 
     const filePath = '../prealert.csv';
 
@@ -9,15 +9,15 @@ module.exports = function(token, request) {
         this.timeout(20000);
         it('should be successful', function (done) {
             request
-            .post('/prealerts')
-            .set('Content-Type', 'multipart/form-data')
-            .set('x-access-token', token)
-            .field('override', 'true')
-            .attach('file', filePath)
-            .end(function(err, res) {
-                expect(res.status).to.equal(200);
-                done();
-            });
+                .post('/prealerts')
+                .set('Content-Type', 'multipart/form-data')
+                .set('x-access-token', token)
+                .field('override', 'true')
+                .attach('file', filePath)
+                .end(function (err, res) {
+                    expect(res.status).to.equal(200);
+                    done();
+                });
         });
     });
 
@@ -25,12 +25,12 @@ module.exports = function(token, request) {
         this.timeout(20000);
         it('should be successful', function (done) {
             request
-            .post('/test/prealert-cutoff')
-            .set('x-access-token', token)
-            .end(function(err, res) {
-                expect(res.status).to.equal(200);
-                done();
-            });
+                .post('/test/prealert-cutoff')
+                .set('x-access-token', token)
+                .end(function (err, res) {
+                    expect(res.status).to.equal(200);
+                    done();
+                });
         });
     });
 
@@ -39,15 +39,15 @@ module.exports = function(token, request) {
         this.timeout(20000);
         it('should be successful', function (done) {
             request
-            .post('/bookings/ZEU-ULP-180807-001/postalerts')
-            .set('Content-Type', 'multipart/form-data')
-            .set('x-access-token', token)
-            .field('override', 'true')
-            .attach('file', '../ZEU-ULP-180807-001.csv')
-            .end(function(err, res) {
-                expect(res.status).to.equal(200);
-                done();
-            });
+                .post('/bookings/ZEU-ULP-180808-001/postalerts')
+                .set('Content-Type', 'multipart/form-data')
+                .set('x-access-token', token)
+                .field('override', 'true')
+                .attach('file', '../ZEU-ULP-180808-001.csv')
+                .end(function (err, res) {
+                    expect(res.status).to.equal(200);
+                    done();
+                });
         });
     });
 
@@ -57,6 +57,4 @@ module.exports = function(token, request) {
         });
     });
 
-
-    
 }
