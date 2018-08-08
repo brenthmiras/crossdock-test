@@ -12,16 +12,15 @@ module.exports = function (token, request) {
                 .set('x-access-token', token)
                 .send({
                     "source_container": "ZEU600000001",
-                    "destination_container": "GRC-006",
+                    "destination_container": "ZEU-A05-02",
                     "quantity": 40,
-                    "sku": "300796",
-                    "ship_to_code": "STC-000000531"
+                    // "sku": "67106205",
+                    // "ship_to_code": "STC-000000531"
                 })
                 .expect(200, function (err, result) {
                     
                     done();
                 });
-
         });
         it('it should sort ZEU600000002 successfully', function (done) {
 
@@ -30,10 +29,10 @@ module.exports = function (token, request) {
                 .set('x-access-token', token)
                 .send({
                     "source_container": "ZEU600000002",
-                    "destination_container": "GRC-006",
+                    "destination_container": "ZEU-A01-01",
                     "quantity": 40,
-                    "sku": "300796",
-                    "ship_to_code": "STC-000000531"
+                    // "sku": "300796",
+                    // "ship_to_code": "STC-000000531"
                 })
                 .expect(200, function (err, result) {
                     

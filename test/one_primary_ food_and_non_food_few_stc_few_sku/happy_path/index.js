@@ -6,8 +6,9 @@ const chai = require('chai');
 
 let token;
 
-before('Login user to get token', function (done) {
-    this.timeout(20000);
+describe('Login user to get token', function () {
+    it('should be successful', function(done){
+        this.timeout(20000);
     request
     .post('/auth/login')
     .type('json')
@@ -18,12 +19,25 @@ before('Login user to get token', function (done) {
     })
     .end(function(err, result){
         token = result.header['x-access-token'];
-        done();
-    });
-});
 
-describe('POST /test/reset', function () {
-    it('should be able to reset data', function (done) {
+        describe('Inbound', function () {
+            require('./item_movement/inbound-06')(token, request);
+        });
+
+        describe('Putaway', function () {
+            require('./item_movement/putaway-06')(token, request);
+        });
+         
+        describe('Sorting', function () {
+                require('./item_movement/sorting-06')(token, request);
+        });
+
+        done();
+     });
+    })
+});
+//describe('POST /test/reset', function () {
+   /* it('should be able to reset data', function (done) {
         // Pass
         this.timeout(20000);
         request
@@ -48,19 +62,20 @@ describe('POST /test/reset', function () {
 
             describe('Resource plan', function () {
                 require('./resource_plan')(token, request);
-            });
+            }); 
+            */
 
-            describe('Inbound', function () {
-                require('./item_movement/inbound')(token, request);
-            });
+            // describe('Inbound', function () {
+            //     require('./item_movement/inbound')(token, request);
+            // });
 
-            describe('Putaway', function () {
-                require('./item_movement/putaway')(token, request);
-            });
-            describe('Sorting', function () {
-                require('./item_movement/sorting')(token, request);
-            });
-
+            // describe('Putaway', function () {
+            //     require('./item_movement/putaway')(token, request);
+            // });
+            // describe('Sorting', function () {
+            //     require('./item_movement/sorting')(token, request);
+            // });
+/*            
             describe('Outbound', function () {
                 require('./item_movement/outbound')(token, request);
             });
@@ -75,9 +90,9 @@ describe('POST /test/reset', function () {
 
             describe('Dashboard', function () {
                 require('./dashboard')(token, request);
-            });
-
-            done();
-        });
-    });
-});
+            });*/
+          
+        //     done();
+        // });
+//     });
+// });
