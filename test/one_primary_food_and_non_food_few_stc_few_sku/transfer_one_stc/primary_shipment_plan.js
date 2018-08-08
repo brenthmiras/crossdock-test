@@ -5,6 +5,7 @@ const async = require('async');
 module.exports = function (token, request) {
 
     let recommendations;
+    let customer_primary_id;
 
     describe('GET /shipment-primary/recommendation', function () {
         let result;
@@ -16,7 +17,8 @@ module.exports = function (token, request) {
             .send()
             .end(function(err, res) {
                 result = res;
-                recommendations = res.body;
+                recommendations = res.body.data.items;
+                customer_primary_id = recommendations[0].customer_primary_id;
                 done();
             });
         });
@@ -55,6 +57,30 @@ module.exports = function (token, request) {
                     cb();
                 });
             }
+        });
+    });
+
+    describe('GET /customer-primaries/:id/shipments', function () {
+        let result;
+
+        before('Fire http request', function (done) {
+            request
+            .get(`/customer-primaries/${customer_primary_id}/shipments`)
+            .set('x-access-token', token)
+            .send()
+            .end(function(err, res) {
+                result = res;
+                done();
+            });
+        });
+        
+        it('should be successful', function () {
+            expect(result.status).to.equal(200);
+        });
+
+        it('should contain 5 confirmed primary shipments', function () {
+            const rows = result.body.data.items;
+            expect(rows.length).to.equal(5);
         });
     });
 };
