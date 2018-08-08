@@ -42,7 +42,7 @@ describe('POST /test/reset', function () {
                 require('./primary_shipment_plan')(token, request);
             });
 
-            describe('Secondary plan', function () {
+           /*  describe('Secondary plan', function () {
                 require('./secondary_shipment_plan')(token, request);
             });
 
@@ -79,7 +79,7 @@ describe('POST /test/reset', function () {
 
             describe('Dashboard', function () {
                 require('./dashboard')(token, request);
-            });
+            }); */
 
             done();
         });
