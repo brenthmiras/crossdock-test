@@ -1,95 +1,26 @@
-const config = require('../../../config');
-
-
-const request = require('supertest')(config.BASE_URL);
 const chai = require('chai');
 
-let token;
+module.exports = function (token, request) {
 
-describe('Login user to get token', function () {
-    it('should be successful',function(done) {
-        this.timeout(20000);
-        request
-        .post('/auth/login')
-        .type('json')
-        .set('Content-Type', 'application/json')
-        .send({
-            email: 'admin@cdi.com',
-            password: 'secret'
-        })
-    .end(function(err, result){
-        token = result.header['x-access-token'];
-        describe('Inbound', function () {
-            require('./item_movement/inbound')(token, request);
+    describe('GET /inbound', function () {
+
+        it('it should receive ZEU100000002 successfully', function (done) {
+            // Pass
+            request
+                .post('/item/receive')
+                .set('x-access-token', token)
+                .type('json')
+                .send({
+                    'source_container_location': 'ID-180808-001',
+                    'source_container': 'MAX999',
+                    'destination_container': 'ZEU200000001',
+                    'material_id': '0a08a686-c4ac-43e9-a30e-4ef838c12e58',
+                    'quantity': 30
+                })
+                .expect(200, function (err, result) {
+                    chai.expect(result.body.data).to.have.property('items');
+                    done();
+                });
+            });  
         });
-        describe('Putaway', function () {
-            require('./item_movement/putaway')(token, request);
-        });
-        describe('Sorting', function () {
-                require('./item_movement/sorting')(token, request);
-            });
-        done();
-    });
-    })
-    
-});
-
-// describe('POST /test/reset', function () {
-//     // it('should be able to reset data', function (done) {
-//     //     // Pass
-//     //     this.timeout(20000);
-//     //     request
-//     //     .post('/test/reset')
-//     //     .type('json')
-//     //     .set('Content-Type', 'application/json')
-//     //     .set('x-access-token', token)
-//     //     .send()
-//     //     .expect(200, function (err, result) {
-
-//             // describe('Order management', function () {
-//             //     require('./order_management')(token, request);
-//             // });
-
-//             // describe('Primary shipment plan', function () {
-//             //     require('./primary_shipment_plan')(token, request);
-//             // });
-
-//             // describe('Secondary plan', function () {
-//             //     require('./secondary_shipment_plan')(token, request);
-//             // });
-
-//             // describe('Resource plan', function () {
-//             //     require('./resource_plan')(token, request);
-//             // });
-
-//             describe('Inbound', function () {
-//                 require('./item_movement/inbound')(token, request);
-//             });
-
-//             describe('Putaway', function () {
-//                 require('./item_movement/putaway')(token, request);
-//             });
-//             // describe('Sorting', function () {
-//             //     require('./item_movement/sorting')(token, request);
-//             // });
-
-//             // describe('Outbound', function () {
-//             //     require('./item_movement/outbound')(token, request);
-//             // });
-
-//             // describe('Loading', function () {
-//             //     require('./item_movement/loading')(token, request);
-//             // });
-
-//             // describe('Reports', function () {
-//             //     require('./reports')(token, request);
-//             // });
-
-//             // describe('Dashboard', function () {
-//             //     require('./dashboard')(token, request);
-//             // });
-
-//             done();
-//     //     });
-//     // });
-// });
+};
