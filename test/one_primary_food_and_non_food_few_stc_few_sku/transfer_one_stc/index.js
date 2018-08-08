@@ -42,10 +42,11 @@ describe('POST /test/reset', function () {
                 require('./primary_shipment_plan')(token, request);
             });
 
-           /*  describe('Secondary plan', function () {
+            describe('Secondary shipment plan', function () {
                 require('./secondary_shipment_plan')(token, request);
             });
-
+            
+            /*
             describe('Resource plan', function () {
                 require('./resource_plan')(token, request);
             });
