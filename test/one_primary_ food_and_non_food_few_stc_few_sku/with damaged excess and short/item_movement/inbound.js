@@ -72,7 +72,7 @@ module.exports = function (token, request) {
                     'source_container': 'MAX999',
                     'destination_container': 'ZEU000000004',
                     'material_id': 'e9dd8159-7ed5-4778-9723-7e98aa8fce9e',
-                    'quantity': 30
+                    'quantity': 40
                 })
                 .expect(200, function (err, result) {
                     chai.expect(result.body.data).to.have.property('items');
