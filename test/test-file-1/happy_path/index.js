@@ -19,6 +19,7 @@ describe('Login user to get token', function () {
         })
 
         .end(function(err, result){
+
             token = result.header['x-access-token'];    
 
             describe('Resource plan', function () {
@@ -37,10 +38,12 @@ describe('Login user to get token', function () {
                 require('./item_movement/sorting')(token, request);
             });
             done();
+
         });
     });
-    
+        
 });
+    
 
 // describe('POST /test/reset', function () {
 //     it('should be able to reset data', function (done) {

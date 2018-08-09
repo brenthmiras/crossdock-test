@@ -3,6 +3,7 @@ const chai = require('chai');
 module.exports = function (token, request) {
 
     describe('GET /inbound', function () {
+
         it('it should receive ZEU100000001 successfully', function (done) {
             // Pass
             request
@@ -212,7 +213,7 @@ module.exports = function (token, request) {
                 });
         });
 
-        it('it should receive ZEU80000001 successfully', function (done) {
+        it('it should receive ZEU800000001 successfully', function (done) {
             // Pass
             request
                 .post('/item/receive')

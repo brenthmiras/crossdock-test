@@ -5,6 +5,18 @@ const config = require('../../../config');
 module.exports = function (token, request) {
     
     describe('PUT /grid-plan/:rollcage_id', function () {
+
+        it('should be able to reset data', function (done) {
+            // Pass
+            request
+                .get('/reset-item-movements')
+                .set('x-access-token', token)
+                .expect(200, function (err, result) {
+                    done();
+                });
+        });
+
+        
         it('it should get assign GRC-002 successfully', function (done) {
             
             request

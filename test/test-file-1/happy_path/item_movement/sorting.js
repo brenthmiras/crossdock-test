@@ -23,7 +23,7 @@ module.exports = function (token, request) {
                .set('x-access-token', token)
                .send({
                    "source_container": "ZEU100000001",
-                   "destination_container": "GRC-008",
+                   "destination_container": "GRC-005",
                    "quantity": 5
                })
                .expect(200, function (err, result) {
@@ -51,7 +51,7 @@ module.exports = function (token, request) {
                 .set('x-access-token', token)
                 .send({
                     "source_container": "ZEU200000001",
-                    "destination_container": "GRC-007",
+                    "destination_container": "GRC-001",
                     "quantity": 10,
                 })
                 .expect(200, function (err, result) {
@@ -101,13 +101,44 @@ module.exports = function (token, request) {
                });
         });
 
+        it('it should sort ZEU300000001 successfully', function (done) {
+            request
+                .post('/item/sort')
+                .set('x-access-token', token)
+                .send({
+                    "source_container": "ZEU300000001",
+                    "destination_container": "GRC-007",
+                    "quantity": 10,
+
+                })
+                .expect(200, function (err, result) {
+                    done();
+                });
+        });
+
+        it('it should sort ZEU300000001 successfully', function (done) {
+
+            request
+                .post('/item/sort')
+                .set('x-access-token', token)
+                .send({
+                    "source_container": "ZEU300000001",
+                    "destination_container": "GRC-002",
+                    "quantity": 10,
+
+                })
+                .expect(200, function (err, result) {
+                    done();
+                });
+        });
+
         it('it should sort ZEU400000001 successfully', function (done) {
             request
                .post('/item/sort')
                .set('x-access-token', token)
                .send({
                    "source_container": "ZEU400000001",
-                   "destination_container": "GRC-003",
+                   "destination_container": "GRC-006",
                    "quantity": 35,
                })
                .expect(200, function (err, result) {
@@ -121,7 +152,7 @@ module.exports = function (token, request) {
                .set('x-access-token', token)
                .send({
                    "source_container": "ZEU400000001",
-                   "destination_container": "GRC-007",
+                   "destination_container": "GRC-004",
                    "quantity": 5,
 
                })
@@ -136,7 +167,7 @@ module.exports = function (token, request) {
                .set('x-access-token', token)
                .send({
                    "source_container": "ZEU400000002",
-                   "destination_container": "GRC-007",
+                   "destination_container": "GRC-004",
                    "quantity": 30,
                })
                .expect(200, function (err, result) {
@@ -150,7 +181,7 @@ module.exports = function (token, request) {
                .set('x-access-token', token)
                .send({
                    "source_container": "ZEU400000002",
-                   "destination_container": "GRC-006",
+                   "destination_container": "GRC-001",
                    "quantity": 10,
 
                })
@@ -165,7 +196,7 @@ module.exports = function (token, request) {
                .set('x-access-token', token)
                .send({
                    "source_container": "ZEU400000003",
-                   "destination_container": "GRC-006",
+                   "destination_container": "GRC-001",
                    "quantity": 25,
                })
                .expect(200, function (err, result) {
@@ -179,7 +210,7 @@ module.exports = function (token, request) {
                 .set('x-access-token', token)
                 .send({
                     "source_container": "ZEU500000001",
-                    "destination_container": "GRC-001",
+                    "destination_container": "GRC-007",
                     "quantity": 10,
                 })
                 .expect(200, function (err, result) {
@@ -193,7 +224,7 @@ module.exports = function (token, request) {
                 .set('x-access-token', token)
                 .send({
                     "source_container": "ZEU500000001",
-                    "destination_container": "GRC-008",
+                    "destination_container": "GRC-002",
                     "quantity": 10,
                 })
                 .expect(200, function (err, result) {
@@ -263,6 +294,20 @@ module.exports = function (token, request) {
                .set('x-access-token', token)
                .send({
                    "source_container": "ZEU800000001",
+                   "destination_container": "GRC-006",
+                   "quantity": 8,
+               })
+               .expect(200, function (err, result) {
+                   done();
+               });
+        });
+
+        it('it should sort ZEU800000001 successfully', function (done) {
+            request
+               .post('/item/sort')
+               .set('x-access-token', token)
+               .send({
+                   "source_container": "ZEU800000001",
                    "destination_container": "GRC-005",
                    "quantity": 8,
                })
@@ -277,21 +322,7 @@ module.exports = function (token, request) {
                .set('x-access-token', token)
                .send({
                    "source_container": "ZEU800000001",
-                   "destination_container": "GRC-004",
-                   "quantity": 8,
-               })
-               .expect(200, function (err, result) {
-                   done();
-               });
-        });
-
-        it('it should sort ZEU800000001 successfully', function (done) {
-            request
-               .post('/item/sort')
-               .set('x-access-token', token)
-               .send({
-                   "source_container": "ZEU800000001",
-                   "destination_container": "GRC-002",
+                   "destination_container": "GRC-003",
                    "quantity": 8
                })
                .expect(200, function (err, result) {
