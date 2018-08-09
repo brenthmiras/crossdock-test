@@ -55,7 +55,7 @@ module.exports = function (token, request) {
                 .send({
                     "source_container": "ZEU000000004",
                     "destination_container": "ZEU-A03-02",
-                    "quantity": 40
+                    "quantity": 30
                 })
                 .expect(200, function (err, result) {
                     done();
