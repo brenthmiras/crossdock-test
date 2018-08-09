@@ -19,14 +19,14 @@ describe('Login user to get token', function () {
         })
         .end(function(err, result){
             token = result.header['x-access-token'];
-            /* describe('Inbound', function () {
+
+            describe('Inbound', function () {
                 require('./item_movement/inbound')(token, request);
             });
 
             describe('Putaway', function () {
                 require('./item_movement/putaway')(token, request);
             });
-            }); */
 
             describe('Sorting', function () {
                 require('./item_movement/sorting')(token, request);
