@@ -1,0 +1,23 @@
+{
+  "name": "happy_path",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha || true"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "chai": "^4.1.2",
+    "express": "^4.16.3",
+    "it-each": "^0.4.0",
+    "lodash": "^4.17.10",
+    "mocha": "^5.2.0",
+    "moment": "^2.22.2",
+    "nock": "^9.4.4",
+    "node-fetch": "^2.2.0",
+    "supertest": "^3.1.0"
+  }
+}
