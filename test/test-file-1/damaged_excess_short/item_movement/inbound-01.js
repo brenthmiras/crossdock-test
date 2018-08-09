@@ -22,7 +22,7 @@ module.exports = function (token, request) {
                     done();
                 });
         });
-        it('it should receive ZEU100000002 successfully', function (done) {
+        it('it should receive 7 excess ZEU100000002 successfully', function (done) {
             // Pass
             request
                 .post('/item/receive')

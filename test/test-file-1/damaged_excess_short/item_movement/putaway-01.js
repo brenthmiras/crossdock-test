@@ -16,7 +16,7 @@ module.exports = function (token, request) {
                 });
 
         });
-        it('it should putaway ZEU100000002 successfully', function (done) {
+        it('it should putaway 7 excess ZEU100000002 successfully', function (done) {
             request
                 .post('/item/putaway')
                 .set('x-access-token', token)
