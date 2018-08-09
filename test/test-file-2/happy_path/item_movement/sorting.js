@@ -24,7 +24,7 @@ module.exports = function (token, request) {
                 .send({
                     "source_container": "ZEU010000001",
                     "destination_container": "GRC-011",
-                    "quantity": 85
+                    "quantity": 80
                 })
                 .expect(200, function (err, result) {
                     done();
