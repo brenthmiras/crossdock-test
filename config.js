@@ -1,3 +1,3 @@
 module.exports = {
-    BASE_URL: 'http://test.codedisruptors.com:10007'
+    BASE_URL: '13.250.63.204:10007'
 };
