@@ -16,18 +16,5 @@ module.exports = function (token, request) {
                 });
 
         });
-        it('it should putaway ZEU200000002 successfully', function (done) {
-            request
-                .post('/item/putaway')
-                .set('x-access-token', token)
-                .send({
-                    'source_container': 'ZEU200000002',
-                    'destination_container_location': 'EXCESS'
-                })
-                .expect(200, function (err, result) {
-                    done();
-                });
-
-        });
     });
 };
