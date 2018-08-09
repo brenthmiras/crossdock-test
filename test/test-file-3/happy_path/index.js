@@ -21,15 +21,15 @@ describe('Login user to get token', function () {
             token = result.header['x-access-token'];
     
             describe('Inbound', function () {
-                require('./item_movement/inbound-8')(token, request);
+                require('./item_movement/inbound-08')(token, request);
             });
     
             describe('Putaway', function () {
-                require('./item_movement/putaway-8')(token, request);
+                require('./item_movement/putaway-08')(token, request);
             });
-        //    describe('Sorting', function () {
-        //              require('./item_movement/sorting-8')(token, request);
-        //          });
+           describe('Sorting', function () {
+                     require('./item_movement/sorting-08')(token, request);
+                 });
             done();
         });
     })
