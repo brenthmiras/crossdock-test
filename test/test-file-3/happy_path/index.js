@@ -6,23 +6,35 @@ const chai = require('chai');
 
 let token;
 
-before('Login user to get token', function (done) {
-    this.timeout(20000);
-    request
-    .post('/auth/login')
-    .type('json')
-    .set('Content-Type', 'application/json')
-    .send({
-        email: 'admin@cdi.com',
-        password: 'secret'
+describe('Login user to get token', function () {
+    it('should be successful', function(done){
+        this.timeout(20000);
+        request
+        .post('/auth/login')
+        .type('json')
+        .set('Content-Type', 'application/json')
+        .send({
+            email: 'admin@cdi.com',
+            password: 'secret'
+        })
+        .end(function(err, result){
+            token = result.header['x-access-token'];            
+            describe('Inbound', function () {
+                require('./item_movement/inbound-3')(token, request);
+            });
+    
+            describe('Putaway', function () {
+                require('./item_movement/putaway-3')(token, request);
+            });
+            describe('Sorting', function () {
+                require('./item_movement/sorting-3')(token, request);
+            });
+            done();
+        });
     })
-    .end(function(err, result){
-        token = result.header['x-access-token'];
-        done();
-    });
 });
 
-describe('POST /test/reset', function () {
+/*describe('POST /test/reset', function () {
     it('should be able to reset data', function (done) {
         // Pass
         this.timeout(20000);
@@ -57,10 +69,6 @@ describe('POST /test/reset', function () {
             describe('Putaway', function () {
                 require('./item_movement/putaway')(token, request);
             });
-
-            describe('Inbound', function () {
-                require('./item_movement/inbound')(token, request);
-            });
             describe('Sorting', function () {
                 require('./item_movement/sorting')(token, request);
             });
@@ -84,4 +92,4 @@ describe('POST /test/reset', function () {
             done();
         });
     });
-});
+});*/
