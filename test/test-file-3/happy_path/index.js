@@ -26,9 +26,11 @@ describe('Login user to get token', function () {
             describe('Putaway', function () {
                 require('./item_movement/putaway-3')(token, request);
             });
+            
             describe('Sorting', function () {
                 require('./item_movement/sorting-3')(token, request);
             });
+            
             done();
         });
     })
