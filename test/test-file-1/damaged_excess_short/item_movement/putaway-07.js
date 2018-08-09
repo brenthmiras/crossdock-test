@@ -30,7 +30,7 @@ module.exports = function (token, request) {
                 });
         });
 
-        it('it should putaway ZEU700000003 successfully', function (done) {
+        it('it should putaway 15 damaged 616704', function (done) {
             request
                 .post('/item/putaway')
                 .set('x-access-token', token)

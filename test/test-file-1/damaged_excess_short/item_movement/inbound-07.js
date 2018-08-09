@@ -42,7 +42,7 @@ module.exports = function (token, request) {
                 });
         });
 
-        it('it should receive ZEU700000003 successfully', function (done) {
+        it('it should receive 15 damaged 616704', function (done) {
             // Pass
             request
                 .post('/item/receive')
