@@ -23,7 +23,7 @@ module.exports = function (token, request) {
                 });
         });
 
-        it('it should receive ZEU300000002 successfully', function (done) {
+        it('it should receive 3 excess ZEU300000002', function (done) {
             // Pass
             request
                 .post('/item/receive')
