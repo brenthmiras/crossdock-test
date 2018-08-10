@@ -2,11 +2,12 @@ const chai = require('chai');
 
 module.exports = function (token, request) {
 
-    describe('GET /inbound', function () {
+    describe('POST /inbound', function () {
 
-        const idn = 'ID-'+ new Date().toISOString().split('T')[0].split('-').join('').substring(2)+ '-001';
+        let dateString = new Date().toISOString().split('T')[0].split('-').join('');
+        let idn = 'ID-'+ dateString.substring(2)+ '-001';
 
-        console.log(idn);
+        console.log(idn, dateString);
 
         it('it should receive ZEU100000001 successfully', function (done) {
             // Pass

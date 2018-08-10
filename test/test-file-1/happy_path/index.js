@@ -37,6 +37,7 @@ describe('Login user to get token', function () {
             describe('Sorting', function () {
                 require('./item_movement/sorting')(token, request);
             });
+            
             done();
 
         });
