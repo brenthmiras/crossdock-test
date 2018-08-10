@@ -2,7 +2,6 @@ module.exports = function (token, request) {
 
     describe('POST /item/transport', function () {
 
-
         it('it should transport GSRT-A01-04 successfully', function (done) {
             request
                 .post('/item/transport')
