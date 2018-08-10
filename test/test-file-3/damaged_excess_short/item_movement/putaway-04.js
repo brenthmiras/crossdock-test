@@ -46,5 +46,46 @@ module.exports = function (token, request) {
                 });
 
         });
+
+        it('it should putaway ZEU440000001 successfully', function (done) {
+            request
+                .post('/item/putaway')
+                .set('x-access-token', token)
+                .send({
+                    'source_container': 'ZEU440000001',
+                    'destination_container_location': 'GSTG-A01'
+                })
+                .expect(200, function (err, result) {
+                    done();
+                });
+
+        });
+
+        it('it should putaway ZEU440000002 successfully', function (done) {
+            request
+                .post('/item/putaway')
+                .set('x-access-token', token)
+                .send({
+                    'source_container': 'ZEU440000002',
+                    'destination_container_location': 'GSTG-A01'
+                })
+                .expect(200, function (err, result) {
+                    done();
+                });
+
+        });
+
+        it('it should putaway ZEU444000001 successfully', function (done) {
+            request
+                .post('/item/putaway')
+                .set('x-access-token', token)
+                .send({
+                    'source_container': 'ZEU444000001',
+                    'destination_container_location': 'GSTG-B01'
+                })
+                .expect(200, function (err, result) {
+                    done();
+                });
+        });
     });
 };
