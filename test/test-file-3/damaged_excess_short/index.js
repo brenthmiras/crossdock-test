@@ -19,16 +19,17 @@ describe('Login user to get token', function () {
         })
         .end(function(err, result){
             token = result.header['x-access-token'];
-            /*describe('Inbound', function () {
-                require('./item_movement/inbound')(token, request);
+
+            describe('Inbound', function () {
+                require('./item_movement/inbound-09')(token, request);
             });
 
             describe('Putaway', function () {
-                require('./item_movement/putaway')(token, request);
-            });*/
+                require('./item_movement/putaway-09')(token, request);
+            });
 
             describe('Sorting', function () {
-                require('./item_movement/sorting')(token, request);
+                require('./item_movement/sorting-09')(token, request);
             });
 
             done();

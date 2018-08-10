@@ -68,6 +68,19 @@ module.exports = function (token, request) {
                 });
         });
 
+        it('it should putaway ZEU990000004 successfully', function (done) {
+            request
+                .post('/item/putaway')
+                .set('x-access-token', token)
+                .send({
+                    'source_container': 'ZEU990000004',
+                    'destination_container_location': 'DAMAGED'
+                })
+                .expect(200, function (err, result) {
+                    done();
+                });
+        });
+
         // Third test file
         it('it should putaway ZEU999000001 successfully', function (done) {
             request
@@ -81,5 +94,20 @@ module.exports = function (token, request) {
                     done();
                 });
         });
+
+        it('it should putaway ZEU999000002 successfully', function (done) {
+            request
+                .post('/item/putaway')
+                .set('x-access-token', token)
+                .send({
+                    'source_container': 'ZEU999000002',
+                    'destination_container_location': 'DAMAGED'
+                })
+                .expect(200, function (err, result) {
+                    done();
+                });
+        });
+
+        
     });
 };
