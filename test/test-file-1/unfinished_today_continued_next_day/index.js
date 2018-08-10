@@ -34,13 +34,9 @@ describe('Login user to get token', function () {
                 require('./item_movement/putaway')(token, request);
             });
 
-            describe('Sorting', function () {
-                require('./item_movement/sorting')(token, request);
-            });
-
-            describe('Outbound', function () {
-                require('./item_movement/outbound')(token, request);
-            });
+            // describe('Sorting', function () {
+            //     require('./item_movement/sorting')(token, request);
+            // });
             
             done();
 

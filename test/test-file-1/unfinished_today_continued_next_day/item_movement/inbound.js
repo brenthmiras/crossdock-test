@@ -7,7 +7,6 @@ module.exports = function (token, request) {
         let dateString = new Date().toISOString().split('T')[0].split('-').join('');
         let idn = 'ID-'+ dateString.substring(2)+ '-001';
 
-        console.log(idn, dateString);
 
         it('it should receive ZEU100000001 successfully', function (done) {
             // Pass
@@ -180,6 +179,22 @@ module.exports = function (token, request) {
                 });
         });
 
+        //uncomment to move data to yesterday and continue receiving today
+        // it('it should simulate date -1', function (done) {
+        //     request
+        //        .post('/test/minus_one')
+        //        .set('x-access-token', token)
+        //        .send({
+        //        })
+        //        .expect(200, function (err, result) {
+        //             dateString = (parseInt(dateString) - 1).toString();
+        //             idn =  'ID-'+ dateString.substring(2)+ '-001';
+        //             console.log('receiving inbound doc', idn);
+        //            done();
+        //        });
+        // });
+
+
         it('it should receive ZEU700000001 successfully', function (done) {
             // Pass
             request
@@ -349,7 +364,6 @@ module.exports = function (token, request) {
                     chai.expect(result.body.data).to.have.property('items');
                     done();
             });
-        });
- 
+        }); 
     });
 };
