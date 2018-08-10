@@ -17,6 +17,7 @@ module.exports = function (token, request) {
                 });
 
         });
+
         it('it should putaway 7 excess ZEU100000002 successfully', function (done) {
             request
                 .post('/item/putaway')
@@ -221,6 +222,19 @@ module.exports = function (token, request) {
                     done();
                 });
         });
+
+        // it('it should simulate date +1', function (done) {
+        //     request
+        //        .post('/test/plus_one')
+        //        .set('x-access-token', token)
+        //        .send({
+        //        })
+        //        .expect(200, function (err, result) {
+        //             console.log('continue putaway today');
+        //             done();
+        //        });
+        // });
+
 
         it('it should putaway 15 damaged 616704', function (done) {
             request
