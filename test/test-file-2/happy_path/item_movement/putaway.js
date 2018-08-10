@@ -1,6 +1,6 @@
 module.exports = function (token, request) {
 
-    describe('GET /customer-primaries/:id/shipments', function () {
+    describe('POST /item/putaway', function () {
         
         it('it should putaway ZEU110000001 successfully', function (done) {
             request
