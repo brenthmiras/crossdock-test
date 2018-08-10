@@ -300,12 +300,26 @@ module.exports = function (token, request) {
         });
 
         it('it should sort ZEU700000002 successfully', function (done) {
+            request
+                .post('/item/sort')
+                .set('x-access-token', token)
+                .send({
+                    "source_container": "ZEU700000002",
+                    "destination_container": "ZEU-A02-02",
+                    "quantity": 40
+                })
+                .expect(200, function (err, result) {
+                    done();
+                });
+        });
+
+        it('it should sort ZEU700000002 successfully', function (done) {
            request
                .post('/item/sort')
                .set('x-access-token', token)
                .send({
                    "source_container": "ZEU700000002",
-                   "destination_container": "ZEU-A02-02",
+                   "destination_container": "ZEU-A04-01",
                    "quantity": 40
                })
                .expect(200, function (err, result) {
@@ -440,5 +454,19 @@ module.exports = function (token, request) {
                     done();
              });
         });
+        
+        it('it should simulate date -1', function (done) {
+            request
+                .post('/test/minus_one')
+                .set('x-access-token', token)
+                .send({
+                })
+                .expect(200, function (err, result) {
+                    console.log('date -1 simulated successfully');
+                    done();
+                });
+        });
+
+
     });
 };
