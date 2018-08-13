@@ -1,4 +1,4 @@
-const expect = require('chai').expect;  
+const expect = require('chai').expect;
 
 module.exports = function (token, request) {
 
@@ -15,7 +15,7 @@ module.exports = function (token, request) {
                     "source_container": "ZEU700000002",
                     "destination_container": "SS-ZEU-180815-1",
                     "destination_container_location": "MAX999",
-                    "source_container_location": "ZEU700000002"
+                    "source_container_location": "DOCK-01"
                 })
                 .end(function (err, result) {
                     expect(result.status).to.equal(200);
@@ -35,7 +35,7 @@ module.exports = function (token, request) {
                     "source_container": "ZEU000000003",
                     "destination_container": "SS-ZEU-180815-1",
                     "destination_container_location": "MAX999",
-                    "source_container_location": "ZEU000000003"
+                    "source_container_location": "DOCK-01"
                 })
                 .end(function (err, result) {
                     expect(result.status).to.equal(200);
@@ -55,7 +55,7 @@ module.exports = function (token, request) {
                     "source_container": "ZEU000000004",
                     "destination_container": "SS-ZEU-180815-1",
                     "destination_container_location": "MAX999",
-                    "source_container_location": "ZEU000000004"
+                    "source_container_location": "DOCK-01"
                 })
                 .end(function (err, result) {
                     expect(result.status).to.equal(200);
@@ -75,7 +75,7 @@ module.exports = function (token, request) {
                     "source_container": "ZEU600000001",
                     "destination_container": "SS-ZEU-180815-2",
                     "destination_container_location": "MAX999",
-                    "source_container_location": "ZEU600000001"
+                    "source_container_location": "DOCK-01"
                 })
                 .end(function (err, result) {
                     expect(result.status).to.equal(200);
@@ -95,7 +95,7 @@ module.exports = function (token, request) {
                     "source_container": "ZEU900000001",
                     "destination_container": "SS-ZEU-180815-3",
                     "destination_container_location": "MAX999",
-                    "source_container_location": "ZEU900000001"
+                    "source_container_location": "DOCK-01"
                 })
                 .end(function (err, result) {
                     expect(result.status).to.equal(200);
@@ -115,7 +115,7 @@ module.exports = function (token, request) {
                     "source_container": "ZEU900000002",
                     "destination_container": "SS-ZEU-180815-3",
                     "destination_container_location": "MAX999",
-                    "source_container_location": "ZEU900000002"
+                    "source_container_location": "DOCK-01"
                 })
                 .end(function (err, result) {
                     expect(result.status).to.equal(200);
@@ -135,7 +135,7 @@ module.exports = function (token, request) {
                     "source_container": "ZEU700000001",
                     "destination_container": "SS-ZEU-180815-4",
                     "destination_container_location": "MAX999",
-                    "source_container_location": "ZEU700000001"
+                    "source_container_location": "DOCK-01"
                 })
                 .end(function (err, result) {
                     expect(result.status).to.equal(200);
@@ -155,7 +155,7 @@ module.exports = function (token, request) {
                     "source_container": "ZEU000000001",
                     "destination_container": "SS-ZEU-180815-4",
                     "destination_container_location": "MAX999",
-                    "source_container_location": "ZEU000000001"
+                    "source_container_location": "DOCK-01"
                 })
                 .end(function (err, result) {
                     expect(result.status).to.equal(200);
@@ -175,7 +175,7 @@ module.exports = function (token, request) {
                     "source_container": "ZEU000000002",
                     "destination_container": "SS-ZEU-180815-4",
                     "destination_container_location": "MAX999",
-                    "source_container_location": "ZEU000000002"
+                    "source_container_location": "DOCK-01"
                 })
                 .end(function (err, result) {
                     expect(result.status).to.equal(200);
@@ -195,7 +195,7 @@ module.exports = function (token, request) {
                     "source_container": "ZEU600000002",
                     "destination_container": "SS-ZEU-180815-5",
                     "destination_container_location": "MAX999",
-                    "source_container_location": "ZEU600000002"
+                    "source_container_location": "DOCK-01"
                 })
                 .end(function (err, result) {
                     expect(result.status).to.equal(200);
@@ -215,7 +215,7 @@ module.exports = function (token, request) {
                     "source_container": "ZEU900000002",
                     "destination_container": "SS-ZEU-180815-5",
                     "destination_container_location": "MAX999",
-                    "source_container_location": "ZEU900000002"
+                    "source_container_location": "DOCK-01"
                 })
                 .end(function (err, result) {
                     expect(result.status).to.equal(200);
@@ -235,7 +235,7 @@ module.exports = function (token, request) {
                     "source_container": "GRC-001",
                     "destination_container": "SS-ZEU-180815-1",
                     "destination_container_location": "MAX999",
-                    "source_container_location": "GRC-001"
+                    "source_container_location": "DOCK-01"
                 })
                 .end(function (err, result) {
                     expect(result.status).to.equal(200);
@@ -255,7 +255,7 @@ module.exports = function (token, request) {
                     "source_container": "GRC-001",
                     "destination_container": "SS-ZEU-180815-1",
                     "destination_container_location": "MAX999",
-                    "source_container_location": "GRC-001"
+                    "source_container_location": "DOCK-01"
                 })
                 .end(function (err, result) {
                     expect(result.status).to.equal(200);
@@ -275,7 +275,7 @@ module.exports = function (token, request) {
                     "source_container": "GRC-004",
                     "destination_container": "SS-ZEU-180815-1",
                     "destination_container_location": "MAX999",
-                    "source_container_location": "GRC-004"
+                    "source_container_location": "DOCK-01"
                 })
                 .end(function (err, result) {
                     expect(result.status).to.equal(200);
@@ -295,7 +295,7 @@ module.exports = function (token, request) {
                     "source_container": "GRC-004",
                     "destination_container": "SS-ZEU-180815-1",
                     "destination_container_location": "MAX999",
-                    "source_container_location": "GRC-004"
+                    "source_container_location": "DOCK-01"
                 })
                 .end(function (err, result) {
                     expect(result.status).to.equal(200);
@@ -315,7 +315,7 @@ module.exports = function (token, request) {
                     "source_container": "GRC-003",
                     "destination_container": "SS-ZEU-180815-1",
                     "destination_container_location": "MAX999",
-                    "source_container_location": "GRC-003"
+                    "source_container_location": "DOCK-01"
                 })
                 .end(function (err, result) {
                     expect(result.status).to.equal(200);
@@ -335,7 +335,7 @@ module.exports = function (token, request) {
                     "source_container": "GRC-002",
                     "destination_container": "SS-ZEU-180815-2",
                     "destination_container_location": "MAX999",
-                    "source_container_location": "GRC-002"
+                    "source_container_location": "DOCK-01"
                 })
                 .end(function (err, result) {
                     expect(result.status).to.equal(200);
@@ -355,7 +355,7 @@ module.exports = function (token, request) {
                     "source_container": "GRC-002",
                     "destination_container": "SS-ZEU-180815-2",
                     "destination_container_location": "MAX999",
-                    "source_container_location": "GRC-002"
+                    "source_container_location": "DOCK-01"
                 })
                 .end(function (err, result) {
                     expect(result.status).to.equal(200);
@@ -375,7 +375,7 @@ module.exports = function (token, request) {
                     "source_container": "GRC-002",
                     "destination_container": "SS-ZEU-180815-2",
                     "destination_container_location": "MAX999",
-                    "source_container_location": "GRC-002"
+                    "source_container_location": "DOCK-01"
                 })
                 .end(function (err, result) {
                     expect(result.status).to.equal(200);
@@ -395,7 +395,7 @@ module.exports = function (token, request) {
                     "source_container": "GRC-006",
                     "destination_container": "SS-ZEU-180815-3",
                     "destination_container_location": "MAX999",
-                    "source_container_location": "GRC-006"
+                    "source_container_location": "DOCK-01"
                 })
                 .end(function (err, result) {
                     expect(result.status).to.equal(200);
@@ -415,7 +415,7 @@ module.exports = function (token, request) {
                     "source_container": "GRC-008",
                     "destination_container": "SS-ZEU-180815-3",
                     "destination_container_location": "MAX999",
-                    "source_container_location": "GRC-008"
+                    "source_container_location": "DOCK-01"
                 })
                 .end(function (err, result) {
                     expect(result.status).to.equal(200);
@@ -435,7 +435,7 @@ module.exports = function (token, request) {
                     "source_container": "GRC-008",
                     "destination_container": "SS-ZEU-180815-3",
                     "destination_container_location": "MAX999",
-                    "source_container_location": "GRC-008"
+                    "source_container_location": "DOCK-01"
                 })
                 .end(function (err, result) {
                     expect(result.status).to.equal(200);
@@ -455,7 +455,7 @@ module.exports = function (token, request) {
                     "source_container": "GRC-007",
                     "destination_container": "SS-ZEU-180815-5",
                     "destination_container_location": "MAX999",
-                    "source_container_location": "GRC-007"
+                    "source_container_location": "DOCK-01"
                 })
                 .end(function (err, result) {
                     expect(result.status).to.equal(200);
@@ -475,7 +475,7 @@ module.exports = function (token, request) {
                     "source_container": "GRC-007",
                     "destination_container": "SS-ZEU-180815-5",
                     "destination_container_location": "MAX999",
-                    "source_container_location": "GRC-007"
+                    "source_container_location": "DOCK-01"
                 })
                 .end(function (err, result) {
                     expect(result.status).to.equal(200);
@@ -495,7 +495,7 @@ module.exports = function (token, request) {
                     "source_container": "GRC-005",
                     "destination_container": "SS-ZEU-180815-5",
                     "destination_container_location": "MAX999",
-                    "source_container_location": "GRC-005"
+                    "source_container_location": "DOCK-01"
                 })
                 .end(function (err, result) {
                     expect(result.status).to.equal(200);
@@ -515,13 +515,14 @@ module.exports = function (token, request) {
                     "source_container": "GRC-005",
                     "destination_container": "SS-ZEU-180815-5",
                     "destination_container_location": "MAX999",
-                    "source_container_location": "GRC-005"
+                    "source_container_location": "DOCK-01"
                 })
                 .end(function (err, result) {
                     expect(result.status).to.equal(200);
                     done();
                 })
         });
+
 
     });
 
