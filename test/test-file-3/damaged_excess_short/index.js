@@ -22,9 +22,23 @@ describe('Login user to get token', function () {
 
             token = result.header['x-access-token'];    
 
-            describe('Resource plan', function () {
-                require('./resource_plan')(token, request);
+
+            describe('Reset item movement', function() {
+                it('should be able to reset item movement', function (done) {
+                    // Pass
+                    request
+                        .get('/reset-item-movements')
+                        .set('x-access-token', token)
+                        .expect(200, function (err, result) {
+                            if (err) throw err;
+                            done();
+                        });
+                });
             });
+
+            // describe('Resource plan', function () {
+            //     require('./resource_plan')(token, request);
+            // });
 
             describe('Inbound', function () {
                 require('./item_movement/inbound')(token, request);
@@ -32,24 +46,12 @@ describe('Login user to get token', function () {
     
             describe('Putaway', function () {
                 require('./item_movement/putaway')(token, request);
-<<<<<<< HEAD
-            });
-
-            describe('Resource plan', function () {
-                require('./resource_plan')(token, request);
-=======
->>>>>>> 6d29643abb20bd90cd52ddf75646e1df885ea607
             });
 
             describe('Sorting', function () {
                 require('./item_movement/sorting')(token, request);
             });
 
-<<<<<<< HEAD
-            // describe('Sorting', function () {
-            //     require('./item_movement/sorting-01')(token, request);
-            // });
-=======
             // describe('Outbound', function () {
             //     require('./item_movement/outbound')(token, request);
             // });
@@ -58,7 +60,6 @@ describe('Login user to get token', function () {
             //     require('./item_movement/loading')(token, request);
             // });
             
->>>>>>> 6d29643abb20bd90cd52ddf75646e1df885ea607
             done();
 
         });
