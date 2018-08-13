@@ -933,7 +933,7 @@ module.exports = function (token, request) {
                 .set('x-access-token', token)
                 .send({
                     "source_container": "ZEU880000001",
-                    "destination_container": "GSRT-B01-11",
+                    "destination_container": "GRC-014",
                     "quantity": 72,
                     "sku": "21003055",
                     "ship_to_code": "STC-000000531"
