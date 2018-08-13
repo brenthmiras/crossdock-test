@@ -139,7 +139,6 @@ module.exports = function (token, request) {
     });
 
 
-
     // describe('POST /customer-secondaries/:id/shipments', function () {
     //     it('it should get confirm VLZ00189 successfully', function (done) {
 

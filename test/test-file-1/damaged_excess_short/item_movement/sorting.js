@@ -27,7 +27,7 @@ module.exports = function (token, request) {
                 .set('x-access-token', token)
                 .send({
                     "source_container": "ZEU100000001",
-                    "destination_container": "GRC-008",
+                    "destination_container": "GRC-005",
                     "quantity": 5
                 })
                 .expect(200, function (err, result) {
@@ -59,7 +59,7 @@ module.exports = function (token, request) {
                 .set('x-access-token', token)
                 .send({
                     "source_container": "ZEU200000001",
-                    "destination_container": "GRC-007",
+                    "destination_container": "GRC-001",
                     "quantity": 10,
                 })
                 .expect(200, function (err, result) {
@@ -91,7 +91,7 @@ module.exports = function (token, request) {
                 .set('x-access-token', token)
                 .send({
                     "source_container": "ZEU300000001",
-                    "destination_container": "GRC-001",
+                    "destination_container": "GRC-002",
                     "quantity": 10
                 })
                 .expect(200, function (err, result) {
@@ -108,7 +108,7 @@ module.exports = function (token, request) {
                 .set('x-access-token', token)
                 .send({
                     "source_container": "ZEU300000001",
-                    "destination_container": "GRC-008",
+                    "destination_container": "GRC-007",
                     "quantity": 10
                 })
                 .expect(200, function (err, result) {
@@ -125,7 +125,7 @@ module.exports = function (token, request) {
                 .set('x-access-token', token)
                 .send({
                     "source_container": "ZEU400000001",
-                    "destination_container": "GRC-003",
+                    "destination_container": "GRC-008",
                     "quantity": 35,
                     "sku": "616701",
                     "ship_to_code": "STC-000000531"
@@ -144,7 +144,7 @@ module.exports = function (token, request) {
                 .set('x-access-token', token)
                 .send({
                     "source_container": "ZEU400000001",
-                    "destination_container": "GRC-007",
+                    "destination_container": "GRC-004",
                     "quantity": 5,
                     "sku": "616701",
                     "ship_to_code": "STC-000000531"
@@ -166,7 +166,7 @@ module.exports = function (token, request) {
                 .set('x-access-token', token)
                 .send({
                     "source_container": "ZEU400000002",
-                    "destination_container": "GRC-007",
+                    "destination_container": "GRC-004",
                     "quantity": 30,
                     "sku": "616701",
                     "ship_to_code": "STC-000000531"
@@ -186,7 +186,7 @@ module.exports = function (token, request) {
                 .set('x-access-token', token)
                 .send({
                     "source_container": "ZEU400000002",
-                    "destination_container": "GRC-006",
+                    "destination_container": "GRC-001",
                     "quantity": 10,
                     "sku": "616701",
                     "ship_to_code": "STC-000000531"
@@ -206,7 +206,7 @@ module.exports = function (token, request) {
                 .set('x-access-token', token)
                 .send({
                     "source_container": "ZEU400000003",
-                    "destination_container": "GRC-006",
+                    "destination_container": "GRC-001",
                     "quantity": 25,
                     "sku": "616701",
                     "ship_to_code": "STC-000000531"
@@ -226,7 +226,7 @@ module.exports = function (token, request) {
                 .set('x-access-token', token)
                 .send({
                     "source_container": "ZEU500000001",
-                    "destination_container": "GRC-001",
+                    "destination_container": "GRC-007",
                     "quantity": 10,
                 })
                 .expect(200, function (err, result) {
@@ -239,7 +239,7 @@ module.exports = function (token, request) {
                 .set('x-access-token', token)
                 .send({
                     "source_container": "ZEU500000001",
-                    "destination_container": "GRC-008",
+                    "destination_container": "GRC-002",
                     "quantity": 10,
                 })
                 .expect(200, function (err, result) {
@@ -324,7 +324,7 @@ module.exports = function (token, request) {
                 .set('x-access-token', token)
                 .send({
                     "source_container": "ZEU800000001",
-                    "destination_container": "GRC-005",
+                    "destination_container": "GRC-008",
                     "quantity": 8,
                     "sku": "615999",
                     "ship_to_code": "STC-000000531"
@@ -336,7 +336,6 @@ module.exports = function (token, request) {
 
         });
 
-
         it('it should sort ZEU800000001 successfully', function (done) {
 
             request
@@ -344,7 +343,7 @@ module.exports = function (token, request) {
                 .set('x-access-token', token)
                 .send({
                     "source_container": "ZEU800000001",
-                    "destination_container": "GRC-004",
+                    "destination_container": "GRC-003",
                     "quantity": 8,
                     "sku": "615999",
                     "ship_to_code": "STC-000000534"
@@ -363,7 +362,7 @@ module.exports = function (token, request) {
                 .set('x-access-token', token)
                 .send({
                     "source_container": "ZEU800000001",
-                    "destination_container": "GRC-002",
+                    "destination_container": "GRC-005",
                     "quantity": 8,
                     "sku": "615999",
                     "ship_to_code": "STC-000000616"
@@ -484,7 +483,7 @@ module.exports = function (token, request) {
                 .send({
                     "source_container": "ZEU000000004",
                     "destination_container": "ZEU-A03-02",
-                    "quantity": 40
+                    "quantity": 25
                 })
                 .expect(200, function (err, result) {
                     done();
