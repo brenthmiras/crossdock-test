@@ -38,9 +38,13 @@ describe('Login user to get token', function () {
                 require('./item_movement/sorting')(token, request);
             });
 
-            // describe('Outbound', function () {
-            //     require('./item_movement/outbound')(token, request);
-            // });
+            describe('Outbound', function () {
+                require('./item_movement/outbound')(token, request);
+            });
+
+            describe('Loading', function () {
+                require('./item_movement/loading')(token, request);
+            });
             
             done();
 
