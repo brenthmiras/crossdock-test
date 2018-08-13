@@ -1,53 +1,53 @@
 module.exports = function (token, request) {
 
-    describe('GET /customer-primaries/:id/shipments', function () {
+    describe('GET /item/putaway', function () {
 
-        it('it should putaway ZEU000000001 successfully', function (done) {
+        it('it should putaway ZEU010000001 successfully', function (done) {
             request
                 .post('/item/putaway')
                 .set('x-access-token', token)
                 .send({
-                    'source_container': 'ZEU000000001',
-                    'destination_container_location': 'GSTG-A01'
+                    'source_container': 'ZEU010000001',
+                    'destination_container_location': 'GSTG-B01'
                 })
                 .expect(200, function (err, result) {
                     done();
                 });
         });
 
-        it('it should putaway ZEU000000002 successfully', function (done) {
+        it('it should putaway ZEU010000002 successfully', function (done) {
             request
                 .post('/item/putaway')
                 .set('x-access-token', token)
                 .send({
-                    'source_container': 'ZEU000000002',
-                    'destination_container_location': 'GSTG-A01'
+                    'source_container': 'ZEU010000002',
+                    'destination_container_location': 'GSTG-B01'
                 })
                 .expect(200, function (err, result) {
                     done();
                 });
         });
 
-        it('it should putaway ZEU000000003 successfully', function (done) {
+        it('it should putaway ZEU010000003 successfully', function (done) {
             request
                 .post('/item/putaway')
                 .set('x-access-token', token)
                 .send({
-                    'source_container': 'ZEU000000003',
-                    'destination_container_location': 'GSTG-A01'
+                    'source_container': 'ZEU010000003',
+                    'destination_container_location': 'GSTG-B01'
                 })
                 .expect(200, function (err, result) {
                     done();
                 });
         });
 
-        it('it should putaway ZEU000000004 successfully', function (done) {
+        it('it should putaway ZEU010000004 successfully', function (done) {
             request
                 .post('/item/putaway')
                 .set('x-access-token', token)
                 .send({
-                    'source_container': 'ZEU000000004',
-                    'destination_container_location': 'GSTG-A01'
+                    'source_container': 'ZEU010000004',
+                    'destination_container_location': 'DAMAGED'
                 })
                 .expect(200, function (err, result) {
                     done();
@@ -295,13 +295,13 @@ module.exports = function (token, request) {
 
         });
 
-        it('it should putaway ZEU900000001 successfully', function (done) {
+        it('it should putaway ZEU990000001 successfully', function (done) {
             request
                 .post('/item/putaway')
                 .set('x-access-token', token)
                 .send({
-                    'source_container': 'ZEU900000001',
-                    'destination_container_location': 'GSTG-A01'
+                    'source_container': 'ZEU990000001',
+                    'destination_container_location': 'GSTG-B01'
                 })
                 .expect(200, function (err, result) {
                     done();
@@ -309,25 +309,38 @@ module.exports = function (token, request) {
         });
 
 
-        it('it should putaway ZEU900000002 successfully', function (done) {
+        it('it should putaway ZEU990000002 successfully', function (done) {
             request
                 .post('/item/putaway')
                 .set('x-access-token', token)
                 .send({
-                    'source_container': 'ZEU900000002',
-                    'destination_container_location': 'GSTG-A01'
+                    'source_container': 'ZEU990000002',
+                    'destination_container_location': 'GSTG-B01'
                 })
                 .expect(200, function (err, result) {
                     done();
                 });
         });
 
-        it('it should putaway ZEU900000003 successfully', function (done) {
+        it('it should putaway ZEU990000003 successfully', function (done) {
             request
                 .post('/item/putaway')
                 .set('x-access-token', token)
                 .send({
-                    'source_container': 'ZEU900000003',
+                    'source_container': 'ZEU990000003',
+                    'destination_container_location': 'GSTG-B01'
+                })
+                .expect(200, function (err, result) {
+                    done();
+                });
+        });
+
+        it('it should putaway ZEU990000004 successfully', function (done) {
+            request
+                .post('/item/putaway')
+                .set('x-access-token', token)
+                .send({
+                    'source_container': 'ZEU990000004',
                     'destination_container_location': 'DAMAGED'
                 })
                 .expect(200, function (err, result) {

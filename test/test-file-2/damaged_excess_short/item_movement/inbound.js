@@ -1,11 +1,11 @@
 module.exports = function (token, request) {
 
-    describe('POST /inbound', function () {
+    describe('POST /item/receive', function () {
         
         let dateString = new Date().toISOString().split('T')[0].split('-').join('');
         let idn = 'ID-'+ dateString.substring(2)+ '-001';
         
-        it('it should receive ZEU000000001 successfully', function (done) {
+        it('it should receive ZEU010000001 successfully', function (done) {
             // Pass
             request
                 .post('/item/receive')
@@ -14,8 +14,8 @@ module.exports = function (token, request) {
                 .send({
                     'source_container_location': idn,
                     'source_container': 'MAX999',
-                    'destination_container': 'ZEU000000001',
-                    'material_id': 'e9dd8159-7ed5-4778-9723-7e98aa8fce9e',
+                    'destination_container': 'ZEU010000001',
+                    'material_id': '6bd1b793-3aa0-4f58-b7ba-e401d5a545fb',
                     'quantity': 40
                 })
                 .expect(200, function (err, result) {
@@ -24,7 +24,7 @@ module.exports = function (token, request) {
                 });
         });
 
-        it('it should receive ZEU000000002 successfully', function (done) {
+        it('it should receive ZEU010000002 successfully', function (done) {
             // Pass
             request
                 .post('/item/receive')
@@ -33,8 +33,8 @@ module.exports = function (token, request) {
                 .send({
                     'source_container_location': idn,
                     'source_container': 'MAX999',
-                    'destination_container': 'ZEU000000002',
-                    'material_id': 'e9dd8159-7ed5-4778-9723-7e98aa8fce9e',
+                    'destination_container': 'ZEU010000002',
+                    'material_id': '6bd1b793-3aa0-4f58-b7ba-e401d5a545fb',
                     'quantity': 40
                 })
                 .expect(200, function (err, result) {
@@ -43,7 +43,7 @@ module.exports = function (token, request) {
                 });
         });
 
-        it('it should receive ZEU000000003 successfully', function (done) {
+        it('it should receive ZEU010000003 successfully', function (done) {
             // Pass
             request
                 .post('/item/receive')
@@ -52,9 +52,9 @@ module.exports = function (token, request) {
                 .send({
                     'source_container_location': idn,
                     'source_container': 'MAX999',
-                    'destination_container': 'ZEU000000003',
-                    'material_id': 'e9dd8159-7ed5-4778-9723-7e98aa8fce9e',
-                    'quantity': 40
+                    'destination_container': 'ZEU010000003',
+                    'material_id': '6bd1b793-3aa0-4f58-b7ba-e401d5a545fb',
+                    'quantity': 20
                 })
                 .expect(200, function (err, result) {
                     
@@ -62,24 +62,25 @@ module.exports = function (token, request) {
                 });
         });
 
-        it('it should receive ZEU000000004 successfully', function (done) {
+        it('it should receive damaged ZEU010000004 successfully', function (done) {
             // Pass
             request
                 .post('/item/receive')
                 .set('x-access-token', token)
                 .type('json')
                 .send({
-                    'source_container_location': idn,
+                    'source_container_location': idn+'-DAMAGED',
                     'source_container': 'MAX999',
-                    'destination_container': 'ZEU000000004',
-                    'material_id': 'e9dd8159-7ed5-4778-9723-7e98aa8fce9e',
-                    'quantity': 40
+                    'destination_container': 'ZEU010000004',
+                    'material_id': '6bd1b793-3aa0-4f58-b7ba-e401d5a545fb',
+                    'quantity':5
                 })
                 .expect(200, function (err, result) {
                     
                     done();
                 });
         });
+
         
         it('it should receive ZEU110000001 successfully', function (done) {
             // Pass
@@ -421,7 +422,7 @@ module.exports = function (token, request) {
                     done();
                 });
         });
-        it('it should receive ZEU900000001 successful', function (done) {
+        it('it should receive ZEU990000001 successful', function (done) {
             // Pass
             request
                 .post('/item/receive')
@@ -430,9 +431,9 @@ module.exports = function (token, request) {
                 .send({
                     'source_container_location': idn,
                     'source_container': 'MAX999',
-                    'destination_container': 'ZEU900000001',
-                    'material_id': 'c0b3ea8b-859e-40f5-8640-3bd6cfbc8f09',
-                    'quantity': 35
+                    'destination_container': 'ZEU990000001',
+                    'material_id': 'd20e1b31-02c5-498e-8a70-402c34a75a2d',
+                    'quantity': 60
                 })
                 .expect(200, function (err, result) {
                     
@@ -440,7 +441,7 @@ module.exports = function (token, request) {
                 });
         });
 
-        it('it should receive ZEU900000002 successful', function (done) {
+        it('it should receive ZEU990000002 successful', function (done) {
             // Pass
             request
                 .post('/item/receive')
@@ -449,9 +450,9 @@ module.exports = function (token, request) {
                 .send({
                     'source_container_location': idn,
                     'source_container': 'MAX999',
-                    'destination_container': 'ZEU900000002',
-                    'material_id': 'c0b3ea8b-859e-40f5-8640-3bd6cfbc8f09',
-                    'quantity': 37
+                    'destination_container': 'ZEU990000002',
+                    'material_id': 'd20e1b31-02c5-498e-8a70-402c34a75a2d',
+                    'quantity': 60
                 })
                 .expect(200, function (err, result) {
                     
@@ -459,7 +460,26 @@ module.exports = function (token, request) {
                 });
         });
 
-        it('it should receive ZEU900000003 successful', function (done) {
+        it('it should receive ZEU990000003 successful', function (done) {
+            // Pass
+            request
+                .post('/item/receive')
+                .set('x-access-token', token)
+                .type('json')
+                .send({
+                    'source_container_location': idn,
+                    'source_container': 'MAX999',
+                    'destination_container': 'ZEU990000003',
+                    'material_id': 'd20e1b31-02c5-498e-8a70-402c34a75a2d',
+                    'quantity': 14
+                })
+                .expect(200, function (err, result) {
+                    
+                    done();
+                });
+        });
+
+        it('it should receive ZEU990000004 successful', function (done) {
             // Pass
             request
                 .post('/item/receive')
@@ -468,9 +488,9 @@ module.exports = function (token, request) {
                 .send({
                     'source_container_location': idn +'-DAMAGED',
                     'source_container': 'MAX999',
-                    'destination_container': 'ZEU900000003',
-                    'material_id': 'c0b3ea8b-859e-40f5-8640-3bd6cfbc8f09',
-                    'quantity': 8
+                    'destination_container': 'ZEU990000004',
+                    'material_id': 'd20e1b31-02c5-498e-8a70-402c34a75a2d',
+                    'quantity': 6
                 })
                 .expect(200, function (err, result) {
                     
