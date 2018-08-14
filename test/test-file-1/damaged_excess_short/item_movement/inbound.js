@@ -20,7 +20,7 @@ module.exports = function (token, request) {
                     'quantity': 10
                 })
                 .expect(200, function (err, result) {
-                    chai.expect(result.body.data).to.have.property('items');
+                    if (err) throw err;
                     done();
                 });
         });
@@ -38,7 +38,7 @@ module.exports = function (token, request) {
                     'quantity': 7
                 })
                 .expect(200, function (err, result) {
-                    chai.expect(result.body.data).to.have.property('items');
+                    if (err) throw err;
                     done();
                 });
         });
@@ -57,7 +57,7 @@ module.exports = function (token, request) {
                     'quantity': 30
                 })
                 .expect(200, function (err, result) {
-                    chai.expect(result.body.data).to.have.property('items');
+                    if (err) throw err;
                     done();
                 });
         });
@@ -76,7 +76,7 @@ module.exports = function (token, request) {
                     'quantity': 5
                 })
                 .expect(200, function (err, result) {
-                    chai.expect(result.body.data).to.have.property('items');
+                    if (err) throw err;
                     done();
                 });
         });
@@ -95,7 +95,7 @@ module.exports = function (token, request) {
                     'quantity': 20
                 })
                 .expect(200, function (err, result) {
-                    chai.expect(result.body.data).to.have.property('items');
+                    if (err) throw err;
                     done();
                 });
         });
@@ -114,7 +114,7 @@ module.exports = function (token, request) {
                     'quantity': 3
                 })
                 .expect(200, function (err, result) {
-                    chai.expect(result.body.data).to.have.property('items');
+                    if (err) throw err;
                     done();
                 });
         });
@@ -133,7 +133,7 @@ module.exports = function (token, request) {
                     'quantity': 40
                 })
                 .expect(200, function (err, result) {
-                    chai.expect(result.body.data).to.have.property('items');
+                    if (err) throw err;
                     done();
                 });
         });
@@ -152,7 +152,7 @@ module.exports = function (token, request) {
                     'quantity': 40
                 })
                 .expect(200, function (err, result) {
-                    chai.expect(result.body.data).to.have.property('items');
+                    if (err) throw err;
                     done();
                 });
         });
@@ -172,7 +172,7 @@ module.exports = function (token, request) {
                     'quantity': 25
                 })
                 .expect(200, function (err, result) {
-                    chai.expect(result.body.data).to.have.property('items');
+                    if (err) throw err;
                     done();
                 });
         });
@@ -192,7 +192,7 @@ module.exports = function (token, request) {
                     'quantity': 20
                 })
                 .expect(200, function (err, result) {
-                    chai.expect(result.body.data).to.have.property('items');
+                    if (err) throw err;
                     done();
                 });
         });
@@ -210,7 +210,7 @@ module.exports = function (token, request) {
                     'quantity': 3
                 })
                 .expect(200, function (err, result) {
-                    chai.expect(result.body.data).to.have.property('items');
+                    if (err) throw err;
                     done();
                 });
         });
@@ -229,7 +229,7 @@ module.exports = function (token, request) {
                     'quantity': 40
                 })
                 .expect(200, function (err, result) {
-                    chai.expect(result.body.data).to.have.property('items');
+                    if (err) throw err;
                     done();
                 });
         });
@@ -247,7 +247,7 @@ module.exports = function (token, request) {
                     'quantity': 35
                 })
                 .expect(200, function (err, result) {
-                    chai.expect(result.body.data).to.have.property('items');
+                    if (err) throw err;
                     done();
                 });
         });
@@ -266,7 +266,7 @@ module.exports = function (token, request) {
                     'quantity': 5
                 })
                 .expect(200, function (err, result) {
-                    chai.expect(result.body.data).to.have.property('items');
+                    if (err) throw err;
                     done();
                 });
         });
@@ -285,7 +285,7 @@ module.exports = function (token, request) {
                     'quantity': 40
                 })
                 .expect(200, function (err, result) {
-                    chai.expect(result.body.data).to.have.property('items');
+                    if (err) throw err;
                     done();
                 });
         });
@@ -304,7 +304,7 @@ module.exports = function (token, request) {
                     'quantity': 25
                 })
                 .expect(200, function (err, result) {
-                    chai.expect(result.body.data).to.have.property('items');
+                    if (err) throw err;
                     done();
                 });
         });
@@ -323,7 +323,7 @@ module.exports = function (token, request) {
                     'quantity': 15
                 })
                 .expect(200, function (err, result) {
-                    chai.expect(result.body.data).to.have.property('items');
+                    if (err) throw err;
                     done();
                 });
         });
@@ -342,7 +342,7 @@ module.exports = function (token, request) {
                     'quantity': 24
                 })
                 .expect(200, function (err, result) {
-                    chai.expect(result.body.data).to.have.property('items');
+                    if (err) throw err;
                     done();
                 });
         });
@@ -361,7 +361,7 @@ module.exports = function (token, request) {
                     'quantity': 3
                 })
                 .expect(200, function (err, result) {
-                    chai.expect(result.body.data).to.have.property('items');
+                    if (err) throw err;
                     done();
                 });
         });
@@ -380,7 +380,7 @@ module.exports = function (token, request) {
                     'quantity': 35
                 })
                 .expect(200, function (err, result) {
-                    chai.expect(result.body.data).to.have.property('items');
+                    if (err) throw err;
                     done();
                 });
         });
@@ -399,7 +399,7 @@ module.exports = function (token, request) {
                     'quantity': 37
                 })
                 .expect(200, function (err, result) {
-                    chai.expect(result.body.data).to.have.property('items');
+                    if (err) throw err;
                     done();
                 });
         });
@@ -418,7 +418,7 @@ module.exports = function (token, request) {
                     'quantity': 8
                 })
                 .expect(200, function (err, result) {
-                    chai.expect(result.body.data).to.have.property('items');
+                    if (err) throw err;
                     done();
                 });
         });

@@ -15,7 +15,7 @@ module.exports = function (token, request) {
                     "quantity": 5
                 })
                 .expect(200, function (err, result) {
-
+                    if (err) throw err;
                     done();
                 });
 
@@ -31,7 +31,7 @@ module.exports = function (token, request) {
                     "quantity": 5
                 })
                 .expect(200, function (err, result) {
-
+                    if (err) throw err;
                     done();
                 });
 
@@ -48,6 +48,7 @@ module.exports = function (token, request) {
                     "quantity": 10,
                 })
                 .expect(200, function (err, result) {
+                    if (err) throw err;
                     done();
                 });
         });
@@ -63,6 +64,7 @@ module.exports = function (token, request) {
                     "quantity": 10,
                 })
                 .expect(200, function (err, result) {
+                    if (err) throw err;
                     done();
                 });
         });
@@ -77,6 +79,7 @@ module.exports = function (token, request) {
                     "quantity": 10,
                 })
                 .expect(200, function (err, result) {
+                    if (err) throw err;
                     done();
                 });
         });
@@ -95,7 +98,7 @@ module.exports = function (token, request) {
                     "quantity": 10
                 })
                 .expect(200, function (err, result) {
-
+                    if (err) throw err;
                     done();
                 });
 
@@ -112,7 +115,7 @@ module.exports = function (token, request) {
                     "quantity": 10
                 })
                 .expect(200, function (err, result) {
-
+                    if (err) throw err;
                     done();
                 });
 
@@ -131,7 +134,7 @@ module.exports = function (token, request) {
                     "ship_to_code": "STC-000000531"
                 })
                 .expect(200, function (err, result) {
-
+                    if (err) throw err;
                     done();
                 });
 
@@ -150,7 +153,7 @@ module.exports = function (token, request) {
                     "ship_to_code": "STC-000000531"
                 })
                 .expect(200, function (err, result) {
-
+                    if (err) throw err;
                     done();
                 });
 
@@ -172,7 +175,7 @@ module.exports = function (token, request) {
                     "ship_to_code": "STC-000000531"
                 })
                 .expect(200, function (err, result) {
-
+                    if (err) throw err;
                     done();
                 });
 
@@ -192,7 +195,7 @@ module.exports = function (token, request) {
                     "ship_to_code": "STC-000000531"
                 })
                 .expect(200, function (err, result) {
-
+                    if (err) throw err;
                     done();
                 });
 
@@ -212,7 +215,7 @@ module.exports = function (token, request) {
                     "ship_to_code": "STC-000000531"
                 })
                 .expect(200, function (err, result) {
-
+                    if (err) throw err;
                     done();
                 });
 
@@ -230,6 +233,7 @@ module.exports = function (token, request) {
                     "quantity": 10,
                 })
                 .expect(200, function (err, result) {
+                    if (err) throw err;
                     done();
                 });
         });
@@ -243,6 +247,7 @@ module.exports = function (token, request) {
                     "quantity": 10,
                 })
                 .expect(200, function (err, result) {
+                    if (err) throw err;
                     done();
                 });
         });
@@ -260,7 +265,7 @@ module.exports = function (token, request) {
                     // "ship_to_code": "STC-000000531"
                 })
                 .expect(200, function (err, result) {
-
+                    if (err) throw err;
                     done();
                 });
         });
@@ -277,7 +282,7 @@ module.exports = function (token, request) {
                     // "ship_to_code": "STC-000000531"
                 })
                 .expect(200, function (err, result) {
-
+                    if (err) throw err;
                     done();
                 });
         });
@@ -295,7 +300,7 @@ module.exports = function (token, request) {
                     // "ship_to_code": "STC-000000531"
                 })
                 .expect(200, function (err, result) {
-
+                    if (err) throw err;
                     done();
                 });
         });
@@ -312,7 +317,7 @@ module.exports = function (token, request) {
                     // "ship_to_code": "STC-000000531"
                 })
                 .expect(200, function (err, result) {
-
+                    if (err) throw err;
                     done();
                 });
         });
@@ -330,7 +335,7 @@ module.exports = function (token, request) {
                     "ship_to_code": "STC-000000531"
                 })
                 .expect(200, function (err, result) {
-
+                    if (err) throw err;
                     done();
                 });
 
@@ -349,7 +354,7 @@ module.exports = function (token, request) {
                     "ship_to_code": "STC-000000534"
                 })
                 .expect(200, function (err, result) {
-
+                    if (err) throw err;
                     done();
                 });
 
@@ -368,7 +373,7 @@ module.exports = function (token, request) {
                     "ship_to_code": "STC-000000616"
                 })
                 .expect(200, function (err, result) {
-
+                    if (err) throw err;
                     done();
                 });
 
@@ -389,6 +394,7 @@ module.exports = function (token, request) {
                     "ship_to_code": "STC-000000531"
                 })
                 .expect(200, function (err, result) {
+                    if (err) throw err;
                     done();
                 });
 
@@ -408,6 +414,7 @@ module.exports = function (token, request) {
                     "ship_to_code": "STC-000000534"
                 })
                 .expect(200, function (err, result) {
+                    if (err) throw err;
                     done();
                 });
 
@@ -426,6 +433,7 @@ module.exports = function (token, request) {
                     "ship_to_code": "STC-000000534"
                 })
                 .expect(200, function (err, result) {
+                    if (err) throw err;
                     done();
                 });
         });
@@ -440,7 +448,7 @@ module.exports = function (token, request) {
                     "quantity": 40
                 })
                 .expect(200, function (err, result) {
-                    
+                    if (err) throw err;
                     done();
                 });
         });
@@ -455,7 +463,7 @@ module.exports = function (token, request) {
                     "quantity": 40
                 })
                 .expect(200, function (err, result) {
-                    
+                    if (err) throw err;
                     done();
                 });
         });
@@ -470,7 +478,7 @@ module.exports = function (token, request) {
                     "quantity": 40
                 })
                 .expect(200, function (err, result) {
-                    
+                    if (err) throw err;
                     done();
                 });
 
@@ -486,8 +494,9 @@ module.exports = function (token, request) {
                     "quantity": 25
                 })
                 .expect(200, function (err, result) {
+                    if (err) throw err;
                     done();
-             });
+                });
         });
 
     });
