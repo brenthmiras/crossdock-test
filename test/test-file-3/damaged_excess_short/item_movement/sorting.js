@@ -3,6 +3,7 @@ const chai = require('chai');
 module.exports = function (token, request) {
 
     describe('GET /customer-primaries/:id/shipments', function () {
+
         it('it should sort ZEU000000001 successfully', function (done) {
             request
                 .post('/item/sort')
