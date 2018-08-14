@@ -22,9 +22,24 @@ describe('Login user to get token', function () {
 
             token = result.header['x-access-token'];    
 
-            describe('Resource plan', function () {
-                require('./resource_plan')(token, request);
+            // describe('Resource plan', function () {
+            //     require('./resource_plan')(token, request);
+            // });
+
+            describe ('Reset item movement', function(){
+
+                it('should be able to reset data', function (done) {
+                    // Pass
+                    request
+                        .get('/reset-item-movements')
+                        .set('x-access-token', token)
+                        .expect(200, function (err, result) {
+                            if (err) throw err;
+                            done();
+                        });
+                });
             });
+
 
             describe('Inbound', function () {
                 require('./item_movement/inbound')(token, request);
