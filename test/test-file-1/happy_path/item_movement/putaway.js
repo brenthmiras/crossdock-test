@@ -12,6 +12,7 @@ module.exports = function (token, request) {
                     'destination_container_location': 'GSTG-A01'
                 })
                 .expect(200, function (err, result) {
+                    if (err) throw err;
                     done();
                 });
         });
@@ -25,6 +26,7 @@ module.exports = function (token, request) {
                     'destination_container_location': 'GSTG-A01'
                 })
                 .expect(200, function (err, result) {
+                    if (err) throw err;
                     done();
                 });
         });
@@ -38,6 +40,7 @@ module.exports = function (token, request) {
                     'destination_container_location': 'GSTG-A01'
                 })
                 .expect(200, function (err, result) {
+                    if (err) throw err;
                     done();
                 });
         });
@@ -51,6 +54,7 @@ module.exports = function (token, request) {
                     'destination_container_location': 'GSTG-A01'
                 })
                 .expect(200, function (err, result) {
+                    if (err) throw err;
                     done();
                 });
         });
@@ -64,6 +68,7 @@ module.exports = function (token, request) {
                     'destination_container_location': 'GSTG-A01'
                 })
                 .expect(200, function (err, result) {
+                    if (err) throw err;
                     done();
                 });
         });
@@ -77,10 +82,11 @@ module.exports = function (token, request) {
                     'destination_container_location': 'GSTG-A01'
                 })
                 .expect(200, function (err, result) {
+                    if (err) throw err;
                     done();
                 });
         });
-         
+
         it('it should putaway ZEU500000001 successfully', function (done) {
             request
                 .post('/item/putaway')
@@ -90,6 +96,7 @@ module.exports = function (token, request) {
                     'destination_container_location': 'GSTG-A01'
                 })
                 .expect(200, function (err, result) {
+                    if (err) throw err;
                     done();
                 });
         });
@@ -103,6 +110,7 @@ module.exports = function (token, request) {
                     'destination_container_location': 'GSTG-A01'
                 })
                 .expect(200, function (err, result) {
+                    if (err) throw err;
                     done();
                 });
         });
@@ -116,6 +124,7 @@ module.exports = function (token, request) {
                     'destination_container_location': 'GSTG-A01'
                 })
                 .expect(200, function (err, result) {
+                    if (err) throw err;
                     done();
                 });
         });
@@ -129,6 +138,7 @@ module.exports = function (token, request) {
                     'destination_container_location': 'GSTG-A01'
                 })
                 .expect(200, function (err, result) {
+                    if (err) throw err;
                     done();
                 });
         });
@@ -142,6 +152,7 @@ module.exports = function (token, request) {
                     'destination_container_location': 'GSTG-A01'
                 })
                 .expect(200, function (err, result) {
+                    if (err) throw err;
                     done();
                 });
         });
@@ -155,6 +166,7 @@ module.exports = function (token, request) {
                     'destination_container_location': 'GSTG-A01'
                 })
                 .expect(200, function (err, result) {
+                    if (err) throw err;
                     done();
                 });
         });
@@ -168,6 +180,7 @@ module.exports = function (token, request) {
                     'destination_container_location': 'GSTG-A01'
                 })
                 .expect(200, function (err, result) {
+                    if (err) throw err;
                     done();
                 });
         });
@@ -181,10 +194,11 @@ module.exports = function (token, request) {
                     'destination_container_location': 'GSTG-A01'
                 })
                 .expect(200, function (err, result) {
+                    if (err) throw err;
                     done();
                 });
         });
-        
+
         it('it should putaway ZEU000000001 successfully', function (done) {
             request
                 .post('/item/putaway')
@@ -194,6 +208,7 @@ module.exports = function (token, request) {
                     'destination_container_location': 'GSTG-A01'
                 })
                 .expect(200, function (err, result) {
+                    if (err) throw err;
                     done();
                 });
         });
@@ -207,6 +222,7 @@ module.exports = function (token, request) {
                     'destination_container_location': 'GSTG-A01'
                 })
                 .expect(200, function (err, result) {
+                    if (err) throw err;
                     done();
                 });
         });
@@ -220,6 +236,7 @@ module.exports = function (token, request) {
                     'destination_container_location': 'GSTG-A01'
                 })
                 .expect(200, function (err, result) {
+                    if (err) throw err;
                     done();
                 });
         });
@@ -233,6 +250,7 @@ module.exports = function (token, request) {
                     'destination_container_location': 'GSTG-A01'
                 })
                 .expect(200, function (err, result) {
+                    if (err) throw err;
                     done();
                 });
         });

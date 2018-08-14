@@ -17,10 +17,10 @@ module.exports = function (token, request) {
                     "destination_container_location": "MAX999",
                     "source_container_location": "ZEU700000002"
                 })
-                .end(function (err, result) {
-                    expect(result.status).to.equal(200);
+                .expect(200, function (err, result) {
+                    if (err) throw err;
                     done();
-                })
+                });
         });
 
         it('it should load ZEU000000003 successfully', function (done) {
@@ -36,10 +36,10 @@ module.exports = function (token, request) {
                     "destination_container_location": "MAX999",
                     "source_container_location": "ZEU000000003"
                 })
-                .end(function (err, result) {
-                    expect(result.status).to.equal(200);
+                .expect(200, function (err, result) {
+                    if (err) throw err;
                     done();
-                })
+                });
         });
 
         it('it should load ZEU000000004 successfully', function (done) {
@@ -55,10 +55,10 @@ module.exports = function (token, request) {
                     "destination_container_location": "MAX999",
                     "source_container_location": "ZEU000000004"
                 })
-                .end(function (err, result) {
-                    expect(result.status).to.equal(200);
+                .expect(200, function (err, result) {
+                    if (err) throw err;
                     done();
-                })
+                });
         });
 
         it('it should load ZEU600000001 successfully', function (done) {
@@ -74,10 +74,10 @@ module.exports = function (token, request) {
                     "destination_container_location": "MAX999",
                     "source_container_location": "ZEU600000001"
                 })
-                .end(function (err, result) {
-                    expect(result.status).to.equal(200);
+                .expect(200, function (err, result) {
+                    if (err) throw err;
                     done();
-                })
+                });
         });
 
         it('it should load ZEU900000001 successfully', function (done) {
@@ -93,10 +93,10 @@ module.exports = function (token, request) {
                     "destination_container_location": "MAX999",
                     "source_container_location": "ZEU900000001"
                 })
-                .end(function (err, result) {
-                    expect(result.status).to.equal(200);
+                .expect(200, function (err, result) {
+                    if (err) throw err;
                     done();
-                })
+                });
         });
 
         it('it should load ZEU700000001 successfully', function (done) {
@@ -112,10 +112,10 @@ module.exports = function (token, request) {
                     "destination_container_location": "MAX999",
                     "source_container_location": "ZEU700000001"
                 })
-                .end(function (err, result) {
-                    expect(result.status).to.equal(200);
+                .expect(200, function (err, result) {
+                    if (err) throw err;
                     done();
-                })
+                });
         });
 
         it('it should load ZEU000000001 successfully', function (done) {
@@ -131,10 +131,10 @@ module.exports = function (token, request) {
                     "destination_container_location": "MAX999",
                     "source_container_location": "ZEU000000001"
                 })
-                .end(function (err, result) {
-                    expect(result.status).to.equal(200);
+                .expect(200, function (err, result) {
+                    if (err) throw err;
                     done();
-                })
+                });
         });
 
         it('it should load ZEU000000002 successfully', function (done) {
@@ -150,10 +150,10 @@ module.exports = function (token, request) {
                     "destination_container_location": "MAX999",
                     "source_container_location": "ZEU000000002"
                 })
-                .end(function (err, result) {
-                    expect(result.status).to.equal(200);
+                .expect(200, function (err, result) {
+                    if (err) throw err;
                     done();
-                })
+                });
         });
 
         it('it should load ZEU600000002 successfully', function (done) {
@@ -169,10 +169,10 @@ module.exports = function (token, request) {
                     "destination_container_location": "MAX999",
                     "source_container_location": "ZEU600000002"
                 })
-                .end(function (err, result) {
-                    expect(result.status).to.equal(200);
+                .expect(200, function (err, result) {
+                    if (err) throw err;
                     done();
-                })
+                });
         });
 
         it('it should load ZEU900000002 successfully', function (done) {
@@ -188,10 +188,10 @@ module.exports = function (token, request) {
                     "destination_container_location": "MAX999",
                     "source_container_location": "ZEU900000002"
                 })
-                .end(function (err, result) {
-                    expect(result.status).to.equal(200);
+                .expect(200, function (err, result) {
+                    if (err) throw err;
                     done();
-                })
+                });
         });
 
         it('it should load GRC-001 successfully', function (done) {
@@ -207,10 +207,10 @@ module.exports = function (token, request) {
                     "destination_container_location": "MAX999",
                     "source_container_location": "GRC-001"
                 })
-                .end(function (err, result) {
-                    expect(result.status).to.equal(200);
+                .expect(200, function (err, result) {
+                    if (err) throw err;
                     done();
-                })
+                });
         });
 
         it('it should load GRC-001 successfully', function (done) {
@@ -226,10 +226,10 @@ module.exports = function (token, request) {
                     "destination_container_location": "MAX999",
                     "source_container_location": "GRC-001"
                 })
-                .end(function (err, result) {
-                    expect(result.status).to.equal(200);
+                .expect(200, function (err, result) {
+                    if (err) throw err;
                     done();
-                })
+                });
         });
 
         it('it should load GRC-004 successfully', function (done) {
@@ -245,10 +245,10 @@ module.exports = function (token, request) {
                     "destination_container_location": "MAX999",
                     "source_container_location": "GRC-004"
                 })
-                .end(function (err, result) {
-                    expect(result.status).to.equal(200);
+                .expect(200, function (err, result) {
+                    if (err) throw err;
                     done();
-                })
+                });
         });
 
         it('it should load GRC-004 successfully', function (done) {
@@ -264,10 +264,10 @@ module.exports = function (token, request) {
                     "destination_container_location": "MAX999",
                     "source_container_location": "GRC-004"
                 })
-                .end(function (err, result) {
-                    expect(result.status).to.equal(200);
+                .expect(200, function (err, result) {
+                    if (err) throw err;
                     done();
-                })
+                });
         });
 
         it('it should load GRC-003 successfully', function (done) {
@@ -283,10 +283,10 @@ module.exports = function (token, request) {
                     "destination_container_location": "MAX999",
                     "source_container_location": "GRC-003"
                 })
-                .end(function (err, result) {
-                    expect(result.status).to.equal(200);
+                .expect(200, function (err, result) {
+                    if (err) throw err;
                     done();
-                })
+                });
         });
 
         it('it should load GRC-002 successfully', function (done) {
@@ -302,10 +302,10 @@ module.exports = function (token, request) {
                     "destination_container_location": "MAX999",
                     "source_container_location": "GRC-002"
                 })
-                .end(function (err, result) {
-                    expect(result.status).to.equal(200);
+                .expect(200, function (err, result) {
+                    if (err) throw err;
                     done();
-                })
+                });
         });
 
         it('it should load GRC-002 successfully', function (done) {
@@ -321,10 +321,10 @@ module.exports = function (token, request) {
                     "destination_container_location": "MAX999",
                     "source_container_location": "GRC-002"
                 })
-                .end(function (err, result) {
-                    expect(result.status).to.equal(200);
+                .expect(200, function (err, result) {
+                    if (err) throw err;
                     done();
-                })
+                });
         });
 
         it('it should load GRC-002 successfully', function (done) {
@@ -340,10 +340,10 @@ module.exports = function (token, request) {
                     "destination_container_location": "MAX999",
                     "source_container_location": "GRC-002"
                 })
-                .end(function (err, result) {
-                    expect(result.status).to.equal(200);
+                .expect(200, function (err, result) {
+                    if (err) throw err;
                     done();
-                })
+                });
         });
 
         it('it should load GRC-006 successfully', function (done) {
@@ -359,10 +359,10 @@ module.exports = function (token, request) {
                     "destination_container_location": "MAX999",
                     "source_container_location": "GRC-006"
                 })
-                .end(function (err, result) {
-                    expect(result.status).to.equal(200);
+                .expect(200, function (err, result) {
+                    if (err) throw err;
                     done();
-                })
+                });
         });
 
         it('it should load GRC-006 successfully', function (done) {
@@ -378,10 +378,10 @@ module.exports = function (token, request) {
                     "destination_container_location": "MAX999",
                     "source_container_location": "GRC-006"
                 })
-                .end(function (err, result) {
-                    expect(result.status).to.equal(200);
+                .expect(200, function (err, result) {
+                    if (err) throw err;
                     done();
-                })
+                });
         });
 
         it('it should load GRC-006 successfully', function (done) {
@@ -397,10 +397,10 @@ module.exports = function (token, request) {
                     "destination_container_location": "MAX999",
                     "source_container_location": "GRC-006"
                 })
-                .end(function (err, result) {
-                    expect(result.status).to.equal(200);
+                .expect(200, function (err, result) {
+                    if (err) throw err;
                     done();
-                })
+                });
         });
 
         it('it should load GRC-007 successfully', function (done) {
@@ -416,10 +416,10 @@ module.exports = function (token, request) {
                     "destination_container_location": "MAX999",
                     "source_container_location": "GRC-007"
                 })
-                .end(function (err, result) {
-                    expect(result.status).to.equal(200);
+                .expect(200, function (err, result) {
+                    if (err) throw err;
                     done();
-                })
+                });
         });
 
         it('it should load GRC-007 successfully', function (done) {
@@ -435,10 +435,10 @@ module.exports = function (token, request) {
                     "destination_container_location": "MAX999",
                     "source_container_location": "GRC-007"
                 })
-                .end(function (err, result) {
-                    expect(result.status).to.equal(200);
+                .expect(200, function (err, result) {
+                    if (err) throw err;
                     done();
-                })
+                });
         });
 
         it('it should load GRC-005 successfully', function (done) {
@@ -454,10 +454,10 @@ module.exports = function (token, request) {
                     "destination_container_location": "MAX999",
                     "source_container_location": "GRC-005"
                 })
-                .end(function (err, result) {
-                    expect(result.status).to.equal(200);
+                .expect(200, function (err, result) {
+                    if (err) throw err;
                     done();
-                })
+                });
         });
 
         it('it should load GRC-005 successfully', function (done) {
@@ -473,10 +473,10 @@ module.exports = function (token, request) {
                     "destination_container_location": "MAX999",
                     "source_container_location": "GRC-005"
                 })
-                .end(function (err, result) {
-                    expect(result.status).to.equal(200);
+                .expect(200, function (err, result) {
+                    if (err) throw err;
                     done();
-                })
+                });
         });
 
     });
