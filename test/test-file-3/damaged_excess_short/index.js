@@ -37,17 +37,21 @@ describe('Login user to get token', function () {
             //     require('./resource_plan')(token, request);
             // });
 
-            describe('Inbound', function () {
-                require('./item_movement/inbound')(token, request);
-            });
+            // describe('Inbound', function () {
+            //     require('./item_movement/inbound')(token, request);
+            // });
     
-            describe('Putaway', function () {
-                require('./item_movement/putaway')(token, request);
-            });
+            // describe('Putaway', function () {
+            //     require('./item_movement/putaway')(token, request);
+            // });
 
             // describe('Sorting', function () {
             //     require('./item_movement/sorting')(token, request);
             // });
+
+            describe('Sorting', function () {
+                require('./item_movement/outbound')(token, request);
+            });
             done();
 
         });

@@ -152,7 +152,7 @@ module.exports = function (token, request) {
                 .set('x-access-token', token)
                 .type('json')
                 .send({
-                    'source_container_location': 'ID-180810-002-EXCESS',
+                    'source_container_location': idn2 + '-EXCESS',
                     'source_container': 'MAX999',
                     'destination_container': 'ZEU100000002',
                     'material_id': '07ef3043-0ad0-40eb-95fa-1f83db6ce6fc',
@@ -209,7 +209,7 @@ module.exports = function (token, request) {
                 .set('x-access-token', token)
                 .type('json')
                 .send({
-                    'source_container_location': 'ID-180810-001-EXCESS',
+                    'source_container_location': idn1 + '-EXCESS',
                     'source_container': 'MAX999',
                     'destination_container': 'ZEU111000002',
                     'material_id': '2db9a94c-e976-4300-8694-314acb96bec4',
@@ -247,7 +247,7 @@ module.exports = function (token, request) {
                 .set('x-access-token', token)
                 .type('json')
                 .send({
-                    'source_container_location': 'ID-180810-002-EXCESS',
+                    'source_container_location': idn2 + '-EXCESS',
                     'source_container': 'MAX999',
                     'destination_container': 'ZEU200000002',
                     'material_id': '0a08a686-c4ac-43e9-a30e-4ef838c12e58',
@@ -374,7 +374,7 @@ module.exports = function (token, request) {
                 .set('x-access-token', token)
                 .type('json')
                 .send({
-                    'source_container_location': 'ID-180810-001-EXCESS',
+                    'source_container_location': idn1 + '-EXCESS',
                     'source_container': 'MAX999',
                     'destination_container': 'ZEU333000002',
                     'material_id': '3f7ed6e2-87c4-417c-b4b5-1e6e515acb92',
@@ -393,7 +393,7 @@ module.exports = function (token, request) {
                 .set('x-access-token', token)
                 .type('json')
                 .send({
-                    'source_container_location': 'ID-180810-003-EXCESS',
+                    'source_container_location': idn3 + '-EXCESS',
                     'source_container': 'MAX999',
                     'destination_container': 'ZEU330000002',
                     'material_id': '90c8c84b-f5dc-46b3-8db7-ccfd1ba5bbc6',
@@ -568,7 +568,7 @@ module.exports = function (token, request) {
                 .set('x-access-token', token)
                 .type('json')
                 .send({
-                    'source_container_location': 'ID-180810-003-EXCESS',
+                    'source_container_location': idn3 + '-EXCESS',
                     'source_container': 'MAX999',
                     'destination_container': 'ZEU550000002',
                     'material_id': 'cc1c4bcd-cabb-4551-97c1-330100e0a625',
@@ -644,7 +644,7 @@ module.exports = function (token, request) {
                 .set('x-access-token', token)
                 .type('json')
                 .send({
-                    'source_container_location': 'ID-180810-002-DAMAGED',
+                    'source_container_location': idn2 + '-DAMAGED',
                     'source_container': 'MAX999',
                     'destination_container': 'ZEU600000003',
                     'material_id': '72c19f17-ed10-4b51-a150-0b0b74496ff4',
@@ -703,7 +703,7 @@ module.exports = function (token, request) {
                 .set('x-access-token', token)
                 .type('json')
                 .send({
-                    'source_container_location': 'ID-180810-001-DAMAGED',
+                    'source_container_location': idn1 + '-DAMAGED',
                     'source_container': 'MAX999',
                     'destination_container': 'ZEU666000002',
                     'material_id': '8a637440-d213-4737-9da3-be269d91e7ae',
@@ -760,7 +760,7 @@ module.exports = function (token, request) {
                 .set('x-access-token', token)
                 .type('json')
                 .send({
-                    'source_container_location': 'ID-180810-002-DAMAGED',
+                    'source_container_location': idn2 + '-DAMAGED',
                     'source_container': 'MAX999',
                     'destination_container': 'ZEU700000003',
                     'material_id': '8aa7e29d-6980-4e51-bc68-22b08b72865c',
@@ -821,7 +821,7 @@ module.exports = function (token, request) {
                 .set('x-access-token', token)
                 .type('json')
                 .send({
-                    'source_container_location': 'ID-180810-001-DAMAGED',
+                    'source_container_location': idn1 + '-DAMAGED',
                     'source_container': 'MAX999',
                     'destination_container': 'ZEU777000002',
                     'material_id': 'b404acdd-a0b8-4adc-80c4-5f6dccf53573',
@@ -858,7 +858,7 @@ module.exports = function (token, request) {
                 .set('x-access-token', token)
                 .type('json')
                 .send({
-                    'source_container_location': 'ID-180810-001-DAMAGED',
+                    'source_container_location': idn1 + '-DAMAGED',
                     'source_container': 'MAX999',
                     'destination_container': 'ZEU888000002',
                     'material_id': 'c6a0c480-f144-4730-99f4-01b74ea8e76c',
@@ -933,7 +933,7 @@ module.exports = function (token, request) {
                 .set('x-access-token', token)
                 .type('json')
                 .send({
-                    'source_container_location': 'ID-180810-003-DAMAGED',
+                    'source_container_location': idn3 + '-DAMAGED',
                     'source_container': 'MAX999',
                     'destination_container': 'ZEU880000003',
                     'material_id': 'fabdacd7-dd8f-4cc2-9b00-56a95148ab22',
@@ -1049,7 +1049,7 @@ module.exports = function (token, request) {
                 .set('x-access-token', token)
                 .type('json')
                 .send({
-                    'source_container_location': 'ID-180810-003-DAMAGED',
+                    'source_container_location': idn3 + '-DAMAGED',
                     'source_container': 'MAX999',
                     'destination_container': 'ZEU990000004',
                     'material_id': 'd20e1b31-02c5-498e-8a70-402c34a75a2d',
@@ -1088,14 +1088,14 @@ module.exports = function (token, request) {
                 .set('x-access-token', token)
                 .type('json')
                 .send({
-                    'source_container_location': 'ID-180810-001-DAMAGED',
+                    'source_container_location': idn1 + '-DAMAGED',
                     'source_container': 'MAX999',
                     'destination_container': 'ZEU999000002',
                     'material_id': 'df4d5b38-d9b4-474b-bc0f-97c3cbe94817',
                     'quantity': 5
                 })
                 .expect(200, function (err, result) {
-                    if (err) done(err);
+                    if (err) throw err;
                     done();
                 });
         });
