@@ -6,201 +6,128 @@ module.exports = function (token, request) {
 
     describe('POST /grid-plan/:id', function () {
 
-        it('should be able to reset item movement', function (done) {
-            // Pass
-            request
-                .get('/reset-item-movements')
-                .set('x-access-token', token)
-                .expect(200, function (err, result) {
-                    if (err) throw err;
-                    done();
-                });
-        });
-
         it('it should get assign GRC-000 successfully', function (done) {
+
             request
-<<<<<<< HEAD
                 .put('/grid-plan/'+'GSRT-A01-10')
-=======
-                .put('/grid-plan/' + 'GSRT-A01-10')
->>>>>>> 6d29643abb20bd90cd52ddf75646e1df885ea607
                 .set('x-access-token', token)
                 .send({
                     'rollcage': 'GRC-000'
                 })
                 .expect(200, function (err, result) {
-<<<<<<< HEAD
-=======
-                    if (err) throw err;
->>>>>>> 6d29643abb20bd90cd52ddf75646e1df885ea607
                     done();
                 });
-
+                    
         });
-<<<<<<< HEAD
     
-=======
 
-
->>>>>>> 6d29643abb20bd90cd52ddf75646e1df885ea607
         it('it should get assign GRC-001 successfully', function (done) {
+
             request
-<<<<<<< HEAD
                 .put('/grid-plan/'+'GSRT-B01-12')
-=======
-                .put('/grid-plan/' + 'GSRT-B01-12')
->>>>>>> 6d29643abb20bd90cd52ddf75646e1df885ea607
                 .set('x-access-token', token)
                 .send({
                     'rollcage': 'GRC-001'
                 })
                 .expect(200, function (err, result) {
-                    if (err) throw err;
                     done();
                 });
-
+                    
         });
-<<<<<<< HEAD
     
-=======
 
-
->>>>>>> 6d29643abb20bd90cd52ddf75646e1df885ea607
         it('it should get assign GRC-002 successfully', function (done) {
+
             request
-<<<<<<< HEAD
                 .put('/grid-plan/'+'GSRT-B01-08')
-=======
-                .put('/grid-plan/' + 'GSRT-B01-08')
->>>>>>> 6d29643abb20bd90cd52ddf75646e1df885ea607
                 .set('x-access-token', token)
                 .send({
                     'rollcage': 'GRC-002'
                 })
                 .expect(200, function (err, result) {
-                    if (err) throw err;
                     done();
                 });
-
+                    
         });
-<<<<<<< HEAD
     
-=======
 
-
->>>>>>> 6d29643abb20bd90cd52ddf75646e1df885ea607
         it('it should get assign GRC-003 successfully', function (done) {
+
             request
-<<<<<<< HEAD
                 .put('/grid-plan/'+'GSRT-A01-11')
-=======
-                .put('/grid-plan/' + 'GSRT-A01-11')
->>>>>>> 6d29643abb20bd90cd52ddf75646e1df885ea607
                 .set('x-access-token', token)
                 .send({
                     'rollcage': 'GRC-003'
                 })
                 .expect(200, function (err, result) {
-                    if (err) throw err;
                     done();
                 });
-
+                    
         });
-<<<<<<< HEAD
     
+
         it('it should get assign GRC-005 successfully', function (done) {
+
             request
                 .put('/grid-plan/'+'GSRT-A01-04')
-=======
-
-
-        it('it should get assign GRC-005 successfully', function (done) {
-
-            request
-                .put('/grid-plan/' + 'GSRT-A01-04')
->>>>>>> 6d29643abb20bd90cd52ddf75646e1df885ea607
                 .set('x-access-token', token)
                 .send({
                     'rollcage': 'GRC-005'
                 })
                 .expect(200, function (err, result) {
-                    if (err) throw err;
                     done();
                 });
-
+                    
         });
-<<<<<<< HEAD
     
-=======
 
-
->>>>>>> 6d29643abb20bd90cd52ddf75646e1df885ea607
         it('it should get assign GRC-006 successfully', function (done) {
+
             request
-<<<<<<< HEAD
                 .put('/grid-plan/'+'GSRT-A01-05')
-=======
-                .put('/grid-plan/' + 'GSRT-A01-05')
->>>>>>> 6d29643abb20bd90cd52ddf75646e1df885ea607
                 .set('x-access-token', token)
                 .send({
                     'rollcage': 'GRC-006'
                 })
                 .expect(200, function (err, result) {
-                    if (err) throw err;
                     done();
                 });
-
+                    
         });
-<<<<<<< HEAD
     
+
         it('it should get assign GRC-011 successfully', function (done) {
+
             request
                 .put('/grid-plan/'+'GSRT-A01-09')
-=======
-
-
-        it('it should get assign GRC-011 successfully', function (done) {
-
-            request
-                .put('/grid-plan/' + 'GSRT-A01-09')
->>>>>>> 6d29643abb20bd90cd52ddf75646e1df885ea607
                 .set('x-access-token', token)
                 .send({
                     'rollcage': 'GRC-011'
                 })
                 .expect(200, function (err, result) {
-                    if (err) throw err;
                     done();
                 });
-
+                    
         });
-<<<<<<< HEAD
     
+
         it('it should get assign GRC-012 successfully', function (done) {
+
             request
                 .put('/grid-plan/'+'GSRT-B01-09')
-=======
-
-
-        it('it should get assign GRC-012 successfully', function (done) {
-
-            request
-                .put('/grid-plan/' + 'GSRT-B01-09')
->>>>>>> 6d29643abb20bd90cd52ddf75646e1df885ea607
                 .set('x-access-token', token)
                 .send({
                     'rollcage': 'GRC-012'
                 })
                 .expect(200, function (err, result) {
-                    if (err) throw err;
                     done();
                 });
-
+                    
         });
-<<<<<<< HEAD
     
+
         it('it should get assign GRC-013 successfully', function (done) {
+
             request
                 .put('/grid-plan/'+'GSRT-B01-10')
                 .set('x-access-token', token)
@@ -213,7 +140,9 @@ module.exports = function (token, request) {
                     
         });
     
+
         it('it should get assign GRC-014 successfully', function (done) {
+
             request
                 .put('/grid-plan/'+'GSRT-B01-11')
                 .set('x-access-token', token)
@@ -226,7 +155,9 @@ module.exports = function (token, request) {
                     
         });
     
+
         it('it should get assign GRC-016 successfully', function (done) {
+
             request
                 .put('/grid-plan/'+'GSRT-A01-01')
                 .set('x-access-token', token)
@@ -239,7 +170,9 @@ module.exports = function (token, request) {
                     
         });
     
+
         it('it should get assign GRC-017 successfully', function (done) {
+
             request
                 .put('/grid-plan/'+'GSRT-B01-02')
                 .set('x-access-token', token)
@@ -252,7 +185,9 @@ module.exports = function (token, request) {
                     
         });
     
+
         it('it should get assign GRC-018 successfully', function (done) {
+
             request
                 .put('/grid-plan/'+'GSRT-B01-14')
                 .set('x-access-token', token)
@@ -265,7 +200,9 @@ module.exports = function (token, request) {
                     
         });
     
+
         it('it should get assign GRC-019 successfully', function (done) {
+
             request
                 .put('/grid-plan/'+'GSRT-B01-15')
                 .set('x-access-token', token)
@@ -278,7 +215,9 @@ module.exports = function (token, request) {
                     
         });
     
+
         it('it should get assign GRC-021 successfully', function (done) {
+
             request
                 .put('/grid-plan/'+'GSRT-A01-12')
                 .set('x-access-token', token)
@@ -291,7 +230,9 @@ module.exports = function (token, request) {
                     
         });
     
+
         it('it should get assign GRC-022 successfully', function (done) {
+
             request
                 .put('/grid-plan/'+'GSRT-B01-13')
                 .set('x-access-token', token)
@@ -304,7 +245,9 @@ module.exports = function (token, request) {
                     
         });
     
+
         it('it should get assign GRC-023 successfully', function (done) {
+
             request
                 .put('/grid-plan/'+'GSRT-A01-15')
                 .set('x-access-token', token)
@@ -317,400 +260,189 @@ module.exports = function (token, request) {
                     
         });
     
+
         it('it should get assign GRC-024 successfully', function (done) {
-=======
 
-
-        it('it should get assign GRC-013 successfully', function (done) {
-
->>>>>>> 6d29643abb20bd90cd52ddf75646e1df885ea607
             request
-                .put('/grid-plan/' + 'GSRT-B01-10')
+                .put('/grid-plan/'+'GSRT-B01-05')
                 .set('x-access-token', token)
                 .send({
-<<<<<<< HEAD
                     'rollcage': 'GRC-024'
-=======
-                    'rollcage': 'GRC-013'
->>>>>>> 6d29643abb20bd90cd52ddf75646e1df885ea607
                 })
                 .expect(200, function (err, result) {
-                    if (err) throw err;
                     done();
                 });
-
+                    
         });
-<<<<<<< HEAD
     
+
         it('it should get assign GRC-025 successfully', function (done) {
+
             request
                 .put('/grid-plan/'+'GSRT-A01-14')
                 .set('x-access-token', token)
                 .send({
                     'rollcage': 'GRC-025'
-=======
-
-
-        it('it should get assign GRC-014 successfully', function (done) {
-
-            request
-                .put('/grid-plan/' + 'GSRT-B01-11')
-                .set('x-access-token', token)
-                .send({
-                    'rollcage': 'GRC-014'
->>>>>>> 6d29643abb20bd90cd52ddf75646e1df885ea607
                 })
                 .expect(200, function (err, result) {
-                    if (err) throw err;
                     done();
                 });
-
+                    
         });
-<<<<<<< HEAD
     
+
         it('it should get assign GRC-027 successfully', function (done) {
+
             request
                 .put('/grid-plan/'+'GSRT-A01-03')
                 .set('x-access-token', token)
                 .send({
                     'rollcage': 'GRC-027'
-=======
-
-
-        it('it should get assign GRC-016 successfully', function (done) {
-
-            request
-                .put('/grid-plan/' + 'GSRT-A01-01')
-                .set('x-access-token', token)
-                .send({
-                    'rollcage': 'GRC-016'
->>>>>>> 6d29643abb20bd90cd52ddf75646e1df885ea607
                 })
                 .expect(200, function (err, result) {
-                    if (err) throw err;
                     done();
                 });
-
+                    
         });
-<<<<<<< HEAD
     
+
         it('it should get assign GRC-028 successfully', function (done) {
+
             request
                 .put('/grid-plan/'+'GSRT-B01-01')
                 .set('x-access-token', token)
                 .send({
                     'rollcage': 'GRC-028'
-=======
-
-
-        it('it should get assign GRC-017 successfully', function (done) {
-
-            request
-                .put('/grid-plan/' + 'GSRT-B01-02')
-                .set('x-access-token', token)
-                .send({
-                    'rollcage': 'GRC-017'
->>>>>>> 6d29643abb20bd90cd52ddf75646e1df885ea607
                 })
                 .expect(200, function (err, result) {
-                    if (err) throw err;
                     done();
                 });
-
+                    
         });
-<<<<<<< HEAD
     
+
         it('it should get assign GRC-030 successfully', function (done) {
+
             request
                 .put('/grid-plan/'+'GSRT-A01-02')
                 .set('x-access-token', token)
                 .send({
                     'rollcage': 'GRC-030'
-=======
-
-
-        it('it should get assign GRC-018 successfully', function (done) {
-
-            request
-                .put('/grid-plan/' + 'GSRT-B01-14')
-                .set('x-access-token', token)
-                .send({
-                    'rollcage': 'GRC-018'
->>>>>>> 6d29643abb20bd90cd52ddf75646e1df885ea607
                 })
                 .expect(200, function (err, result) {
-                    if (err) throw err;
                     done();
                 });
-
+                    
         });
-<<<<<<< HEAD
     
+
         it('it should get assign GRC-032 successfully', function (done) {
+
             request
                 .put('/grid-plan/'+'GSRT-B01-04')
                 .set('x-access-token', token)
                 .send({
                     'rollcage': 'GRC-032'
-=======
-
-
-        it('it should get assign GRC-019 successfully', function (done) {
-
-            request
-                .put('/grid-plan/' + 'GSRT-B01-15')
-                .set('x-access-token', token)
-                .send({
-                    'rollcage': 'GRC-019'
                 })
                 .expect(200, function (err, result) {
-                    if (err) throw err;
-                    done();
-                });
-
-        });
-
-
-        it('it should get assign GRC-021 successfully', function (done) {
-
-            request
-                .put('/grid-plan/' + 'GSRT-A01-12')
-                .set('x-access-token', token)
-                .send({
-                    'rollcage': 'GRC-021'
-                })
-                .expect(200, function (err, result) {
-                    if (err) throw err;
-                    done();
-                });
-
-        });
-
-
-        it('it should get assign GRC-022 successfully', function (done) {
-
-            request
-                .put('/grid-plan/' + 'GSRT-B01-13')
-                .set('x-access-token', token)
-                .send({
-                    'rollcage': 'GRC-022'
-                })
-                .expect(200, function (err, result) {
-                    if (err) throw err;
-                    done();
-                });
-
-        });
-
-
-        it('it should get assign GRC-023 successfully', function (done) {
-
-            request
-                .put('/grid-plan/' + 'GSRT-A01-15')
-                .set('x-access-token', token)
-                .send({
-                    'rollcage': 'GRC-023'
-                })
-                .expect(200, function (err, result) {
-                    if (err) throw err;
-                    done();
-                });
-
-        });
-
-
-        it('it should get assign GRC-024 successfully', function (done) {
-
-            request
-                .put('/grid-plan/' + 'GSRT-B01-05')
-                .set('x-access-token', token)
-                .send({
-                    'rollcage': 'GRC-024'
-                })
-                .expect(200, function (err, result) {
-                    if (err) throw err;
-                    done();
-                });
-
-        });
-
-
-        it('it should get assign GRC-025 successfully', function (done) {
-
-            request
-                .put('/grid-plan/' + 'GSRT-A01-14')
-                .set('x-access-token', token)
-                .send({
-                    'rollcage': 'GRC-025'
->>>>>>> 6d29643abb20bd90cd52ddf75646e1df885ea607
-                })
-                .expect(200, function (err, result) {
-                    if (err) throw err;
                     done();
                 });
                     
         });
-<<<<<<< HEAD
     
+
         it('it should get assign GRC-033 successfully', function (done) {
+
             request
                 .put('/grid-plan/'+'GSRT-B01-03')
                 .set('x-access-token', token)
                 .send({
                     'rollcage': 'GRC-033'
-=======
-
-
-        it('it should get assign GRC-027 successfully', function (done) {
-
-            request
-                .put('/grid-plan/' + 'GSRT-A01-03')
-                .set('x-access-token', token)
-                .send({
-                    'rollcage': 'GRC-027'
->>>>>>> 6d29643abb20bd90cd52ddf75646e1df885ea607
                 })
                 .expect(200, function (err, result) {
-                    if (err) throw err;
                     done();
                 });
                     
         });
-<<<<<<< HEAD
     
+
         it('it should get assign GRC-034 successfully', function (done) {
+
             request
                 .put('/grid-plan/'+'GSRT-A01-13')
                 .set('x-access-token', token)
                 .send({
                     'rollcage': 'GRC-034'
-=======
-
-
-        it('it should get assign GRC-028 successfully', function (done) {
-
-            request
-                .put('/grid-plan/' + 'GSRT-B01-01')
-                .set('x-access-token', token)
-                .send({
-                    'rollcage': 'GRC-028'
->>>>>>> 6d29643abb20bd90cd52ddf75646e1df885ea607
                 })
                 .expect(200, function (err, result) {
-                    if (err) throw err;
                     done();
                 });
                     
         });
-<<<<<<< HEAD
     
+
         it('it should get assign GRC-035 successfully', function (done) {
+
             request
                 .put('/grid-plan/'+'GSRT-B01-07')
                 .set('x-access-token', token)
                 .send({
                     'rollcage': 'GRC-035'
-=======
-
-
-        it('it should get assign GRC-030 successfully', function (done) {
-
-            request
-                .put('/grid-plan/' + 'GSRT-A01-02')
-                .set('x-access-token', token)
-                .send({
-                    'rollcage': 'GRC-030'
->>>>>>> 6d29643abb20bd90cd52ddf75646e1df885ea607
                 })
                 .expect(200, function (err, result) {
-                    if (err) throw err;
                     done();
                 });
                     
         });
-<<<<<<< HEAD
     
+
         it('it should get assign GRC-036 successfully', function (done) {
+
             request
                 .put('/grid-plan/'+'GSRT-A01-08')
                 .set('x-access-token', token)
                 .send({
                     'rollcage': 'GRC-036'
-=======
-
-
-        it('it should get assign GRC-032 successfully', function (done) {
-
-            request
-                .put('/grid-plan/' + 'GSRT-B01-04')
-                .set('x-access-token', token)
-                .send({
-                    'rollcage': 'GRC-032'
->>>>>>> 6d29643abb20bd90cd52ddf75646e1df885ea607
                 })
                 .expect(200, function (err, result) {
-                    if (err) throw err;
                     done();
                 });
                     
         });
-<<<<<<< HEAD
     
+
         it('it should get assign GRC-037 successfully', function (done) {
+
             request
                 .put('/grid-plan/'+'GSRT-B01-06')
                 .set('x-access-token', token)
                 .send({
                     'rollcage': 'GRC-037'
-=======
-
-
-        it('it should get assign GRC-033 successfully', function (done) {
-
-            request
-                .put('/grid-plan/' + 'GSRT-B01-03')
-                .set('x-access-token', token)
-                .send({
-                    'rollcage': 'GRC-033'
->>>>>>> 6d29643abb20bd90cd52ddf75646e1df885ea607
                 })
                 .expect(200, function (err, result) {
-                    if (err) throw err;
                     done();
                 });
-<<<<<<< HEAD
                     
         });
     
+
         it('it should get assign GRC-038 successfully', function (done) {
+
             request
                 .put('/grid-plan/'+'GSRT-A01-07')
                 .set('x-access-token', token)
                 .send({
                     'rollcage': 'GRC-038'
-=======
-
-        });
-
-
-        it('it should get assign GRC-034 successfully', function (done) {
-
-            request
-                .put('/grid-plan/' + 'GSRT-A01-13')
-                .set('x-access-token', token)
-                .send({
-                    'rollcage': 'GRC-034'
->>>>>>> 6d29643abb20bd90cd52ddf75646e1df885ea607
                 })
                 .expect(200, function (err, result) {
-                    if (err) throw err;
                     done();
                 });
-<<<<<<< HEAD
                     
         });
     
+
         it('it should get assign GRC-039 successfully', function (done) {
+
             request
                 .put('/grid-plan/'+'GSRT-A01-06')
                 .set('x-access-token', token)
@@ -721,92 +453,7 @@ module.exports = function (token, request) {
                     done();
                 });
                     
-=======
-
->>>>>>> 6d29643abb20bd90cd52ddf75646e1df885ea607
         });
-
-
-        it('it should get assign GRC-035 successfully', function (done) {
-
-            request
-                .put('/grid-plan/' + 'GSRT-B01-07')
-                .set('x-access-token', token)
-                .send({
-                    'rollcage': 'GRC-035'
-                })
-                .expect(200, function (err, result) {
-                    if (err) throw err;
-                    done();
-                });
-
-        });
-
-
-        it('it should get assign GRC-036 successfully', function (done) {
-
-            request
-                .put('/grid-plan/' + 'GSRT-A01-08')
-                .set('x-access-token', token)
-                .send({
-                    'rollcage': 'GRC-036'
-                })
-                .expect(200, function (err, result) {
-                    if (err) throw err;
-                    done();
-                });
-
-        });
-
-
-        it('it should get assign GRC-037 successfully', function (done) {
-
-            request
-                .put('/grid-plan/' + 'GSRT-B01-06')
-                .set('x-access-token', token)
-                .send({
-                    'rollcage': 'GRC-037'
-                })
-                .expect(200, function (err, result) {
-                    if (err) throw err;
-                    done();
-                });
-
-        });
-
-
-        it('it should get assign GRC-038 successfully', function (done) {
-
-            request
-                .put('/grid-plan/' + 'GSRT-A01-07')
-                .set('x-access-token', token)
-                .send({
-                    'rollcage': 'GRC-038'
-                })
-                .expect(200, function (err, result) {
-                    if (err) throw err;
-                    done();
-                });
-
-        });
-
-
-        it('it should get assign GRC-039 successfully', function (done) {
-
-            request
-                .put('/grid-plan/' + 'GSRT-A01-06')
-                .set('x-access-token', token)
-                .send({
-                    'rollcage': 'GRC-039'
-                })
-                .expect(200, function (err, result) {
-                    if (err) throw err;
-                    done();
-                });
-
-        });
-
-
 
     });
 
