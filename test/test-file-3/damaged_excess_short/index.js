@@ -17,56 +17,72 @@ describe('Login user to get token', function () {
             email: 'admin@cdi.com',
             password: 'secret'
         })
-        .end(function(err, result){
-            token = result.header['x-access-token'];
 
-            // describe('Sorting', function () {
+        .end(function(err, result){
+             token = result.header['x-access-token'];    
+            //  describe('Reset item movement', function() {
+            //     it('should be able to reset item movement', function (done) {
+            //         // Pass
+            //         request
+            //             .get('/reset-item-movements')
+            //             .set('x-access-token', token)
+            //             .expect(200, function (err, result) {
+            //                 if (err) throw err;
+            //                 done();
+            //             });
+            //     });
+            // });
+
+            // describe('Resource plan', function () {
             //     require('./resource_plan')(token, request);
             // });
-            
+
             describe('Inbound', function () {
                 require('./item_movement/inbound')(token, request);
             });
     
-            // describe('Putaway', function () {
-            //     require('./item_movement/putaway')(token, request);
-            // });
+            describe('Putaway', function () {
+                require('./item_movement/putaway')(token, request);
+            });
 
             // describe('Sorting', function () {
             //     require('./item_movement/sorting')(token, request);
             // });
             done();
+
         });
-    })
+    });
+        
 });
+    
 
 // describe('POST /test/reset', function () {
-//     // it('should be able to reset data', function (done) {
-//     //     // Pass
-//     //     this.timeout(20000);
-//     //     request
-//     //     .post('/test/reset')
-//     //     .type('json')
-//     //     .set('Content-Type', 'application/json')
-//     //     .set('x-access-token', token)
-//     //     .send()
-//     //     .expect(200, function (err, result) {
+//     it('should be able to reset data', function (done) {
+//         // Pass
+//         this.timeout(20000);
+//         request
+//         .post('/test/reset')
+//         .type('json')
+//         .set('Content-Type', 'application/json')
+//         .set('x-access-token', token)
+//         .send()
+//         .expect(200, function (err, result) {
 
-//     //         describe('Order management', function () {
-//     //             require('./order_management')(token, request);
-//     //         });
+//             describe('Order management', function () {
+//                 require('./order_management')(token, request);
+//             });
 
-//     //         describe('Primary shipment plan', function () {
-//     //             require('./primary_shipment_plan')(token, request);
-//     //         });
+//             describe('Primary shipment plan', function () {
+//                 require('./primary_shipment_plan')(token, request);
+//             });
 
-//     //         describe('Secondary plan', function () {
-//     //             require('./secondary_shipment_plan')(token, request);
-//     //         });
+//             describe('Secondary plan', function () {
+//                 require('./secondary_shipment_plan')(token, request);
+//             });
 
-//     //         describe('Resource plan', function () {
-//     //             require('./resource_plan')(token, request);
-//     //         });
+//             describe('Resource plan', function () {
+//                 require('./resource_plan')(token, request);
+//             });
 
 //             describe('Inbound', function () {
 //                 require('./item_movement/inbound')(token, request);
@@ -75,27 +91,27 @@ describe('Login user to get token', function () {
 //             describe('Putaway', function () {
 //                 require('./item_movement/putaway')(token, request);
 //             });
-//             // describe('Sorting', function () {
-//             //     require('./item_movement/sorting')(token, request);
-//             // });
+//             describe('Sorting', function () {
+//                 require('./item_movement/sorting')(token, request);
+//             });
 
-//             // describe('Outbound', function () {
-//             //     require('./item_movement/outbound')(token, request);
-//             // });
+//             describe('Outbound', function () {
+//                 require('./item_movement/outbound')(token, request);
+//             });
 
-//             // describe('Loading', function () {
-//             //     require('./item_movement/loading')(token, request);
-//             // });
+//             describe('Loading', function () {
+//                 require('./item_movement/loading')(token, request);
+//             });
 
-//             // describe('Reports', function () {
-//             //     require('./reports')(token, request);
-//             // });
+//             describe('Reports', function () {
+//                 require('./reports')(token, request);
+//             });
 
-//             // describe('Dashboard', function () {
-//             //     require('./dashboard')(token, request);
-//             // });
+//             describe('Dashboard', function () {
+//                 require('./dashboard')(token, request);
+//             });
 
 //             done();
-//         // });
-//     // });
+//         });
+//     });
 // });

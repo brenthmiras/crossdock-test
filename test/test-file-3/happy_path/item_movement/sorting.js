@@ -2,7 +2,7 @@ const chai = require('chai');
 
 module.exports = function (token, request) {
 
-    describe('GET /customer-primaries/:id/shipments', function () {
+    describe('POST /item/sort', function () {
         it('it should sort ZEU100000001 successfully', function (done) {
 
             request
@@ -14,7 +14,7 @@ module.exports = function (token, request) {
                     "quantity": 5
                 })
                 .expect(200, function (err, result) {
-                    
+                    if (err) throw err;
                     done();
                 });
 
@@ -30,7 +30,7 @@ module.exports = function (token, request) {
                     "quantity": 5
                 })
                 .expect(200, function (err, result) {
-                    
+                    if (err) throw err;
                     done();
                 });
 
@@ -47,7 +47,7 @@ module.exports = function (token, request) {
                     "quantity": 7
                 })
                 .expect(200, function (err, result) {
-                    
+                    if (err) throw err;
                     done();
                 });
 
@@ -63,7 +63,7 @@ module.exports = function (token, request) {
                     "quantity": 1
                 })
                 .expect(200, function (err, result) {
-                    
+                    if (err) throw err;
                     done();
                 });
 
@@ -79,7 +79,7 @@ module.exports = function (token, request) {
                     "quantity": 10
                 })
                 .expect(200, function (err, result) {
-                    
+                    if (err) throw err;
                     done();
                 });
 
@@ -96,7 +96,7 @@ module.exports = function (token, request) {
                     "quantity": 8
                 })
                 .expect(200, function (err, result) {
-                    
+                    if (err) throw err;
                     done();
                 });
 
@@ -113,7 +113,7 @@ module.exports = function (token, request) {
                     "quantity": 1
                 })
                 .expect(200, function (err, result) {
-                    
+                    if (err) throw err;
                     done();
                 });
 
@@ -130,6 +130,7 @@ module.exports = function (token, request) {
                     "quantity": 10,
                 })
                 .expect(200, function (err, result) {
+                    if (err) throw err;
                     done();
                 });
         });
@@ -145,6 +146,7 @@ module.exports = function (token, request) {
                     "quantity": 10,
                 })
                 .expect(200, function (err, result) {
+                    if (err) throw err;
                     done();
                 });
         });
@@ -159,6 +161,7 @@ module.exports = function (token, request) {
                     "quantity": 10,
                 })
                 .expect(200, function (err, result) {
+                    if (err) throw err;
                     done();
                 });
         });
@@ -175,6 +178,7 @@ module.exports = function (token, request) {
                     "quantity": 1,
                 })
                 .expect(200, function (err, result) {
+                    if (err) throw err;
                     done();
                 });
         });
@@ -191,6 +195,7 @@ module.exports = function (token, request) {
                     "quantity": 75,
                 })
                 .expect(200, function (err, result) {
+                    if (err) throw err;
                     done();
                 });
         });
@@ -205,16 +210,17 @@ module.exports = function (token, request) {
                     "quantity": 5,
                 })
                 .expect(200, function (err, result) {
+                    if (err) throw err;
                     done();
                 });
         });
 
 
-         ///////////////////////////////
+        ///////////////////////////////
         /// ZEU333000001 - 2 items ////
         ///////////////////////////////
         it('it should sort ZEU333000001 successfully', function (done) {
-            
+
             request
                 .post('/item/sort')
                 .set('x-access-token', token)
@@ -224,12 +230,12 @@ module.exports = function (token, request) {
                     "quantity": 5
                 })
                 .expect(200, function (err, result) {
-                    
+                    if (err) throw err;
                     done();
                 });
 
         });
-            
+
         it('it should sort ZEU333000001 successfully', function (done) {
 
             request
@@ -241,13 +247,13 @@ module.exports = function (token, request) {
                     "quantity": 10
                 })
                 .expect(200, function (err, result) {
-                    
+                    if (err) throw err;
                     done();
                 });
 
         });
-            
-            
+
+
         ///////////////////////////////
         /// ZEU300000001 - 2 items ////
         ///////////////////////////////
@@ -262,12 +268,12 @@ module.exports = function (token, request) {
                     "quantity": 10
                 })
                 .expect(200, function (err, result) {
-                    
+                    if (err) throw err;
                     done();
                 });
 
         });
-            
+
         it('it should sort ZEU300000001 successfully', function (done) {
 
             request
@@ -279,13 +285,13 @@ module.exports = function (token, request) {
                     "quantity": 10
                 })
                 .expect(200, function (err, result) {
-                    
+                    if (err) throw err;
                     done();
                 });
 
         });
-            
-            
+
+
         ///////////////////////////////
         /// ZEU330000001 - 3 items ////
         ///////////////////////////////
@@ -300,7 +306,7 @@ module.exports = function (token, request) {
                     "quantity": 5
                 })
                 .expect(200, function (err, result) {
-                    
+                    if (err) throw err;
                     done();
                 });
 
@@ -317,7 +323,7 @@ module.exports = function (token, request) {
                     "quantity": 3
                 })
                 .expect(200, function (err, result) {
-                    
+                    if (err) throw err;
                     done();
                 });
 
@@ -334,7 +340,7 @@ module.exports = function (token, request) {
                     "quantity": 6
                 })
                 .expect(200, function (err, result) {
-                    
+                    if (err) throw err;
                     done();
                 });
 
@@ -352,7 +358,7 @@ module.exports = function (token, request) {
                     "ship_to_code": "STC-000000531"
                 })
                 .expect(200, function (err, result) {
-                    
+                    if (err) throw err;
                     done();
                 });
 
@@ -370,11 +376,11 @@ module.exports = function (token, request) {
                     "ship_to_code": "STC-000000531"
                 })
                 .expect(200, function (err, result) {
-                    
+                    if (err) throw err;
                     done();
                 });
 
-        });      
+        });
 
         it('it should sort ZEU400000002 successfully', function (done) {
 
@@ -388,7 +394,7 @@ module.exports = function (token, request) {
                     "ship_to_code": "STC-000000531"
                 })
                 .expect(200, function (err, result) {
-                    
+                    if (err) throw err;
                     done();
                 });
 
@@ -407,7 +413,7 @@ module.exports = function (token, request) {
                     "ship_to_code": "STC-000000531"
                 })
                 .expect(200, function (err, result) {
-                    
+                    if (err) throw err;
                     done();
                 });
 
@@ -426,7 +432,7 @@ module.exports = function (token, request) {
                     "ship_to_code": "STC-000000531"
                 })
                 .expect(200, function (err, result) {
-                    
+                    if (err) throw err;
                     done();
                 });
 
@@ -444,7 +450,7 @@ module.exports = function (token, request) {
                     "ship_to_code": "STC-000000531"
                 })
                 .expect(200, function (err, result) {
-                    
+                    if (err) throw err;
                     done();
                 });
 
@@ -458,11 +464,11 @@ module.exports = function (token, request) {
                 .send({
                     "source_container": "ZEU440000001",
                     "destination_container": "ZEU-A06-01",
-                    "quantity":119,
+                    "quantity": 119,
                     "ship_to_code": "STC-000000531"
                 })
                 .expect(200, function (err, result) {
-                    
+                    if (err) throw err;
                     done();
                 });
 
@@ -480,7 +486,7 @@ module.exports = function (token, request) {
                     "ship_to_code": "STC-000000531"
                 })
                 .expect(200, function (err, result) {
-                    
+                    if (err) throw err;
                     done();
                 });
 
@@ -498,7 +504,7 @@ module.exports = function (token, request) {
                     "ship_to_code": "STC-000000531"
                 })
                 .expect(200, function (err, result) {
-                    
+                    if (err) throw err;
                     done();
                 });
 
@@ -515,7 +521,7 @@ module.exports = function (token, request) {
                     "quantity": 2
                 })
                 .expect(200, function (err, result) {
-                    
+                    if (err) throw err;
                     done();
                 });
 
@@ -532,12 +538,12 @@ module.exports = function (token, request) {
                     "quantity": 25
                 })
                 .expect(200, function (err, result) {
-                    
+                    if (err) throw err;
                     done();
                 });
 
         });
-        
+
         it('it should sort ZEU500000001 successfully', function (done) {
             request
                 .post('/item/sort')
@@ -548,6 +554,7 @@ module.exports = function (token, request) {
                     "quantity": 10,
                 })
                 .expect(200, function (err, result) {
+                    if (err) throw err;
                     done();
                 });
         });
@@ -562,6 +569,7 @@ module.exports = function (token, request) {
                     "quantity": 10,
                 })
                 .expect(200, function (err, result) {
+                    if (err) throw err;
                     done();
                 });
         });
@@ -576,6 +584,7 @@ module.exports = function (token, request) {
                     "quantity": 3,
                 })
                 .expect(200, function (err, result) {
+                    if (err) throw err;
                     done();
                 });
         });
@@ -590,6 +599,7 @@ module.exports = function (token, request) {
                     "quantity": 35,
                 })
                 .expect(200, function (err, result) {
+                    if (err) throw err;
                     done();
                 });
         });
@@ -604,6 +614,7 @@ module.exports = function (token, request) {
                     "quantity": 10,
                 })
                 .expect(200, function (err, result) {
+                    if (err) throw err;
                     done();
                 });
         });
@@ -618,6 +629,7 @@ module.exports = function (token, request) {
                     "quantity": 50,
                 })
                 .expect(200, function (err, result) {
+                    if (err) throw err;
                     done();
                 });
         });
@@ -632,6 +644,7 @@ module.exports = function (token, request) {
                     "quantity": 8,
                 })
                 .expect(200, function (err, result) {
+                    if (err) throw err;
                     done();
                 });
         });
@@ -649,7 +662,7 @@ module.exports = function (token, request) {
                     // "ship_to_code": "STC-000000531"
                 })
                 .expect(200, function (err, result) {
-                    
+                    if (err) throw err;
                     done();
                 });
         });
@@ -667,7 +680,7 @@ module.exports = function (token, request) {
                     // "ship_to_code": "STC-000000531"
                 })
                 .expect(200, function (err, result) {
-                    
+                    if (err) throw err;
                     done();
                 });
         });
@@ -685,7 +698,7 @@ module.exports = function (token, request) {
                     // "ship_to_code": "STC-000000531"
                 })
                 .expect(200, function (err, result) {
-                    
+                    if (err) throw err;
                     done();
                 });
         });
@@ -703,7 +716,7 @@ module.exports = function (token, request) {
                     // "ship_to_code": "STC-000000531"
                 })
                 .expect(200, function (err, result) {
-                    
+                    if (err) throw err;
                     done();
                 });
         });
@@ -721,11 +734,11 @@ module.exports = function (token, request) {
                     // "ship_to_code": "STC-000000531"
                 })
                 .expect(200, function (err, result) {
-                    
+                    if (err) throw err;
                     done();
                 });
         });
-        
+
         it('it should sort ZEU666000001 successfully', function (done) {
 
             request
@@ -739,7 +752,7 @@ module.exports = function (token, request) {
                     // "ship_to_code": "STC-000000531"
                 })
                 .expect(200, function (err, result) {
-                    
+                    if (err) throw err;
                     done();
                 });
         });
@@ -757,7 +770,7 @@ module.exports = function (token, request) {
                     // "ship_to_code": "STC-000000531"
                 })
                 .expect(200, function (err, result) {
-                    
+                    if (err) throw err;
                     done();
                 });
         });
@@ -774,7 +787,7 @@ module.exports = function (token, request) {
                     // "ship_to_code": "STC-000000531"
                 })
                 .expect(200, function (err, result) {
-                    
+                    if (err) throw err;
                     done();
                 });
         });
@@ -792,11 +805,11 @@ module.exports = function (token, request) {
                     // "ship_to_code": "STC-000000531"
                 })
                 .expect(200, function (err, result) {
-                    
+                    if (err) throw err;
                     done();
                 });
         });
-        
+
         it('it should sort ZEU770000001 successfully', function (done) {
 
             request
@@ -810,7 +823,7 @@ module.exports = function (token, request) {
                     // "ship_to_code": "STC-000000531"
                 })
                 .expect(200, function (err, result) {
-                    
+                    if (err) throw err;
                     done();
                 });
         });
@@ -828,7 +841,7 @@ module.exports = function (token, request) {
                     // "ship_to_code": "STC-000000531"
                 })
                 .expect(200, function (err, result) {
-                    
+                    if (err) throw err;
                     done();
                 });
         });
@@ -846,7 +859,7 @@ module.exports = function (token, request) {
                     // "ship_to_code": "STC-000000531"
                 })
                 .expect(200, function (err, result) {
-                    
+                    if (err) throw err;
                     done();
                 });
         });
@@ -864,7 +877,7 @@ module.exports = function (token, request) {
                     // "ship_to_code": "STC-000000531"
                 })
                 .expect(200, function (err, result) {
-                    
+                    if (err) throw err;
                     done();
                 });
         });
@@ -882,7 +895,7 @@ module.exports = function (token, request) {
                     "ship_to_code": "STC-000000531"
                 })
                 .expect(200, function (err, result) {
-                    
+                    if (err) throw err;
                     done();
                 });
 
@@ -901,7 +914,7 @@ module.exports = function (token, request) {
                     "ship_to_code": "STC-000000534"
                 })
                 .expect(200, function (err, result) {
-                    
+                    if (err) throw err;
                     done();
                 });
 
@@ -920,7 +933,7 @@ module.exports = function (token, request) {
                     "ship_to_code": "STC-000000616"
                 })
                 .expect(200, function (err, result) {
-                    
+                    if (err) throw err;
                     done();
                 });
 
@@ -939,7 +952,7 @@ module.exports = function (token, request) {
                     "ship_to_code": "STC-000000531"
                 })
                 .expect(200, function (err, result) {
-                    
+                    if (err) throw err;
                     done();
                 });
 
@@ -958,7 +971,7 @@ module.exports = function (token, request) {
                     "ship_to_code": "STC-000000531"
                 })
                 .expect(200, function (err, result) {
-                    
+                    if (err) throw err;
                     done();
                 });
 
@@ -977,12 +990,12 @@ module.exports = function (token, request) {
                     "ship_to_code": "STC-000000531"
                 })
                 .expect(200, function (err, result) {
-                    
+                    if (err) throw err;
                     done();
                 });
 
         });
-       
+
         it('it should sort ZEU888000001 successfully', function (done) {
             request
                 .post('/item/sort')
@@ -994,7 +1007,7 @@ module.exports = function (token, request) {
                     "sku": "JF000896"
                 })
                 .expect(200, function (err, result) {
-                    
+                    if (err) throw err;
                     done();
                 });
 
@@ -1012,7 +1025,7 @@ module.exports = function (token, request) {
                     "sku": "JF000896"
                 })
                 .expect(200, function (err, result) {
-                    
+                    if (err) throw err;
                     done();
                 });
 
@@ -1029,7 +1042,7 @@ module.exports = function (token, request) {
                     "quantity": 40
                 })
                 .expect(200, function (err, result) {
-                    
+                    if (err) throw err;
                     done();
                 });
 
@@ -1046,7 +1059,7 @@ module.exports = function (token, request) {
                     "quantity": 40
                 })
                 .expect(200, function (err, result) {
-                    
+                    if (err) throw err;
                     done();
                 });
 
@@ -1064,7 +1077,7 @@ module.exports = function (token, request) {
                     "quantity": 40
                 })
                 .expect(200, function (err, result) {
-                    
+                    if (err) throw err;
                     done();
                 });
 
@@ -1081,7 +1094,7 @@ module.exports = function (token, request) {
                     "quantity": 20
                 })
                 .expect(200, function (err, result) {
-                    
+                    if (err) throw err;
                     done();
                 });
 
@@ -1098,7 +1111,7 @@ module.exports = function (token, request) {
                     "quantity": 60
                 })
                 .expect(200, function (err, result) {
-                    
+                    if (err) throw err;
                     done();
                 });
 
@@ -1115,7 +1128,7 @@ module.exports = function (token, request) {
                     "quantity": 20
                 })
                 .expect(200, function (err, result) {
-                    
+                    if (err) throw err;
                     done();
                 });
 
@@ -1133,7 +1146,7 @@ module.exports = function (token, request) {
                     "quantity": 10
                 })
                 .expect(200, function (err, result) {
-                    
+                    if (err) throw err;
                     done();
                 });
 
@@ -1150,7 +1163,7 @@ module.exports = function (token, request) {
                     "quantity": 5
                 })
                 .expect(200, function (err, result) {
-                    
+                    if (err) throw err;
                     done();
                 });
 
@@ -1166,6 +1179,7 @@ module.exports = function (token, request) {
                     "quantity": 2
                 })
                 .expect(200, function (err, result) {
+                    if (err) throw err;
                     done();
                 });
         });
@@ -1180,6 +1194,7 @@ module.exports = function (token, request) {
                     "quantity": 1
                 })
                 .expect(200, function (err, result) {
+                    if (err) throw err;
                     done();
                 });
         });
@@ -1197,6 +1212,7 @@ module.exports = function (token, request) {
                     "quantity": 40
                 })
                 .expect(200, function (err, result) {
+                    if (err) throw err;
                     done();
                 });
         });
@@ -1211,6 +1227,7 @@ module.exports = function (token, request) {
                     "quantity": 40
                 })
                 .expect(200, function (err, result) {
+                    if (err) throw err;
                     done();
                 });
         });
@@ -1225,6 +1242,7 @@ module.exports = function (token, request) {
                     "quantity": 40
                 })
                 .expect(200, function (err, result) {
+                    if (err) throw err;
                     done();
                 });
         });
@@ -1239,6 +1257,7 @@ module.exports = function (token, request) {
                     "quantity": 40
                 })
                 .expect(200, function (err, result) {
+                    if (err) throw err;
                     done();
                 });
         });
@@ -1255,6 +1274,7 @@ module.exports = function (token, request) {
                     "quantity": 85
                 })
                 .expect(200, function (err, result) {
+                    if (err) throw err;
                     done();
                 });
         });
@@ -1269,6 +1289,7 @@ module.exports = function (token, request) {
                     "quantity": 20
                 })
                 .expect(200, function (err, result) {
+                    if (err) throw err;
                     done();
                 });
         });
