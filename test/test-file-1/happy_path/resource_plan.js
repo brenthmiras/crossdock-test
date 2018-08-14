@@ -12,6 +12,7 @@ module.exports = function (token, request) {
                 .get('/reset-item-movements')
                 .set('x-access-token', token)
                 .expect(200, function (err, result) {
+                    if (err) throw err;
                     done();
                 });
         });
@@ -26,6 +27,7 @@ module.exports = function (token, request) {
                     'rollcage': 'GRC-002'
                 })
                 .expect(200, function (err, result) {
+                    if (err) throw err;
                     done();
                 });
     
@@ -41,6 +43,7 @@ module.exports = function (token, request) {
                     'rollcage': 'GRC-008'
                 })
                 .expect(200, function (err, result) {
+                    if (err) throw err;
                     done();
                 });
     
@@ -56,6 +59,7 @@ module.exports = function (token, request) {
                     'rollcage': 'GRC-006'
                 })
                 .expect(200, function (err, result) {
+                    if (err) throw err;
                     done();
                 });
     
@@ -71,6 +75,7 @@ module.exports = function (token, request) {
                     'rollcage': 'GRC-005'
                 })
                 .expect(200, function (err, result) {
+                    if (err) throw err;
                     done();
                 });
     
@@ -86,6 +91,7 @@ module.exports = function (token, request) {
                     'rollcage': 'GRC-007'
                 })
                 .expect(200, function (err, result) {
+                    if (err) throw err;
                     done();
                 });
     
@@ -101,6 +107,7 @@ module.exports = function (token, request) {
                     'rollcage': 'GRC-004'
                 })
                 .expect(200, function (err, result) {
+                    if (err) throw err;
                     done();
                 });
     
@@ -116,6 +123,7 @@ module.exports = function (token, request) {
                     'rollcage': 'GRC-001'
                 })
                 .expect(200, function (err, result) {
+                    if (err) throw err;
                     done();
                 });
     
@@ -131,6 +139,7 @@ module.exports = function (token, request) {
                     'rollcage': 'GRC-003'
                 })
                 .expect(200, function (err, result) {
+                    if (err) throw err;
                     done();
                 });
     
