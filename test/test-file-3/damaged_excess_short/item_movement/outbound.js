@@ -257,26 +257,303 @@ it('it should transport GSRT-A01-03 successfully', function (done) {
             })
         });
 
-        
+    
         //shipment 10
+        it('it should transport GSRT-A01-10 successfully', function (done) {
+            request
+            .post('/item/transport')
+            .set('x-access-token', token)
+            .send({
+  "shipment_id": "SS-ZEU-180816-10",
+  "grid_id": "GSRT-A01-10",
+  "customer_secondary_id": "SCC-003605",
+  "source_container": "GRC-000",
+  "destination_container": "GRC-000",
+  "destination_container_location": "DOCK-02"
+})
+            .expect(200, function (err, result) {
+                done();
+            })
+        });
+
 
         //shipment 9
+it('it should transport GSRT-A01-12 successfully', function (done) {
+            request
+            .post('/item/transport')
+            .set('x-access-token', token)
+            .send({
+  "shipment_id": "SS-ZEU-180816-9",
+  "grid_id": "GSRT-A01-12",
+  "customer_secondary_id": "SCC-004110",
+  "source_container": "GRC-021",
+  "destination_container": "GRC-021",
+  "destination_container_location": "DOCK-02"
+})
+            .expect(200, function (err, result) {
+                done();
+            })
+        });
+
 
         //shipment 6
+it('it should transport ZEU-A04-01 successfully', function (done) {
+            request
+            .post('/item/transport')
+            .set('x-access-token', token)
+            .send({
+  "shipment_id": "SS-ZEU-180816-6",
+  "grid_id": "ZEU-A04-01",
+  "customer_secondary_id": "SCC-004030",
+  "source_container": "ZEU-A04-01",
+  "destination_container": "ZEU-A04-01",
+  "destination_container_location": "DOCK-01"
+})
+            .expect(200, function (err, result) {
+                done();
+            })
+        });
+    
 
+        it('it should transport ZEU-A04-02 successfully', function (done) {
+            request
+            .post('/item/transport')
+            .set('x-access-token', token)
+            .send({
+  "shipment_id": "SS-ZEU-180816-6",
+  "grid_id": "ZEU-A04-02",
+  "customer_secondary_id": "SCC-004030",
+  "source_container": "ZEU-A04-02",
+  "destination_container": "ZEU-A04-02",
+  "destination_container_location": "DOCK-01"
+})
+            .expect(200, function (err, result) {
+                done();
+            })
+        });
+    
+
+        it('it should transport ZEU-A05-01 successfully', function (done) {
+            request
+            .post('/item/transport')
+            .set('x-access-token', token)
+            .send({
+  "shipment_id": "SS-ZEU-180816-6",
+  "grid_id": "ZEU-A05-01",
+  "customer_secondary_id": "SCC-004030",
+  "source_container": "ZEU-A05-01",
+  "destination_container": "ZEU-A05-01",
+  "destination_container_location": "DOCK-01"
+})
+            .expect(200, function (err, result) {
+                done();
+            })
+        });
+
+        
         //shipment 7
+        it('it should transport GSRT-A01-01 successfully', function (done) {
+            request
+            .post('/item/transport')
+            .set('x-access-token', token)
+            .send({
+  "shipment_id": "SS-ZEU-180816-7",
+  "grid_id": "GSRT-A01-01",
+  "customer_secondary_id": "SCC-004051",
+  "source_container": "GRC-016",
+  "destination_container": "GRC-016",
+  "destination_container_location": "DOCK-02"
+})
+            .expect(200, function (err, result) {
+                done();
+            })
+        });
+
 
         //shipment 14
+it('it should transport GSRT-B01-08 successfully', function (done) {
+            request
+            .post('/item/transport')
+            .set('x-access-token', token)
+            .send({
+  "shipment_id": "SS-ZEU-180816-14",
+  "grid_id": "GSRT-B01-08",
+  "customer_secondary_id": "SCC-003628",
+  "source_container": "GRC-002",
+  "destination_container": "GRC-002",
+  "destination_container_location": "DOCK-01"
+})
+            .expect(200, function (err, result) {
+                done();
+            })
+        });
+
 
         //shipment 11
+it('it should transport GSRT-B01-07 successfully', function (done) {
+            request
+            .post('/item/transport')
+            .set('x-access-token', token)
+            .send({
+  "shipment_id": "SS-ZEU-180816-11",
+  "grid_id": "GSRT-B01-07",
+  "customer_secondary_id": "SCC-004522",
+  "source_container": "GRC-035",
+  "destination_container": "GRC-035",
+  "destination_container_location": "DOCK-02"
+})
+            .expect(200, function (err, result) {
+                done();
+            })
+        });
+
 
         //shipment 15
+it('it should transport GSRT-B01-02 successfully', function (done) {
+            request
+            .post('/item/transport')
+            .set('x-access-token', token)
+            .send({
+  "shipment_id": "SS-ZEU-180816-15",
+  "grid_id": "GSRT-B01-02",
+  "customer_secondary_id": "SCC-004052",
+  "source_container": "GRC-017",
+  "destination_container": "GRC-017",
+  "destination_container_location": "DOCK-01"
+})
+            .expect(200, function (err, result) {
+                done();
+            })
+        });
+    
+
+        it('it should transport GSRT-B01-01 successfully', function (done) {
+            request
+            .post('/item/transport')
+            .set('x-access-token', token)
+            .send({
+  "shipment_id": "SS-ZEU-180816-15",
+  "grid_id": "GSRT-B01-01",
+  "customer_secondary_id": "SCC-004267",
+  "source_container": "GRC-028",
+  "destination_container": "GRC-028",
+  "destination_container_location": "DOCK-01"
+})
+            .expect(200, function (err, result) {
+                done();
+            })
+        });
+
 
         //shipment 12
+it('it should transport GSRT-B01-06 successfully', function (done) {
+            request
+            .post('/item/transport')
+            .set('x-access-token', token)
+            .send({
+  "shipment_id": "SS-ZEU-180816-12",
+  "grid_id": "GSRT-B01-06",
+  "customer_secondary_id": "SCC-004535",
+  "source_container": "GRC-037",
+  "destination_container": "GRC-037",
+  "destination_container_location": "DOCK-02"
+})
+            .expect(200, function (err, result) {
+                done();
+            })
+        });
+
 
         //shipment 17
+it('it should transport GSRT-B01-05 successfully', function (done) {
+            request
+            .post('/item/transport')
+            .set('x-access-token', token)
+            .send({
+  "shipment_id": "SS-ZEU-180816-17",
+  "grid_id": "GSRT-B01-05",
+  "customer_secondary_id": "SCC-004115",
+  "source_container": "GRC-024",
+  "destination_container": "GRC-024",
+  "destination_container_location": "DOCK-01"
+})
+            .expect(200, function (err, result) {
+                done();
+            })
+        });
+    
+
+        it('it should transport GSRT-B01-04 successfully', function (done) {
+            request
+            .post('/item/transport')
+            .set('x-access-token', token)
+            .send({
+  "shipment_id": "SS-ZEU-180816-17",
+  "grid_id": "GSRT-B01-04",
+  "customer_secondary_id": "SCC-004406",
+  "source_container": "GRC-032",
+  "destination_container": "GRC-032",
+  "destination_container_location": "DOCK-01"
+})
+            .expect(200, function (err, result) {
+                done();
+            })
+        });
+    
+
+        it('it should transport GSRT-B01-03 successfully', function (done) {
+            request
+            .post('/item/transport')
+            .set('x-access-token', token)
+            .send({
+  "shipment_id": "SS-ZEU-180816-17",
+  "grid_id": "GSRT-B01-03",
+  "customer_secondary_id": "SCC-004431",
+  "source_container": "GRC-033",
+  "destination_container": "GRC-033",
+  "destination_container_location": "DOCK-01"
+})
+            .expect(200, function (err, result) {
+                done();
+            })
+        });
+
 
         //shipment 13
+it('it should transport GSRT-B01-11 successfully', function (done) {
+            request
+            .post('/item/transport')
+            .set('x-access-token', token)
+            .send({
+  "shipment_id": "SS-ZEU-180816-13",
+  "grid_id": "GSRT-B01-11",
+  "customer_secondary_id": "SCC-004050",
+  "source_container": "GRC-014",
+  "destination_container": "GRC-014",
+  "destination_container_location": "DOCK-02"
+})
+            .expect(200, function (err, result) {
+                done();
+            })
+        });
+    
+
+        it('it should transport ZEU-C01-01 successfully', function (done) {
+            request
+            .post('/item/transport')
+            .set('x-access-token', token)
+            .send({
+  "shipment_id": "SS-ZEU-180816-13",
+  "grid_id": "ZEU-C01-01",
+  "customer_secondary_id": "SCC-004050",
+  "source_container": "ZEU-C01-01",
+  "destination_container": "ZEU-C01-01",
+  "destination_container_location": "DOCK-02"
+})
+            .expect(200, function (err, result) {
+                done();
+            })
+        });
 
 
     });
