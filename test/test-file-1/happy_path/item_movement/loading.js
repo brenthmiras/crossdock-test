@@ -7,11 +7,11 @@ module.exports = function (token, request) {
         let dateString = new Date().toISOString().split('T')[0].split('-').join('');
         let dateStringPlus2 = (parseInt(dateString)+2).toString();
 
-        let sn1 = 'SS-ZEU-' + dateStringPlus2.substring(2) + '-1';
-        let sn2 = 'SS-ZEU-' + dateStringPlus2.substring(2) + '-2';
-        let sn3 = 'SS-ZEU-' + dateStringPlus2.substring(2) + '-3';
-        let sn4 = 'SS-ZEU-' + dateStringPlus2.substring(2) + '-4';
-        let sn5 = 'SS-ZEU-' + dateStringPlus2.substring(2) + '-5';
+        let sn1 = 'SS-ZEU' + dateStringPlus2.substring(2) + '-1';
+        let sn2 = 'SS-ZEU' + dateStringPlus2.substring(2) + '-2';
+        let sn3 = 'SS-ZEU' + dateStringPlus2.substring(2) + '-3';
+        let sn4 = 'SS-ZEU' + dateStringPlus2.substring(2) + '-4';
+        let sn5 = 'SS-ZEU' + dateStringPlus2.substring(2) + '-5';
 
         it('it should load ZEU700000002 successfully', function (done) {
             request
