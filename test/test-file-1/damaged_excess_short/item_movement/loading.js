@@ -17,10 +17,10 @@ module.exports = function (token, request) {
                     "destination_container_location": "MAX999",
                     "source_container_location": "DOCK-01"
                 })
-                .end(function (err, result) {
-                    expect(result.status).to.equal(200);
+                .expect(200, function (err, result) {
+                    if (err) throw err;
                     done();
-                })
+                });
         });
 
 
@@ -37,10 +37,10 @@ module.exports = function (token, request) {
                     "destination_container_location": "MAX999",
                     "source_container_location": "DOCK-01"
                 })
-                .end(function (err, result) {
-                    expect(result.status).to.equal(200);
+                .expect(200, function (err, result) {
+                    if (err) throw err;
                     done();
-                })
+                });
         });
 
 
@@ -57,10 +57,10 @@ module.exports = function (token, request) {
                     "destination_container_location": "MAX999",
                     "source_container_location": "DOCK-01"
                 })
-                .end(function (err, result) {
-                    expect(result.status).to.equal(200);
+                .expect(200, function (err, result) {
+                    if (err) throw err;
                     done();
-                })
+                });
         });
 
 
@@ -77,10 +77,10 @@ module.exports = function (token, request) {
                     "destination_container_location": "MAX999",
                     "source_container_location": "DOCK-01"
                 })
-                .end(function (err, result) {
-                    expect(result.status).to.equal(200);
+                .expect(200, function (err, result) {
+                    if (err) throw err;
                     done();
-                })
+                });
         });
 
 
@@ -97,10 +97,10 @@ module.exports = function (token, request) {
                     "destination_container_location": "MAX999",
                     "source_container_location": "DOCK-01"
                 })
-                .end(function (err, result) {
-                    expect(result.status).to.equal(200);
+                .expect(200, function (err, result) {
+                    if (err) throw err;
                     done();
-                })
+                });
         });
 
 
@@ -117,10 +117,10 @@ module.exports = function (token, request) {
                     "destination_container_location": "MAX999",
                     "source_container_location": "DOCK-01"
                 })
-                .end(function (err, result) {
-                    expect(result.status).to.equal(200);
+                .expect(200, function (err, result) {
+                    if (err) throw err;
                     done();
-                })
+                });
         });
 
 
@@ -137,10 +137,10 @@ module.exports = function (token, request) {
                     "destination_container_location": "MAX999",
                     "source_container_location": "DOCK-01"
                 })
-                .end(function (err, result) {
-                    expect(result.status).to.equal(200);
+                .expect(200, function (err, result) {
+                    if (err) throw err;
                     done();
-                })
+                });
         });
 
 
@@ -157,10 +157,10 @@ module.exports = function (token, request) {
                     "destination_container_location": "MAX999",
                     "source_container_location": "DOCK-01"
                 })
-                .end(function (err, result) {
-                    expect(result.status).to.equal(200);
+                .expect(200, function (err, result) {
+                    if (err) throw err;
                     done();
-                })
+                });
         });
 
 
@@ -177,10 +177,10 @@ module.exports = function (token, request) {
                     "destination_container_location": "MAX999",
                     "source_container_location": "DOCK-01"
                 })
-                .end(function (err, result) {
-                    expect(result.status).to.equal(200);
+                .expect(200, function (err, result) {
+                    if (err) throw err;
                     done();
-                })
+                });
         });
 
 
@@ -197,10 +197,10 @@ module.exports = function (token, request) {
                     "destination_container_location": "MAX999",
                     "source_container_location": "DOCK-01"
                 })
-                .end(function (err, result) {
-                    expect(result.status).to.equal(200);
+                .expect(200, function (err, result) {
+                    if (err) throw err;
                     done();
-                })
+                });
         });
 
 
@@ -217,10 +217,10 @@ module.exports = function (token, request) {
                     "destination_container_location": "MAX999",
                     "source_container_location": "DOCK-01"
                 })
-                .end(function (err, result) {
-                    expect(result.status).to.equal(200);
+                .expect(200, function (err, result) {
+                    if (err) throw err;
                     done();
-                })
+                });
         });
 
 
@@ -237,10 +237,10 @@ module.exports = function (token, request) {
                     "destination_container_location": "MAX999",
                     "source_container_location": "DOCK-01"
                 })
-                .end(function (err, result) {
-                    expect(result.status).to.equal(200);
+                .expect(200, function (err, result) {
+                    if (err) throw err;
                     done();
-                })
+                });
         });
 
 
@@ -257,10 +257,10 @@ module.exports = function (token, request) {
                     "destination_container_location": "MAX999",
                     "source_container_location": "DOCK-01"
                 })
-                .end(function (err, result) {
-                    expect(result.status).to.equal(200);
+                .expect(200, function (err, result) {
+                    if (err) throw err;
                     done();
-                })
+                });
         });
 
 
@@ -277,10 +277,10 @@ module.exports = function (token, request) {
                     "destination_container_location": "MAX999",
                     "source_container_location": "DOCK-01"
                 })
-                .end(function (err, result) {
-                    expect(result.status).to.equal(200);
+                .expect(200, function (err, result) {
+                    if (err) throw err;
                     done();
-                })
+                });
         });
 
 
@@ -297,10 +297,10 @@ module.exports = function (token, request) {
                     "destination_container_location": "MAX999",
                     "source_container_location": "DOCK-01"
                 })
-                .end(function (err, result) {
-                    expect(result.status).to.equal(200);
+                .expect(200, function (err, result) {
+                    if (err) throw err;
                     done();
-                })
+                });
         });
 
 
@@ -317,10 +317,10 @@ module.exports = function (token, request) {
                     "destination_container_location": "MAX999",
                     "source_container_location": "DOCK-01"
                 })
-                .end(function (err, result) {
-                    expect(result.status).to.equal(200);
+                .expect(200, function (err, result) {
+                    if (err) throw err;
                     done();
-                })
+                });
         });
 
 
@@ -337,10 +337,10 @@ module.exports = function (token, request) {
                     "destination_container_location": "MAX999",
                     "source_container_location": "DOCK-01"
                 })
-                .end(function (err, result) {
-                    expect(result.status).to.equal(200);
+                .expect(200, function (err, result) {
+                    if (err) throw err;
                     done();
-                })
+                });
         });
 
 
@@ -357,10 +357,10 @@ module.exports = function (token, request) {
                     "destination_container_location": "MAX999",
                     "source_container_location": "DOCK-01"
                 })
-                .end(function (err, result) {
-                    expect(result.status).to.equal(200);
+                .expect(200, function (err, result) {
+                    if (err) throw err;
                     done();
-                })
+                });
         });
 
 
@@ -377,10 +377,10 @@ module.exports = function (token, request) {
                     "destination_container_location": "MAX999",
                     "source_container_location": "DOCK-01"
                 })
-                .end(function (err, result) {
-                    expect(result.status).to.equal(200);
+                .expect(200, function (err, result) {
+                    if (err) throw err;
                     done();
-                })
+                });
         });
 
 
@@ -397,10 +397,10 @@ module.exports = function (token, request) {
                     "destination_container_location": "MAX999",
                     "source_container_location": "DOCK-01"
                 })
-                .end(function (err, result) {
-                    expect(result.status).to.equal(200);
+                .expect(200, function (err, result) {
+                    if (err) throw err;
                     done();
-                })
+                });
         });
 
 
@@ -417,10 +417,10 @@ module.exports = function (token, request) {
                     "destination_container_location": "MAX999",
                     "source_container_location": "DOCK-01"
                 })
-                .end(function (err, result) {
-                    expect(result.status).to.equal(200);
+                .expect(200, function (err, result) {
+                    if (err) throw err;
                     done();
-                })
+                });
         });
 
 
@@ -437,10 +437,10 @@ module.exports = function (token, request) {
                     "destination_container_location": "MAX999",
                     "source_container_location": "DOCK-01"
                 })
-                .end(function (err, result) {
-                    expect(result.status).to.equal(200);
+                .expect(200, function (err, result) {
+                    if (err) throw err;
                     done();
-                })
+                });
         });
 
 
@@ -457,10 +457,10 @@ module.exports = function (token, request) {
                     "destination_container_location": "MAX999",
                     "source_container_location": "DOCK-01"
                 })
-                .end(function (err, result) {
-                    expect(result.status).to.equal(200);
+                .expect(200, function (err, result) {
+                    if (err) throw err;
                     done();
-                })
+                });
         });
 
 
@@ -477,10 +477,10 @@ module.exports = function (token, request) {
                     "destination_container_location": "MAX999",
                     "source_container_location": "DOCK-01"
                 })
-                .end(function (err, result) {
-                    expect(result.status).to.equal(200);
+                .expect(200, function (err, result) {
+                    if (err) throw err;
                     done();
-                })
+                });
         });
 
 
@@ -497,10 +497,10 @@ module.exports = function (token, request) {
                     "destination_container_location": "MAX999",
                     "source_container_location": "DOCK-01"
                 })
-                .end(function (err, result) {
-                    expect(result.status).to.equal(200);
+                .expect(200, function (err, result) {
+                    if (err) throw err;
                     done();
-                })
+                });
         });
 
 
@@ -517,10 +517,10 @@ module.exports = function (token, request) {
                     "destination_container_location": "MAX999",
                     "source_container_location": "DOCK-01"
                 })
-                .end(function (err, result) {
-                    expect(result.status).to.equal(200);
+                .expect(200, function (err, result) {
+                    if (err) throw err;
                     done();
-                })
+                });
         });
 
 
