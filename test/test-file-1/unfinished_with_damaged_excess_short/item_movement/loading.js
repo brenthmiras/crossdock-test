@@ -16,8 +16,9 @@ module.exports = function (token, request) {
                     "source_container_location": "GSRT-A01-04"
                 })
                 .expect(200, function (err, result) {
+                    if (err) throw err;
                     done();
-                });
+                 });
 
         });
 

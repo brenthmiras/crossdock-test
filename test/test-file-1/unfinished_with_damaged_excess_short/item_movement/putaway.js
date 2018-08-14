@@ -3,7 +3,7 @@ const chai = require('chai');
 module.exports = function (token, request) {
 
     describe('POST /item/putaway', function () {
-        
+
         it('it should putaway ZEU100000001 successfully', function (done) {
             request
                 .post('/item/putaway')
@@ -13,6 +13,7 @@ module.exports = function (token, request) {
                     'destination_container_location': 'GSTG-A01'
                 })
                 .expect(200, function (err, result) {
+                    if (err) throw err;
                     done();
                 });
 
@@ -27,6 +28,7 @@ module.exports = function (token, request) {
                     'destination_container_location': 'EXCESS'
                 })
                 .expect(200, function (err, result) {
+                    if (err) throw err;
                     done();
                 });
 
@@ -41,6 +43,7 @@ module.exports = function (token, request) {
                     'destination_container_location': 'GSTG-A01'
                 })
                 .expect(200, function (err, result) {
+                    if (err) throw err;
                     done();
                 });
 
@@ -54,11 +57,12 @@ module.exports = function (token, request) {
                     'destination_container_location': 'EXCESS'
                 })
                 .expect(200, function (err, result) {
+                    if (err) throw err;
                     done();
                 });
 
         });
-        
+
         it('it should putaway ZEU300000001 successfully', function (done) {
             request
                 .post('/item/putaway')
@@ -68,6 +72,7 @@ module.exports = function (token, request) {
                     'destination_container_location': 'GSTG-A01'
                 })
                 .expect(200, function (err, result) {
+                    if (err) throw err;
                     done();
                 });
 
@@ -81,6 +86,7 @@ module.exports = function (token, request) {
                     'destination_container_location': 'EXCESS'
                 })
                 .expect(200, function (err, result) {
+                    if (err) throw err;
                     done();
                 });
 
@@ -95,6 +101,7 @@ module.exports = function (token, request) {
                     'destination_container_location': 'GSTG-A01'
                 })
                 .expect(200, function (err, result) {
+                    if (err) throw err;
                     done();
                 });
 
@@ -110,6 +117,7 @@ module.exports = function (token, request) {
                     'destination_container_location': 'GSTG-A01'
                 })
                 .expect(200, function (err, result) {
+                    if (err) throw err;
                     done();
                 });
 
@@ -125,6 +133,7 @@ module.exports = function (token, request) {
                     'destination_container_location': 'GSTG-A01'
                 })
                 .expect(200, function (err, result) {
+                    if (err) throw err;
                     done();
                 });
 
@@ -141,6 +150,7 @@ module.exports = function (token, request) {
                     'destination_container_location': 'GSTG-A01'
                 })
                 .expect(200, function (err, result) {
+                    if (err) throw err;
                     done();
                 });
 
@@ -154,6 +164,7 @@ module.exports = function (token, request) {
                     'destination_container_location': 'EXCESS'
                 })
                 .expect(200, function (err, result) {
+                    if (err) throw err;
                     done();
                 });
 
@@ -168,6 +179,7 @@ module.exports = function (token, request) {
                     'destination_container_location': 'GSTG-A01'
                 })
                 .expect(200, function (err, result) {
+                    if (err) throw err;
                     done();
                 });
         });
@@ -180,6 +192,7 @@ module.exports = function (token, request) {
                     'destination_container_location': 'GSTG-A01'
                 })
                 .expect(200, function (err, result) {
+                    if (err) throw err;
                     done();
                 });
         });
@@ -192,6 +205,7 @@ module.exports = function (token, request) {
                     'destination_container_location': 'DAMAGED'
                 })
                 .expect(200, function (err, result) {
+                    if (err) throw err;
                     done();
                 });
         });
@@ -205,6 +219,7 @@ module.exports = function (token, request) {
                     'destination_container_location': 'GSTG-A01'
                 })
                 .expect(200, function (err, result) {
+                    if (err) throw err;
                     done();
                 });
 
@@ -219,6 +234,7 @@ module.exports = function (token, request) {
                     'destination_container_location': 'GSTG-A01'
                 })
                 .expect(200, function (err, result) {
+                    if (err) throw err;
                     done();
                 });
         });
@@ -245,6 +261,7 @@ module.exports = function (token, request) {
                     'destination_container_location': 'DAMAGED'
                 })
                 .expect(200, function (err, result) {
+                    if (err) throw err;
                     done();
                 });
         });
@@ -258,6 +275,7 @@ module.exports = function (token, request) {
                     'destination_container_location': 'GSTG-A01'
                 })
                 .expect(200, function (err, result) {
+                    if (err) throw err;
                     done();
                 });
 
@@ -272,6 +290,7 @@ module.exports = function (token, request) {
                     'destination_container_location': 'EXCESS'
                 })
                 .expect(200, function (err, result) {
+                    if (err) throw err;
                     done();
                 });
 
@@ -286,6 +305,7 @@ module.exports = function (token, request) {
                     'destination_container_location': 'GSTG-A01'
                 })
                 .expect(200, function (err, result) {
+                    if (err) throw err;
                     done();
                 });
         });
@@ -300,6 +320,7 @@ module.exports = function (token, request) {
                     'destination_container_location': 'GSTG-A01'
                 })
                 .expect(200, function (err, result) {
+                    if (err) throw err;
                     done();
                 });
         });
@@ -313,6 +334,7 @@ module.exports = function (token, request) {
                     'destination_container_location': 'DAMAGED'
                 })
                 .expect(200, function (err, result) {
+                    if (err) throw err;
                     done();
                 });
         });
@@ -327,9 +349,10 @@ module.exports = function (token, request) {
                     'destination_container_location': 'GSTG-A01'
                 })
                 .expect(200, function (err, result) {
+                    if (err) throw err;
                     done();
                 });
-         });
+        });
 
         it('it should putaway ZEU000000002 successfully', function (done) {
             request
@@ -340,9 +363,10 @@ module.exports = function (token, request) {
                     'destination_container_location': 'GSTG-A01'
                 })
                 .expect(200, function (err, result) {
+                    if (err) throw err;
                     done();
                 });
-         });
+        });
 
         it('it should putaway ZEU000000003 successfully', function (done) {
             request
@@ -353,9 +377,10 @@ module.exports = function (token, request) {
                     'destination_container_location': 'GSTG-A01'
                 })
                 .expect(200, function (err, result) {
+                    if (err) throw err;
                     done();
                 });
-         });
+        });
 
         it('it should putaway ZEU000000004 successfully', function (done) {
             request
@@ -366,10 +391,9 @@ module.exports = function (token, request) {
                     'destination_container_location': 'GSTG-A01'
                 })
                 .expect(200, function (err, result) {
+                    if (err) throw err;
                     done();
                 });
-         });
-
-
+        });
     });
 };
