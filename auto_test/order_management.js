@@ -21,6 +21,14 @@ const file_paths = prealert_selector.select();
 // The file paths of the new csv with adjusted rdd
 const new_paths = file_paths.map( path => prealert_selector.change_rdd(path) );
 
+// The booking ids of uploaded prealerts
+const path_booking_map = new_paths.map( (path) => {
+    return {
+        path,
+        booking_id: ''
+    };
+});
+
 describe('Login user to get token', function () {
     it('should be successful', function (done) {
         request
@@ -51,7 +59,16 @@ describe('POST /prealerts', function () {
                 .attach('file', path)
                 .end(function(err, res) {
                     expect(res.status).to.equal(200);
-                    done();
+
+                    const booking_id = res.body.data.items[0].booking_id;
+
+                    const path_to_update = path_booking_map.find( (item) => {
+                        return item.path == path;
+                    });
+
+                    path_to_update.booking_id = booking_id;
+
+                    cb();
                 });
         }
     });
@@ -118,5 +135,31 @@ describe('POST /test/prealert-cutoff', function () {
             expect(res.status).to.equal(200);
             done();
         });
+    });
+});
+
+describe('POST /bookings/:id/postalerts', function () {
+
+    before('Create postalert files', function () {
+        path_booking_map.forEach( (item) => {
+            item.postalert_filepath = prealert_selector.create_postalert(item);
+        });
+    });
+
+    it('should upload all selected files', function (done) {
+        async.each(path_booking_map, upload_postalert, done);
+
+        function upload_postalert (item, cb) {
+            request
+                .post(`/bookings/${item.booking_id}/postalerts`)
+                .set('Content-Type', 'multipart/form-data')
+                .set('x-access-token', token)
+                .field('override', 'true')
+                .attach('file', item.postalert_filepath)
+                .end(function(err, res) {
+                    expect(res.status).to.equal(200);
+                    cb();
+                });
+        }
     });
 });
