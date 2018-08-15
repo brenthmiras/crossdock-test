@@ -38,15 +38,15 @@ describe('SORT: POST /item/sort', function () {
                 if (err) {
                     throw err;
                 }
-                items = result.body.data.items.map((s) => {return s.container_id});
+                items = result.body.data.items.map((s) => {return s.container_id;});
 
                 items = Array.from(new Set(items));
-                items = items.map((s) => { return { container_id: s}});
+                items = items.map((s) => { return { container_id: s};});
                 done();
             });
     });
 
-    it('it sort all received items', function (done) {
+    it('it should sort all staged items', function (done) {
 
         async.each(items, sort_item, done);
 
@@ -102,6 +102,8 @@ describe('SORT: POST /item/sort', function () {
                     if (err) {
                         throw err;
                     }
+
+                    console.log('Sorted '+ item.quantity, item.container_id+' to '+ item.dc)
                     chai.expect(result.body).not.to.have.property('errors');
                     cb();
                 });
