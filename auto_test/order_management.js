@@ -76,9 +76,9 @@ describe('GET /bookings?status=prealert', function () {
         expect(result.status).to.equal(200);
     });
 
-    it('should contain the prealert we uploaded', function () {
+    it('should contain the prealert(s) we uploaded', function () {
         const rows = result.body.data.items;
-        expect(rows.length).to.equal(1);
+        expect(rows.length).to.equal(file_paths.length);
     });
 });
 
