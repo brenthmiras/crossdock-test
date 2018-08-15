@@ -46,7 +46,7 @@ describe('SORT: POST /item/sort', function () {
             });
     });
 
-    it('it should sort all staged items', function (done) {
+    it('it sort all received items', function (done) {
 
         async.each(items, sort_item, done);
 
@@ -102,8 +102,6 @@ describe('SORT: POST /item/sort', function () {
                     if (err) {
                         throw err;
                     }
-
-                    console.log('Sorted '+ item.quantity, item.container_id+' to '+ item.dc)
                     chai.expect(result.body).not.to.have.property('errors');
                     cb();
                 });
