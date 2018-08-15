@@ -15,7 +15,11 @@ const expect    = chai.expect;
 // Declarations
 let token;                  // Access token used for authenticating requests
 
+// The original file path
 const file_path = prealert_selector.select();
+
+// The file path of the new csv with adjusted rdd
+const new_path = prealert_selector.change_rdd(file_path);
 
 describe('Login user to get token', function () {
     it('should be successful', function (done) {
@@ -42,7 +46,7 @@ describe('POST /prealerts', function () {
         .set('Content-Type', 'multipart/form-data')
         .set('x-access-token', token)
         .field('override', 'true')
-        .attach('file', file_path)
+        .attach('file', new_path)
         .end(function(err, res) {
             expect(res.status).to.equal(200);
             done();

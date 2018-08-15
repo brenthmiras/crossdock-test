@@ -26,6 +26,9 @@
   "devDependencies": {
     "async": "^2.6.1",
     "chai": "^3.5.0",
+    "csv-parse": "^2.5.0",
+    "csv-stringify": "^3.1.1",
+    "json2csv": "^4.2.1",
     "moment": "^2.22.2",
     "readline-sync": "^1.4.9",
     "supertest": "^2.0.1"
