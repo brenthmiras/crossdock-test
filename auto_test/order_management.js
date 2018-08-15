@@ -5,8 +5,8 @@ const async     = require('async');
 const chai      = require('chai');
 
 // Local imports
-const prealert_selector = require('../lib/prealert-selector');
-const config            = require('../config');
+const prealert = require('../lib/prealert');
+const config   = require('../config');
 
 // Imports initialization
 const request   = supertest(config.BASE_URL);
@@ -16,10 +16,10 @@ const expect    = chai.expect;
 let token;                  // Access token used for authenticating requests
 
 // The original file path
-const file_paths = prealert_selector.select();
+const file_paths = prealert.select();
 
 // The file paths of the new csv with adjusted rdd
-const new_paths = file_paths.map( path => prealert_selector.change_rdd(path) );
+const new_paths = file_paths.map( path => prealert.change_rdd(path) );
 
 // The booking ids of uploaded prealerts
 const path_booking_map = new_paths.map( (path) => {
@@ -142,7 +142,7 @@ describe('POST /bookings/:id/postalerts', function () {
 
     before('Create postalert files', function () {
         path_booking_map.forEach( (item) => {
-            item.postalert_filepath = prealert_selector.create_postalert(item);
+            item.postalert_filepath = prealert.create_postalert(item);
         });
     });
 
