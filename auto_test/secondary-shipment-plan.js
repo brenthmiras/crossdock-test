@@ -77,7 +77,7 @@ describe('POST /customer-secondaries/:id/shipments', function () {
 
     it('it should confirm all shipments', function (done) {
         
-        async.each(recommendations, confirm_recommendation, done);
+        async.eachSeries(recommendations, confirm_recommendation, done);
 
         function confirm_recommendation(r, cb){
 
@@ -103,7 +103,7 @@ describe('POST /customer-secondaries/:id/shipments', function () {
                     throw err;
                 }
 
-                console.log('Shipment confirmed for', cluster_name);
+                console.log('    ✓ Successfully confirmed shipment for', cluster_name);
 
                 cb();
             
@@ -159,7 +159,7 @@ describe('PUT /customer-secondaries/:id/priority', function () {
             });
         });
 
-        async.each(priorities, confirm_priority, done);
+        async.eachSeries(priorities, confirm_priority, done);
 
         function confirm_priority(data, cb){
             const {customer_secondary_id} = data;
@@ -174,11 +174,10 @@ describe('PUT /customer-secondaries/:id/priority', function () {
             })
             .expect(200, function (err, result) {
                 if(err){
-                    console.log(result.body);
                     throw err;
                 }
 
-                console.log(customer_secondary_id,'Loading priority confirmed');                
+                console.log('    ✓ Successfully loading priority for ',customer_secondary_id);                
 
                 cb();
             });

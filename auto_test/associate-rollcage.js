@@ -50,7 +50,6 @@ describe('ASSOCIATE ROLLCAGE: PUT /grid-plan/subgrid_id', function () {
                 }
                 items =  result.body.data.items.filter((item, i) => {
                     if(item.customer_secondary_id){
-                        item.index = i+1;
                         return item;
                     }
 
@@ -61,11 +60,14 @@ describe('ASSOCIATE ROLLCAGE: PUT /grid-plan/subgrid_id', function () {
 
     it('should associate rollcage to subgrid', function (done) {
 
+        items.forEach(function(item, i) {
+            item.index = i+1;
+        });
         
         async.each(items, assign, done);
         
         function assign(item, cb) {
-           let i =  (item.index < 9) ? ('00'+ item.index.toString())  :'0'+ item.index.toString();
+            let i =  (item.index < 9) ? ('00'+ item.index.toString())  :'0'+ item.index.toString();
             let rollcage = 'GRC-'+i;
             request
                 .put('/grid-plan/'+item.grid)
@@ -78,7 +80,6 @@ describe('ASSOCIATE ROLLCAGE: PUT /grid-plan/subgrid_id', function () {
                     console.log('    ✓ Successfully assigned', rollcage +' to', item.grid);
                     cb();
                 });
-
         }
     });
 

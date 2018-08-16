@@ -20,14 +20,13 @@ describe('Login user to get token', function () {
             })
             .end(function (err, result) {
                 token = result.header['x-access-token'];
-                console.log(token);
                 done();
         });
     });
 });
 
 
-describe('loading', function () {
+describe('LOAD: POST /item/load', function () {
     const items = [];
 
     let today = moment().format('YYYY-MM-DD');
@@ -84,8 +83,8 @@ describe('loading', function () {
                 if(err) { 
                     console.log(result.body); 
                     throw err;
-                };
-                console.log('successfully received:', i.destination_container);
+                }
+                console.log('    ✓ Successfully loaded', i.destination_container);
                 cb();
             });
         }

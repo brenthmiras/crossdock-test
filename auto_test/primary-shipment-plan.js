@@ -79,18 +79,26 @@ describe('POST /customer-primaries/:id/shipments', function () {
             .send(data)
             .end(function(err, res) {
                 result = res;
+                console.log('    ✓ Successfully confirmed shipment for',r.customer_primary_id);
                 cb();
             });
         }
     });
 });
 
-describe('GET /customer-primaries/:id/shipments', function () {
+describe('GET /customer-primaries/shipments', function () {
     let result;
+
+    const dateObj = new Date();
+    const month = ('0' + (dateObj.getMonth() + 1)).slice(-2);
+    const date = parseInt(('0' + dateObj.getDate()).slice(-2)) + 1;
+    const year = dateObj.getFullYear();
+
+    const dateString = [year, month, date].join('-');
 
     before('Fire http request', function (done) {
         request
-        .get(`/customer-primaries/${customer_primary_id}/shipments`)
+        .get(`/customer-primaries/shipments?date=`+dateString)
         .set('x-access-token', token)
         .send()
         .end(function(err, res) {

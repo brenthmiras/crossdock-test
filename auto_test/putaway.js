@@ -76,7 +76,7 @@ describe('PUTAWAY: POST /item/putaway', function () {
                     if (err) {
                         throw err;
                     }
-                    console.log('Successfully staged:', o.destination_container+' to', grid);
+                    console.log('    ✓ Successfully staged', o.destination_container+' to', grid);
                         cb();
                     });
         

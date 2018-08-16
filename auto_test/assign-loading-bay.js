@@ -97,6 +97,7 @@ describe('PUT /shipment-secondary/:id', function () {
                     throw err;
                 }
 
+                console.log('    ✓ Successfully assigned loading bay');
                 cb();
             });
         }

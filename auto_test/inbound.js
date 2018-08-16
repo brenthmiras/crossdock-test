@@ -18,7 +18,6 @@ describe('Login user to get token', function () {
             })
             .end(function (err, result) {
                 token = result.header['x-access-token'];
-                console.log(token);
                 done();
         });
     });
@@ -26,7 +25,7 @@ describe('Login user to get token', function () {
 
 
 
-describe('inbound', function () {
+describe('RECEIVE: POST /item/receive', function () {
     const items = [];
     const excess_index = [];           
     const excess_quantity = [];  
@@ -35,7 +34,7 @@ describe('inbound', function () {
     const short_index = [];
     const short_quantity = [];
     let counter = 1;
-    before('get all items to be inbound', function (done) {
+    before('get all items to be received', function (done) {
         request
         .get('/inbound')
         .set('x-access-token', token)
@@ -117,7 +116,7 @@ describe('inbound', function () {
     });
 
 
-    it('should receive all inbound', function (done) {
+    it('should receive all skus from inbound doc', function (done) {
         async.eachSeries(items, inbound, done);
         function inbound(i, cb) {
             request
@@ -130,8 +129,8 @@ describe('inbound', function () {
                 if(err) { 
                     console.log(result.body); 
                     throw err;
-                };
-                console.log('successfully received:', i.destination_container);
+                }
+                console.log('    ✓ Successfully received', i.destination_container);
                 cb();
             });
         }

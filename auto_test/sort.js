@@ -46,7 +46,7 @@ describe('SORT: POST /item/sort', function () {
             });
     });
 
-    it('it sort all received items', function (done) {
+    it('it should sort all items to be sorted', function (done) {
 
         async.each(items, sort_item, done);
 
@@ -102,6 +102,7 @@ describe('SORT: POST /item/sort', function () {
                     if (err) {
                         throw err;
                     }
+                    console.log('    ✓ Successfully sorted',item.container_id, ' to ', item.dc );
                     chai.expect(result.body).not.to.have.property('errors');
                     cb();
                 });
