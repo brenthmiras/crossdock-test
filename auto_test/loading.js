@@ -15,7 +15,7 @@ describe('Login user to get token', function () {
             .type('json')
             .set('Content-Type', 'application/json')
             .send({
-                email: 'inbound@cdi.com',
+                email: 'admin@cdi.com',
                 password: 'secret'
             })
             .end(function (err, result) {

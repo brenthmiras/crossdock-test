@@ -43,27 +43,24 @@ describe('inbound', function () {
         .expect(200, function (err, result) {
 
             result.body.data.items.forEach((item, index) => {
-
                 if(item.quantity > item.pallet_max_case) {
-
                     while(item.quantity >= item.pallet_max_case) {
                         items.push({
                             'source_container_location': item.inbound_document_number,
                             'source_container': 'MAX999',
-                            'destination_container': 'ZEU0000000'+counter,
+                            'destination_container': 'ZEU0000000'+padZero(counter),
                             'material_id': item.material_id,
                             'quantity': (item.quantity % item.pallet_max_case) || item.pallet_max_case
                         });
                         item.quantity = item.quantity - ((item.quantity % item.pallet_max_case) || item.pallet_max_case);
                         counter++;
                     }
-                    
                 } else {
 
                     items.push({
                         'source_container_location': item.inbound_document_number,
                         'source_container': 'MAX999',
-                        'destination_container': 'ZEU0000000'+counter,
+                        'destination_container': 'ZEU0000000'+padZero(counter),
                         'material_id': item.material_id,
                         'quantity': item.quantity
                     });
@@ -77,7 +74,7 @@ describe('inbound', function () {
                     items.push({
                         'source_container_location': res.source_container_location + "-EXCESS",
                         'source_container': 'MAX999',
-                        'destination_container': 'ZEU0000000'+counter,
+                        'destination_container': 'ZEU0000000'+padZero(counter),
                         'material_id': res.material_id,
                         'quantity': excess_quantity[index]
                     });
@@ -92,7 +89,7 @@ describe('inbound', function () {
                         items.push({
                             'source_container_location': res.source_container_location + "-DAMAGED",
                             'source_container': 'MAX999',
-                            'destination_container': 'ZEU0000000'+counter,
+                            'destination_container': 'ZEU0000000'+padZero(counter),
                             'material_id': res.material_id,
                             'quantity': damaged_quantity[index]
                         });
@@ -110,6 +107,13 @@ describe('inbound', function () {
             }
             done();
         });
+
+        function padZero(count) {
+            if(count < 10) {
+                return '0' + count;
+            }
+            return count;
+        }
     });
 
 
