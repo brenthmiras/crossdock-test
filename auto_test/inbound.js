@@ -108,11 +108,11 @@ describe('inbound', function () {
             done();
         });
 
-        function padZero(zero) {
-            if(zero < 10) {
-                return '0' + zero++;
+        function padZero(count) {
+            if(count < 10) {
+                return '0' + count;
             }
-            return ''+zero++;
+            return count;
         }
     });
 
