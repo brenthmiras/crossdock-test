@@ -60,7 +60,7 @@ describe('GET /shipment-primary/recommendation', function () {
 
 describe('POST /customer-primaries/:id/shipments', function () {
     it('should confirm all recommendations', function (done) {
-        async.each(recommendations, confirm_shipment, done);
+        async.eachSeries(recommendations, confirm_shipment, done);
 
         function confirm_shipment (r, cb) {
             const customer_id = r.customer_primary_id;
