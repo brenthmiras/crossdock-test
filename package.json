@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "Crossdock Test",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "test": "cd auto_test && mocha reset_all.js --timeout 20000 && mocha order_management.js --timeout 20000 && mocha primary-shipment-plan.js --timeout 20000 && mocha secondary-shipment-plan.js --timeout 20000 && mocha assign-loading-bay.js --timeout 20000 && mocha associate-rollcage.js --timeout 20000 && mocha inbound.js --timeout 20000 && mocha putaway.js --timeout 20000 && mocha sort.js --timeout 20000 && mocha loading.js --timeout 20000 && mocha outbound.js --timeout 20000"
+    },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/brenthmiras/crossdock-test.git"
