@@ -24,7 +24,7 @@ describe('Login user to get token', function () {
 
 });
 
-describe('PUT /shipment-secondary/:id', function () {
+describe('ASSIGN LOADING BAY: PUT /shipment-secondary/:id', function () {
 
     let shipments;
     let docks;

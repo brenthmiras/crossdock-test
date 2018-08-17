@@ -46,7 +46,7 @@ describe('Login user to get token', function () {
     });
 });
 
-describe('POST /prealerts', function () {
+describe('UPLOAD PREALERT: POST /prealerts', function () {
     it('should upload all selected files', function (done) {
         async.each(new_paths, upload_prealert, done);
 
@@ -120,11 +120,11 @@ describe('GET /last_cutoff', function () {
 
     it('should have not been done', function () {
         const cutoff_done = result.body.data.cutoff_today;
-        expect(cutoff_done).to.equal(0)
+        expect(cutoff_done).to.equal(0);
     });
 });
 
-describe('POST /test/prealert-cutoff', function () {
+describe('SIMULATE PREALERT CUTOFF: POST /test/prealert-cutoff', function () {
     it('should be successful', function (done) {
         request
         .post('/test/prealert-cutoff')
@@ -138,7 +138,7 @@ describe('POST /test/prealert-cutoff', function () {
     });
 });
 
-describe('POST /bookings/:id/postalerts', function () {
+describe('UPLOAD POST ALERT: POST /bookings/:id/postalerts', function () {
 
     before('Create postalert files', function () {
         path_booking_map.forEach( (item) => {

@@ -58,7 +58,7 @@ describe('GET /shipment-primary/recommendation', function () {
     });
 });
 
-describe('POST /customer-primaries/:id/shipments', function () {
+describe('CONFIRM PRIMARY SHIPMENT: POST /customer-primaries/:id/shipments', function () {
     it('should confirm all recommendations', function (done) {
         async.eachSeries(recommendations, confirm_shipment, done);
 

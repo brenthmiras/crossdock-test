@@ -22,7 +22,7 @@ describe('Login user to get token', function () {
     });
 });
 
-describe('POST plus 1', function () {
+describe('SIMULATE DATE PLUS ONE: POST test/plus_one', function () {
     it('should be succesful', function (done) {
         request
             .post('/test/plus_one')

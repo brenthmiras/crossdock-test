@@ -46,7 +46,7 @@ describe('Login user to get token', function () {
 
 // });
 
-describe('POST /customer-secondaries/:id/shipments', function () {
+describe('CONFIRM SECONDARY SHIPMENT: POST /customer-secondaries/:id/shipments', function () {
 
     let recommendations;
 
@@ -114,7 +114,7 @@ describe('POST /customer-secondaries/:id/shipments', function () {
 
 });
 
-describe('PUT /customer-secondaries/:id/priority', function () {
+describe('CONFIRM SHIP TO CODE PRIORITY: PUT /customer-secondaries/:id/priority', function () {
 
     let recommendations;
 
@@ -177,7 +177,7 @@ describe('PUT /customer-secondaries/:id/priority', function () {
                     throw err;
                 }
 
-                console.log('    ✓ Successfully loading priority for ',customer_secondary_id);                
+                console.log('    ✓ Successfully confirmed loading priority for ',customer_secondary_id);                
 
                 cb();
             });
