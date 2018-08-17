@@ -57,7 +57,6 @@ describe('PUTAWAY: POST /item/putaway', function () {
     });
 
     it('should putaway all received items', function (done) {
-        console.log(items.length);
         async.each(items, putaway, done);
         function putaway(o, cb) {
             request

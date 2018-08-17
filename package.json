@@ -4,13 +4,13 @@
   "description": "Crossdock Test",
   "main": "index.js",
   "scripts": {
-    "test": "cd auto_test && mocha reset_all.js --timeout 20000 && mocha order_management.js --timeout 20000 && mocha primary-shipment-plan.js --timeout 20000 && mocha secondary-shipment-plan.js --timeout 20000 && mocha assign-loading-bay.js --timeout 20000 && mocha associate-rollcage.js --timeout 20000 && mocha inbound.js --timeout 20000 && mocha putaway.js --timeout 20000 && mocha sort.js --timeout 20000 && mocha outbound.js --timeout 20000 && mocha loading.js --timeout 20000",
-    "item_movement": "cd auto_test && mocha reset_item_movement.js --timeout 20000 && mocha inbound.js --timeout 20000 && mocha putaway.js --timeout 20000 && mocha sort.js --timeout 20000 && mocha outbound.js --timeout 20000 && mocha loading.js --timeout 20000",
-    "inbound":"cd auto_test && mocha reset_item_movement.js --timeout 20000 && mocha inbound.js --timeout 20000",
-    "putaway":"cd auto_test && mocha putaway.js --timeout 20000",
-    "sort":"cd auto_test && mocha sort.js --timeout 20000",
-    "outbound":"cd auto_test && mocha outbound.js --timeout 20000",
-    "load":"cd auto_test && mocha loading.js --timeout 20000"
+    "test": "cd auto_test && mocha reset_all.js --timeout 50000 && mocha order_management.js --timeout 50000 && mocha primary-shipment-plan.js --timeout 50000 && mocha secondary-shipment-plan.js --timeout 50000 && mocha assign-loading-bay.js --timeout 50000 && mocha associate-rollcage.js --timeout 50000 && mocha inbound.js --timeout 50000 && mocha putaway.js --timeout 50000 && mocha sort.js --timeout 50000 && mocha outbound.js --timeout 50000 && mocha loading.js --timeout 50000",
+    "item_movement": "cd auto_test && mocha reset_item_movement.js --timeout 50000 && mocha inbound.js --timeout 50000 && mocha putaway.js --timeout 50000 && mocha sort.js --timeout 200000 && mocha outbound.js --timeout 50000 && mocha loading.js --timeout 50000",
+    "inbound":"cd auto_test && mocha reset_item_movement.js --timeout 50000 && mocha inbound.js --timeout 50000",
+    "putaway":"cd auto_test && mocha putaway.js --timeout 50000",
+    "sort":"cd auto_test && mocha sort.js --timeout 200000",
+    "outbound":"cd auto_test && mocha outbound.js --timeout 50000",
+    "load":"cd auto_test && mocha loading.js --timeout 50000"
     },
   "repository": {
     "type": "git",

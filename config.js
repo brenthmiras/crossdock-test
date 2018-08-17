@@ -1,5 +1,5 @@
 module.exports = {
-    BASE_URL: 'http://192.168.0.58:8001',
+    BASE_URL: 'http://staging.codedisruptors.com:8001',
     FILES: [
         {
             title: 'With 1 primary, few secondary, few sku (non-food only)',
@@ -12,6 +12,10 @@ module.exports = {
         {
             title: 'ULP - Food and Non-Food',
             path: '../prealerts/ulp_prealert.csv'
+        },
+        {
+            title: 'ULP - With two invoice per sku, same customer',
+            path: '../prealerts/ULP-two-invoice-same-STC.csv'
         }
     ]
 };

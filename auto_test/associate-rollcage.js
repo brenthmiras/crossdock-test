@@ -36,9 +36,6 @@ describe('ASSOCIATE ROLLCAGE: PUT /grid-plan/subgrid_id', function () {
 
     const dateString = [year, month, date].join('-');
 
-
-    console.log('/grid-plan?container_type=rollcage&date=' + dateString);
-
     before('Get grid plan', function (done) {
         request
             .get('/grid-plan?container_type=rollcage&date=' + dateString)
