@@ -29,8 +29,8 @@ describe('RECEIVE: POST /item/receive', function () {
     const items = [];
     const excess_index = [];           
     const excess_quantity = [];  
-    const damaged_index = [];
-    const damaged_quantity = [];
+    const damaged_index = [0,2,4];
+    const damaged_quantity = [20,15,1];
     const short_index = [];
     const short_quantity = [];
     let counter = 1;
@@ -40,7 +40,6 @@ describe('RECEIVE: POST /item/receive', function () {
         .set('x-access-token', token)
         .send()
         .expect(200, function (err, result) {
-
             result.body.data.items.forEach((item, index) => {
                 if(item.quantity > item.pallet_max_case) {
                     while(item.quantity >= item.pallet_max_case) {
@@ -83,15 +82,8 @@ describe('RECEIVE: POST /item/receive', function () {
 
             if(damaged_index.length) {
                 damaged_index.forEach((item, index) => {
-                    items[item].quantity = items[item].quantity - damaged_quantity[index];
-                    let res = items[item];
-                        items.push({
-                            'source_container_location': res.source_container_location + "-DAMAGED",
-                            'source_container': 'MAX999',
-                            'destination_container': 'ZEU0000000'+padZero(counter),
-                            'material_id': res.material_id,
-                            'quantity': damaged_quantity[index]
-                        });
+                    const with_damaged = withDamaged(item, index);
+                    typeof with_damaged === 'string' ? '':  items.push(with_damaged);
                     counter++;
                 });
             }
@@ -112,6 +104,35 @@ describe('RECEIVE: POST /item/receive', function () {
                 return '0' + count;
             }
             return count;
+        }
+
+
+        function withDamaged(item, index) {
+            const res = items[item];
+
+            if(damaged_quantity[index] > res.quantity) {
+                res.source_container_location += '-DAMAGED';
+                return {
+                    'source_container_location': res.source_container_location + "-DAMAGED-EXCESS",
+                    'source_container': 'MAX999',
+                    'destination_container': 'ZEU0000000'+padZero(counter),
+                    'material_id': res.material_id,
+                    'quantity': damaged_quantity[index] - res.quantity
+                }
+            }
+
+            if(damaged_quantity[index] < res.quantity) {
+                res.quantity = res.quantity - damaged_quantity[index];
+                return {
+                    'source_container_location': res.source_container_location + "-DAMAGED",
+                    'source_container': 'MAX999',
+                    'destination_container': 'ZEU0000000'+padZero(counter),
+                    'material_id': res.material_id,
+                    'quantity': damaged_quantity[index]
+                }
+            }
+
+            return res.source_container_location += '-DAMAGED';
         }
     });
 
