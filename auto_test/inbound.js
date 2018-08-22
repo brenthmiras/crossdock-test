@@ -46,7 +46,7 @@ describe('RECEIVE: POST /item/receive', function () {
                         items.push({
                             'source_container_location': item.inbound_document_number,
                             'source_container': 'MAX999',
-                            'destination_container': 'ZEU0000000'+padZero(counter),
+                            'destination_container': 'ZEU'+padZero(counter),
                             'material_id': item.material_id,
                             'quantity': (item.quantity % item.pallet_max_case) || item.pallet_max_case
                         });
@@ -58,7 +58,7 @@ describe('RECEIVE: POST /item/receive', function () {
                     items.push({
                         'source_container_location': item.inbound_document_number,
                         'source_container': 'MAX999',
-                        'destination_container': 'ZEU0000000'+padZero(counter),
+                        'destination_container': 'ZEU'+padZero(counter),
                         'material_id': item.material_id,
                         'quantity': item.quantity
                     });
@@ -72,7 +72,7 @@ describe('RECEIVE: POST /item/receive', function () {
                     items.push({
                         'source_container_location': res.source_container_location + "-EXCESS",
                         'source_container': 'MAX999',
-                        'destination_container': 'ZEU0000000'+padZero(counter),
+                        'destination_container': 'ZEU'+padZero(counter),
                         'material_id': res.material_id,
                         'quantity': excess_quantity[index]
                     });
@@ -100,10 +100,8 @@ describe('RECEIVE: POST /item/receive', function () {
         });
 
         function padZero(count) {
-            if(count < 10) {
-                return '0' + count;
-            }
-            return count;
+            let res = count.toString().padStart(9,'0');
+            return res;
         }
 
 
@@ -115,7 +113,7 @@ describe('RECEIVE: POST /item/receive', function () {
                 return {
                     'source_container_location': res.source_container_location + "-DAMAGED-EXCESS",
                     'source_container': 'MAX999',
-                    'destination_container': 'ZEU0000000'+padZero(counter),
+                    'destination_container': 'ZEU'+padZero(counter),
                     'material_id': res.material_id,
                     'quantity': damaged_quantity[index] - res.quantity
                 }
@@ -126,7 +124,7 @@ describe('RECEIVE: POST /item/receive', function () {
                 return {
                     'source_container_location': res.source_container_location + "-DAMAGED",
                     'source_container': 'MAX999',
-                    'destination_container': 'ZEU0000000'+padZero(counter),
+                    'destination_container': 'ZEU'+padZero(counter),
                     'material_id': res.material_id,
                     'quantity': damaged_quantity[index]
                 }
