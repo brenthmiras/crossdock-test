@@ -27,10 +27,11 @@ describe('Login user to get token', function () {
 
 describe('RECEIVE: POST /item/receive', function () {
     const items = [];
+    let results = [];
     const excess_index = [];           
     const excess_quantity = [];  
     const damaged_index = [0,2,4];
-    const damaged_quantity = [20,15,1];
+    const damaged_quantity = [20,30,158];
     const short_index = [];
     const short_quantity = [];
     let counter = 1;
@@ -40,7 +41,9 @@ describe('RECEIVE: POST /item/receive', function () {
         .set('x-access-token', token)
         .send()
         .expect(200, function (err, result) {
+            results = JSON.parse(JSON.stringify(result.body.data.items));
             result.body.data.items.forEach((item, index) => {
+
                 if(item.quantity > item.pallet_max_case) {
                     while(item.quantity >= item.pallet_max_case) {
                         items.push({
@@ -64,9 +67,11 @@ describe('RECEIVE: POST /item/receive', function () {
                     });
                     counter++;
                 }
+
             });
 
             if(excess_index.length) {
+
                 excess_index.forEach((item, index) => {
                 let res = items[item];
                     items.push({
@@ -81,6 +86,7 @@ describe('RECEIVE: POST /item/receive', function () {
             }
 
             if(damaged_index.length) {
+
                 damaged_index.forEach((item, index) => {
                     const with_damaged = withDamaged(item, index);
                     typeof with_damaged === 'string' ? '':  items.push(with_damaged);
@@ -89,6 +95,7 @@ describe('RECEIVE: POST /item/receive', function () {
             }
 
             if(short_index.length) {
+                
                 short_index.forEach((item, index) => {
                     items[item].quantity = items[item].quantity - short_quantity[index];
                     let res = items[item];
@@ -107,6 +114,17 @@ describe('RECEIVE: POST /item/receive', function () {
 
         function withDamaged(item, index) {
             const res = items[item];
+            const ress = results[item];
+
+            if(ress.quantity > ress.pallet_max_case && ress.quantity == damaged_quantity[index]) {
+                let count = item;
+                while(ress.quantity >= ress.pallet_max_case) {
+                    items[count].source_container_location += '-DAMAGED';                    
+                    count++;
+                    ress.quantity = ress.quantity - ( (ress.quantity % ress.pallet_max_case) || ress.pallet_max_case);
+                }
+                return '';
+            }
 
             if(damaged_quantity[index] > res.quantity) {
                 let temp = res.source_container_location;
