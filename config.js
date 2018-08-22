@@ -1,5 +1,5 @@
 module.exports = {
-    BASE_URL: 'http://staging.codedisruptors.com:8001',
+    BASE_URL: 'http://test.codedisruptors.com:8001',
     FILES: [
         {
             title: 'With 1 primary, few secondary, few sku (non-food only)',
