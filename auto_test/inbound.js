@@ -109,9 +109,10 @@ describe('RECEIVE: POST /item/receive', function () {
             const res = items[item];
 
             if(damaged_quantity[index] > res.quantity) {
+                let temp = res.source_container_location;
                 res.source_container_location += '-DAMAGED';
                 return {
-                    'source_container_location': res.source_container_location + "-DAMAGED-EXCESS",
+                    'source_container_location': temp + "-DMG-EXCESS",
                     'source_container': 'MAX999',
                     'destination_container': 'ZEU'+padZero(counter),
                     'material_id': res.material_id,
