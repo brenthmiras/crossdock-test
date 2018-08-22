@@ -59,8 +59,3 @@ module.exports = {
         }
     ]
 };
-//ZEU-RFM-180806-005
-//ZEU-RFM-180806-004
-//ZEU-GSM-180806-003
-//ZEU-ULP-180806-001
-//ZEU-SCJ-180806-002
