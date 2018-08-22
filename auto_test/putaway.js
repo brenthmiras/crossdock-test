@@ -51,7 +51,7 @@ describe('PUTAWAY: POST /item/putaway', function () {
 
     it('should putaway all received items', function (done) {
         let grid;
-        async.each(items, putaway, done);
+        async.eachSeries(items, putaway, done);
         function putaway(o, cb) {
             request
             .get('/materials/barcode/' + o.destination_container)
@@ -67,6 +67,7 @@ describe('PUTAWAY: POST /item/putaway', function () {
                 })
                 .expect(200, function (err, result) {
                     if (err) {
+                        console.log('cannot putaway',o.destination_container, grid);
                         throw err;
                     }
                     console.log('    ✓ Successfully staged', o.destination_container+' to', grid);
