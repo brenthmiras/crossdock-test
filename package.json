@@ -10,7 +10,11 @@
     "putaway":"cd auto_test && mocha putaway.js --timeout 50000",
     "sort":"cd auto_test && mocha sort.js --timeout 200000",
     "outbound":"cd auto_test && mocha outbound.js --timeout 50000",
-    "load":"cd auto_test && mocha loading.js --timeout 50000"
+    "load":"cd auto_test && mocha loading.js --timeout 50000",
+    "om":"cd auto_test && mocha reset_all.js --timeout 50000 && mocha order_management.js --timeout 50000",
+    "rp":" cd auto_test && mocha primary-shipment-plan.js --timeout 50000 && mocha secondary-shipment-plan.js --timeout 50000 && mocha assign-loading-bay.js --timeout 50000",
+    "arc":"cd auto_test && mocha associate-rollcage.js --timeout 50000",
+    "alb":"cd auto_test && mocha assign-loading-bay.js --timeout 50000"
     },
   "repository": {
     "type": "git",
