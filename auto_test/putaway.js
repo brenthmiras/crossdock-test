@@ -30,16 +30,9 @@ describe('PUTAWAY: POST /item/putaway', function () {
 
     let items;
 
-    const dateObj = new Date();
-    const month = ('0' + (dateObj.getMonth() + 1)).slice(-2);
-    const date = ('0' + dateObj.getDate()).slice(-2);
-    const year = dateObj.getFullYear();
-
-    const dateString = [year, month, date].join('-');
-
     before('Get all items to be staged', function (done) {
         request
-            .get(`/inbound?date=${dateString}`)
+            .get(`/inbound`)
             .set('x-access-token', token)
             .send()
             .expect(200, function (err, result) {
@@ -57,6 +50,7 @@ describe('PUTAWAY: POST /item/putaway', function () {
     });
 
     it('should putaway all received items', function (done) {
+        let grid;
         async.each(items, putaway, done);
         function putaway(o, cb) {
             request
@@ -76,10 +70,10 @@ describe('PUTAWAY: POST /item/putaway', function () {
                         throw err;
                     }
                     console.log('    ✓ Successfully staged', o.destination_container+' to', grid);
-                        cb();
-                    });
-        
+                    cb();
                 });
+        
+            });
         }
     });
 
