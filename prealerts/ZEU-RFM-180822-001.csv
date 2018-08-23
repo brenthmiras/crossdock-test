@@ -1,0 +1,4 @@
+Shipment,Principal Code ,Principal Name,Product Category,Sales Order No,Delivery Order No,Sales Invoice No,PO Number,Required Delivery Date (RDD),Customer Code,Customer Name,Customer Address,SKU Code,SKU Description,SLED,Batch code,Quantity,UOM,Volume (CBM),Weight (KG)
+,PCC-000616,RFM Corporation,FOOD,131390144,331409519,1001372353,081718-doy,8 23 18,28546,TRIPLE EIGHT HOLDINGS INC.,"507 Buendia Ave., North Forbes Park Makati City",JF000363,SK ORANGE DOY 185ML X 10,,24 07 2019,10,CAS,0.05,21.3
+,PCC-000616,RFM Corporation,FOOD,131390144,331409519,1001372353,081718-doy,8 23 18,28546,TRIPLE EIGHT HOLDINGS INC.,"507 Buendia Ave., North Forbes Park Makati City",JF000365,SK APPLE DOY 185ML X 10,,30 06 2019,10,CAS,0.05,20.5
+,PCC-000616,RFM Corporation,FOOD,131390144,331409519,1001372353,081718-doy,8 23 18,28546,TRIPLE EIGHT HOLDINGS INC.,"507 Buendia Ave., North Forbes Park Makati City",JF000366,SK GRAPE DOY 185ML X 10,,9 07 2019,10,CAS,0.05,21.2

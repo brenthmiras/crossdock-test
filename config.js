@@ -1,5 +1,5 @@
 module.exports = {
-    BASE_URL: 'http://test.codedisruptors.com:8001',
+    BASE_URL: 'http://test.codedisruptors.com:10002',
     FILES: [
         {
             title: 'With 1 primary, few secondary, few sku (non-food only)',
@@ -16,10 +16,6 @@ module.exports = {
         {
             title: 'ULP - With two invoice per sku, same customer',
             path: '../prealerts/ULP-two-invoice-same-STC.csv'
-        },
-        {
-            title: 'SCJ PRE ALERT JUNE 20_v2 (actual file)',
-            path: '../prealerts/SCJ_PRE_ALERT_JUNE_20_v2.csv'
         },
         {
             title: 'ZEU-ULP-180727-003 (actual file)',
@@ -40,6 +36,41 @@ module.exports = {
         {
             title: 'RFM-NON-SM (actual file)',
             path: '../prealerts/RFM-NON-SM.csv'
+        },
+        {
+            title: 'ZEU-RFM-180806-005 (RFM actual file Aug 6)',
+            path: '../prealerts/ZEU-RFM-180806-005.csv'
+        },
+        {
+            title: 'ZEU-RFM-180806-004 (RFM actual file Aug 6)',
+            path: '../prealerts/ZEU-RFM-180806-004.csv'
+        },
+        {
+            title: 'ZEU-ULP-180806-001 (ULP actual file Aug 6)',
+            path: '../prealerts/ZEU-ULP-180806-001.csv'
+        },
+        {
+            title: 'ZEU-SCJ-180806-002 (SCJ actual file Aug 6)',
+            path: '../prealerts/ZEU-SCJ-180806-002.csv'
+        },
+        {
+            title: 'ZEU-GSM-180806-003 (GSM actual file Aug 6)',
+            path: '../prealerts/ZEU-GSM-180806-003.csv'
+        },
+        {
+            title: 'ZEU-RFM-180822-001 (RFM actual file Aug 22)',
+            path: '../prealerts/ZEU-RFM-180822-001.csv'
+        },
+        {
+            title: 'ZEU-RFM-180822-002 (RFM actual file Aug 22)',
+            path: '../prealerts/ZEU-RFM-180822-002.csv'
+        },{
+            title: 'ZEU-SCJ-180822-003 (SCJ actual file Aug 22)',
+            path: '../prealerts/ZEU-SCJ-180822-003.csv'
+        },
+        {
+            title: 'ZEU-ULP-180822-004 (ULP actual file Aug 22)',
+            path: '../prealerts/ZEU-ULP-180822-004.csv'
         }
     ]
 };
