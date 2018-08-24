@@ -61,10 +61,10 @@ describe('ASSOCIATE ROLLCAGE: PUT /grid-plan/subgrid_id', function () {
             item.index = i+1;
         });
         
-        async.each(items, assign, done);
+        async.eachSeries(items, assign, done);
         
         function assign(item, cb) {
-            let i =  (item.index <= 9) ? ('00'+ item.index.toString())  :'0'+ item.index.toString();
+            let  i = item.index.toString().padStart(3,'0');
             let rollcage = 'GRC-'+i;
             request
                 .put('/grid-plan/'+item.grid)
