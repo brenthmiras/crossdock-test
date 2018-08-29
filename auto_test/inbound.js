@@ -30,8 +30,8 @@ describe('RECEIVE: POST /item/receive', function () {
     let results = [];
     const excess_index = [];           
     const excess_quantity = [];  
-    const damaged_index = [0,2,4];
-    const damaged_quantity = [20,30,158];
+    const damaged_index = [];
+    const damaged_quantity = [];
     const short_index = [];
     const short_quantity = [];
     let counter = 1;

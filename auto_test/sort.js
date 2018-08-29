@@ -28,10 +28,10 @@ describe('Login user to get token', function () {
 describe('SORT: POST /item/sort', function () {
 
     let items;
-
+    let result = [];
     before('Get all items to be sorted', function (done) {
         request
-            .get(`/staging`)
+            .get(`/staging?date=2018-08-29`)
             .set('x-access-token', token)
             .send()
             .expect(200, function (err, result) {
@@ -47,11 +47,10 @@ describe('SORT: POST /item/sort', function () {
     });
 
     it('it should sort all items to be sorted', function (done) {
-
-        async.eachSeries(items, sort_item, done);
+        async.eachSeries(items, sort_item, sort);
 
         function sort_item(item, cb) {
-            
+                    
             request
                 .get(`/containers/${item.container_id}/sort-list`)
                 .set('x-access-token', token)
@@ -61,17 +60,7 @@ describe('SORT: POST /item/sort', function () {
                     }
                     const customers = result.body.data.items;
 
-                    customers.forEach((v) => {
-                        v.container_id = item.container_id;
-
-
-                        if(v.quantity > v.pallet_max_case){
-                            v.quantity = v.pallet_max_case;
-                        }
-                    });
-                    
-
-                    async.eachSeries(customers, sort, _cb);
+                    async.eachSeries(customers, is_fullpallet, _cb);
 
                     function _cb() {
                         cb();
@@ -80,47 +69,56 @@ describe('SORT: POST /item/sort', function () {
                 });
         }
 
-        function sort(item, cb) {
-            const full_pallets = item.subgrids.filter((v) => {
-                return v.fullpallet === 1;
-            });
-            
-            const rollcages = item.subgrids.filter((v) => {
-                return v.fullpallet === 0;
-            });
+        function is_fullpallet(item, cb) {
+            let {subgrids, quantity} = item;
+            let qty = item.quantity;
+            let dc;
+           
+                for(let v of subgrids) {
 
-            if(full_pallets.length > 0){
-                const fp = full_pallets[0] 
-                item.dc = fp.grid;
+                    if(v.fullpallet) {
+                        quantity = ((item.pallet_max_case % v.sorted_quantity) || item.quantity);
+                        quantity == item.quantity ? v.sorted_quantity = item.quantity : '';
+                        console.log('asdasdasdsa',item.pallet_max_case, v.sorted_quantity, quantity, item.container_id);
+                        dc = v.grid;
+                    }else {
+                        quantity = qty;
+                        dc = v.rollcage;
+                        v.sorted_quantity = item.quantity ;
+                    }
 
-                if(item.quantity + (fp.sorted_quantity || 0) > item.pallet_max_case){
-                    item.quantity = item.quantity - fp.sorted_quantity;
+                    result.push({
+                        "source_container": item.container_id,
+                        "destination_container": dc,
+                        "quantity": quantity
+                    }); 
+                    qty = item.quantity - quantity;
+                    if(v.sorted_quantity == item.quantity) {
+                        break;
+                    }
                 }
+            cb();
+        }
 
-            }else{
-                item.dc = rollcages[0].rollcage;
-            }
-            
+        function sort() {
+            async.eachSeries(result, sort_item, done);
 
-            request
+            function sort_item(item, cb) {
+                request
                 .post('/item/sort')
                 .set('x-access-token', token)
                 .type('json')
-                .send({
-                    "source_container": item.container_id,
-                    "destination_container": item.dc,
-                    "quantity": item.quantity
-                })
+                .send(item)
                 .expect(200, function (err, result) {
                     if (err) {
+                        console.log(result.body);
                         throw err;
                     }
-                    console.log('    ✓ Successfully sorted',item.container_id, ' to ', item.dc );
+                    // console.log('    ✓ Successfully sorted',item.source_container, ' to ', item.destination_container );
                     chai.expect(result.body).not.to.have.property('errors');
                     cb();
                 });
+            }
         }
-
     });
-
 });
