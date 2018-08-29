@@ -90,11 +90,18 @@ describe('SORT: POST /item/sort', function () {
             });
 
             if(full_pallets.length > 0){
-                item.dc = full_pallets[0].grid;
+                const fp = full_pallets[0] 
+                item.dc = fp.grid;
+
+                if(item.quantity + (fp.sorted_quantity || 0) > item.pallet_max_case){
+                    item.quantity = item.quantity - fp.sorted_quantity;
+                }
+
             }else{
                 item.dc = rollcages[0].rollcage;
             }
             
+
             request
                 .post('/item/sort')
                 .set('x-access-token', token)
