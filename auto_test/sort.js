@@ -82,7 +82,7 @@ describe('SORT: POST /item/sort', function () {
 
         function sort(item, cb) {
             const full_pallets = item.subgrids.filter((v) => {
-                return v.fullpallet === 1;
+                return v.fullpallet === 1 && (v.sorted_quantity || 0) < item.pallet_max_case;
             });
             
             const rollcages = item.subgrids.filter((v) => {
@@ -93,8 +93,10 @@ describe('SORT: POST /item/sort', function () {
                 const fp = full_pallets[0] 
                 item.dc = fp.grid;
 
-                if(item.quantity + (fp.sorted_quantity || 0) > item.pallet_max_case){
-                    item.quantity = item.quantity - fp.sorted_quantity;
+                if(item.quantity + (fp.sorted_quantity || 0) > item.pallet_max_case && item.quantity - (fp.sorted_quantity || 0) > 0){
+                    item.dc = rollcages[0].rollcage
+                } else if (item.quantity + (fp.sorted_quantity || 0) > item.pallet_max_case){
+                    item.dc = rollcages[0].rollcage
                 }
 
             }else{
