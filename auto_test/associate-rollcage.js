@@ -2,6 +2,8 @@ const config = require('../config');
 
 const request = require('supertest')(config.BASE_URL);
 const chai = require('chai');
+const async = require('async');
+const moment = require('moment');
 
 describe('Login user to get token', function () {
     it('should be successful', function (done) {
@@ -20,148 +22,58 @@ describe('Login user to get token', function () {
     });
 
 });
+// /grid-plan?container_type=rollcage&date=2018-08-16
+// '/customer-secondaries/:id/allocated-grids
 
 
+describe('ASSOCIATE ROLLCAGE: PUT /grid-plan/subgrid_id', function () {
+
+    let items;
+
+    let dateString = moment().add(1, 'days').format('YYYY-MM-DD');
     
-describe('PUT /grid-plan/:rollcage_id', function () {
-
-    it('should be able to reset data', function (done) {
-        // Pass
+    before('Get grid plan', function (done) {
         request
-            .get('/reset-item-movements')
+            .get('/grid-plan?container_type=rollcage&date=' + dateString)
             .set('x-access-token', token)
+            .send()
             .expect(200, function (err, result) {
-                if (err) throw err;
+                if (err) {
+                    throw err;
+                }
+                items =  result.body.data.items.filter((item, i) => {
+                    if(item.customer_secondary_id){
+                        return item;
+                    }
+
+                });
                 done();
             });
     });
 
-    
-    it('it should assign GRC-002 successfully', function (done) {
+    it('should associate rollcage to subgrid', function (done) {
+
+        items.forEach(function(item, i) {
+            item.index = i+1;
+        });
         
-        request
-            .put('/grid-plan/'+'GSRT-A01-08')
-            .set('x-access-token', token)
-            .send({
-                'rollcage': 'GRC-002'
-            })
-            .expect(200, function (err, result) {
-                if (err) throw err;
-                done();
-            });
-
-    });
-
-
-    it('it should assign GRC-008 successfully', function (done) {
-
-        request
-            .put('/grid-plan/'+'GSRT-A01-03')
-            .set('x-access-token', token)
-            .send({
-                'rollcage': 'GRC-008'
-            })
-            .expect(200, function (err, result) {
-                if (err) throw err;
-                done();
-            });
-
-    });
-
-
-    it('it should assign GRC-006 successfully', function (done) {
-
-        request
-            .put('/grid-plan/'+'GSRT-A01-04')
-            .set('x-access-token', token)
-            .send({
-                'rollcage': 'GRC-006'
-            })
-            .expect(200, function (err, result) {
-                if (err) throw err;
-                done();
-            });
-
-    });
-
-
-    it('it should assign GRC-005 successfully', function (done) {
-
-        request
-            .put('/grid-plan/'+'GSRT-A01-02')
-            .set('x-access-token', token)
-            .send({
-                'rollcage': 'GRC-005'
-            })
-            .expect(200, function (err, result) {
-                if (err) throw err;
-                done();
-            });
-
-    });
-
-
-    it('it should assign GRC-007 successfully', function (done) {
-
-        request
-            .put('/grid-plan/'+'GSRT-A01-01')
-            .set('x-access-token', token)
-            .send({
-                'rollcage': 'GRC-007'
-            })
-            .expect(200, function (err, result) {
-                if (err) throw err;
-                done();
-            });
-
-    });
-
-
-    it('it should assign GRC-004 successfully', function (done) {
-
-        request
-            .put('/grid-plan/'+'GSRT-A01-07')
-            .set('x-access-token', token)
-            .send({
-                'rollcage': 'GRC-004'
-            })
-            .expect(200, function (err, result) {
-                if (err) throw err;
-                done();
-            });
-
-    });
-
-
-    it('it should assign GRC-001 successfully', function (done) {
-
-        request
-            .put('/grid-plan/'+'GSRT-A01-06')
-            .set('x-access-token', token)
-            .send({
-                'rollcage': 'GRC-001'
-            })
-            .expect(200, function (err, result) {
-                if (err) throw err;
-                done();
-            });
-
-    });
-
-
-    it('it should assign GRC-003 successfully', function (done) {
-
-        request
-            .put('/grid-plan/'+'GSRT-A01-05')
-            .set('x-access-token', token)
-            .send({
-                'rollcage': 'GRC-003'
-            })
-            .expect(200, function (err, result) {
-                if (err) throw err;
-                done();
-            });
-
+        async.eachSeries(items, assign, done);
+        
+        function assign(item, cb) {
+            let  i = item.index.toString().padStart(3,'0');
+            let rollcage = 'GRC-'+i;
+            request
+                .put('/grid-plan/'+item.grid)
+                .set('x-access-token', token)
+                .send({
+                    'rollcage': rollcage
+                })
+                .expect(200, function (err, result) {
+                    if (err) throw err;
+                    console.log('    ✓ Successfully assigned', rollcage +' to', item.grid);
+                    cb();
+                });
+        }
     });
 
 });
