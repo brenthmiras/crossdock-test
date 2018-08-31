@@ -46,9 +46,9 @@ describe('SORT: POST /item/sort', function () {
             });
     });
 
-    it('it should sort all staged items', function (done) {
+    it('it should sort all items to be sorted', function (done) {
 
-        async.each(items, sort_item, done);
+        async.eachSeries(items, sort_item, done);
 
         function sort_item(item, cb) {
             
@@ -63,8 +63,14 @@ describe('SORT: POST /item/sort', function () {
 
                     customers.forEach((v) => {
                         v.container_id = item.container_id;
+
+
+                        if(v.quantity > v.pallet_max_case){
+                            v.quantity = v.pallet_max_case;
+                        }
                     });
                     
+
                     async.eachSeries(customers, sort, _cb);
 
                     function _cb() {
@@ -76,7 +82,7 @@ describe('SORT: POST /item/sort', function () {
 
         function sort(item, cb) {
             const full_pallets = item.subgrids.filter((v) => {
-                return v.fullpallet === 1 && v.occupied === 0;
+                return v.fullpallet === 1 && (v.sorted_quantity || 0) < item.pallet_max_case;
             });
             
             const rollcages = item.subgrids.filter((v) => {
@@ -84,11 +90,20 @@ describe('SORT: POST /item/sort', function () {
             });
 
             if(full_pallets.length > 0){
-                item.dc = full_pallets[0].grid;
+                const fp = full_pallets[0] 
+                item.dc = fp.grid;
+
+                if(item.quantity + (fp.sorted_quantity || 0) > item.pallet_max_case && item.quantity - (fp.sorted_quantity || 0) > 0){
+                    item.dc = rollcages[0].rollcage
+                } else if (item.quantity + (fp.sorted_quantity || 0) > item.pallet_max_case){
+                    item.dc = rollcages[0].rollcage
+                }
+
             }else{
                 item.dc = rollcages[0].rollcage;
             }
             
+
             request
                 .post('/item/sort')
                 .set('x-access-token', token)
@@ -102,8 +117,7 @@ describe('SORT: POST /item/sort', function () {
                     if (err) {
                         throw err;
                     }
-
-                    console.log('Sorted '+ item.quantity, item.container_id+' to '+ item.dc)
+                    console.log('    ✓ Successfully sorted',item.container_id, ' to ', item.dc );
                     chai.expect(result.body).not.to.have.property('errors');
                     cb();
                 });

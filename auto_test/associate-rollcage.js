@@ -5,6 +5,7 @@ const chai = require('chai');
 const async = require('async');
 const moment = require('moment');
 
+
 describe('Login user to get token', function () {
     it('should be successful', function (done) {
         request
@@ -31,7 +32,7 @@ describe('ASSOCIATE ROLLCAGE: PUT /grid-plan/subgrid_id', function () {
     let items;
 
     let dateString = moment().add(1, 'days').format('YYYY-MM-DD');
-    
+
     before('Get grid plan', function (done) {
         request
             .get('/grid-plan?container_type=rollcage&date=' + dateString)

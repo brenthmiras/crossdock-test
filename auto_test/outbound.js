@@ -74,7 +74,7 @@ describe('OUTBOUND: POST /item/transport', function () {
                 if (err) {
                     throw err;
                 }
-                console.log('Transported', container +' to ', item.door_id);
+                console.log('    ✓ Successfully transported', container +' to ', item.door_id);
                 cb();
             });
         }

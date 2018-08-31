@@ -30,16 +30,9 @@ describe('PUTAWAY: POST /item/putaway', function () {
 
     let items;
 
-    const dateObj = new Date();
-    const month = ('0' + (dateObj.getMonth() + 1)).slice(-2);
-    const date = ('0' + dateObj.getDate()).slice(-2);
-    const year = dateObj.getFullYear();
-
-    const dateString = [year, month, date].join('-');
-
     before('Get all items to be staged', function (done) {
         request
-            .get(`/inbound?date=${dateString}`)
+            .get(`/inbound`)
             .set('x-access-token', token)
             .send()
             .expect(200, function (err, result) {
@@ -57,8 +50,8 @@ describe('PUTAWAY: POST /item/putaway', function () {
     });
 
     it('should putaway all received items', function (done) {
-        console.log(items.length);
-        async.each(items, putaway, done);
+        let grid;
+        async.eachSeries(items, putaway, done);
         function putaway(o, cb) {
             request
             .get('/materials/barcode/' + o.destination_container)
@@ -74,13 +67,14 @@ describe('PUTAWAY: POST /item/putaway', function () {
                 })
                 .expect(200, function (err, result) {
                     if (err) {
+                        console.log('cannot putaway',o.destination_container, grid);
                         throw err;
                     }
-                    console.log('Successfully staged:', o.destination_container+' to', grid);
-                        cb();
-                    });
-        
+                    console.log('    ✓ Successfully staged', o.destination_container+' to', grid);
+                    cb();
                 });
+        
+            });
         }
     });
 
