@@ -3,6 +3,7 @@ const config = require('../config');
 const request = require('supertest')(config.BASE_URL);
 const chai = require('chai');
 const async = require('async');
+const moment = require('moment');
 
 describe('Login user to get token', function () {
     it('should be successful', function (done) {
@@ -29,13 +30,8 @@ describe('ASSOCIATE ROLLCAGE: PUT /grid-plan/subgrid_id', function () {
 
     let items;
 
-    const dateObj = new Date();
-    const month = ('0' + (dateObj.getMonth() + 1)).slice(-2);
-    const date = parseInt(('0' + dateObj.getDate()).slice(-2)) + 1;
-    const year = dateObj.getFullYear();
-
-    const dateString = [year, month, date].join('-');
-
+    let dateString = moment().add(1, 'days').format('YYYY-MM-DD');
+    
     before('Get grid plan', function (done) {
         request
             .get('/grid-plan?container_type=rollcage&date=' + dateString)
