@@ -48,7 +48,8 @@ describe('LOAD: POST /item/load', function () {
                     'source_container' : get_source_container(item),
                     'destination_container': item.shipment_number,
                     'destination_container_location': "MAX999",
-                    'source_container_location' : item.destination_container_location
+                    'source_container_location' : item.destination_container_location,
+                    'received_date': moment(item.received_date).format('YYYY-MM-DD')
                 });
             });
             done();
