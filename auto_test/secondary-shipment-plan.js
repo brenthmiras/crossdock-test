@@ -46,7 +46,7 @@ describe('Login user to get token', function () {
 
 // });
 
-describe('CONFIRM SECONDARY SHIPMENT: POST /customer-secondaries/:id/shipments', function () {
+describe('CONFIRM SECONDARY SHIPMENT: POST shipment-secondary/:cluster_plan_id/confirm', function () {
 
     let recommendations;
 
@@ -84,17 +84,21 @@ describe('CONFIRM SECONDARY SHIPMENT: POST /customer-secondaries/:id/shipments',
             if (r.ship_to_codes.length == 0) return cb();
 
             const {cluster_name} = r;
+            const data = [];
             
-            const data = [{
-                truck_type:             r.truck_type,
-                category:               r.category,
-                clusters:               [r.cluster_name],
-                quantity:               1,
-                required_delivery_date: r.required_delivery_date
-            }];
+            r.trucks.forEach(function(truck){
+                data.push({
+                    truck_type:             truck.name,
+                    category:               r.category,
+                    clusters:               [r.cluster_name],
+                    quantity:               1,
+                    required_delivery_date: r.required_delivery_date
+                });
+            });
+
 
             request
-            .post(`/customer-secondaries/${cluster_name}/shipments`)
+            .post(`/shipment-secondary/${r.id}/confirm`)
             .set('x-access-token', token)
             .send(data)
             .expect(200, function (err, result) {
@@ -116,7 +120,7 @@ describe('CONFIRM SECONDARY SHIPMENT: POST /customer-secondaries/:id/shipments',
 
 describe('CONFIRM SHIP TO CODE PRIORITY: PUT /customer-secondaries/:id/priority', function () {
 
-    let recommendations;
+    let shipments;
 
     before('Get all customers to confirm priority', function (done) {
 
@@ -128,7 +132,7 @@ describe('CONFIRM SHIP TO CODE PRIORITY: PUT /customer-secondaries/:id/priority'
         const dateString = [year, month, date].join('-');
 
         request
-            .get(`/shipment-secondary/recommendation?date=${dateString}`)
+            .get(`/shipment-secondaries?date=${dateString}`)
             .set('x-access-token', token)
             .send()
             .expect(200, function (err, result) {
@@ -137,7 +141,7 @@ describe('CONFIRM SHIP TO CODE PRIORITY: PUT /customer-secondaries/:id/priority'
                     throw err;
                 }
 
-                recommendations = result.body.data.items;
+                shipments = result.body.data.items;
                 
                 done();
             });
@@ -147,12 +151,12 @@ describe('CONFIRM SHIP TO CODE PRIORITY: PUT /customer-secondaries/:id/priority'
         const priorities = [];
 
         // Set priorities for all customers
-        recommendations.forEach( (r) => {
+        shipments.forEach( (r) => {
             r.ship_to_codes.forEach( (stc, index) => {
                 const priority_data = {
                     priority: index + 1,
                     customer_secondary_id: stc.customer_secondary_id,
-                    shipment_secondary_id: r.secondary_shipment_number
+                    shipment_secondary_id: r.id
                 };  
 
                 priorities.push(priority_data);
