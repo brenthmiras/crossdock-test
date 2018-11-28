@@ -57,8 +57,11 @@ describe('UPLOAD PREALERT: POST /prealerts', function () {
                 .set('x-access-token', token)
                 .field('override', 'true')
                 .attach('file', path)
-                .end(function(err, res) {
-                    expect(res.status).to.equal(200);
+                .expect(200, function(err, res) {
+                    if (err) {
+                        console.log(res.body.data.data[0]);
+                        throw err;
+                    }
 
                     const booking_id = res.body.data.items[0].booking_id;
 
