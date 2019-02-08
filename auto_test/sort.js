@@ -52,6 +52,8 @@ describe('SORT: POST /item/sort', function () {
 
         function sort_item(item, cb) {
             
+            // Before you can sort,
+            // Retrieve all customers for that item
             request
                 .get(`/containers/${item.container_id}/sort-list`)
                 .set('x-access-token', token)
@@ -70,7 +72,8 @@ describe('SORT: POST /item/sort', function () {
                         }
                     });
                     
-
+                    // For every customer,
+                    // Sort
                     async.eachSeries(customers, sort, _cb);
 
                     function _cb() {
@@ -81,10 +84,13 @@ describe('SORT: POST /item/sort', function () {
         }
 
         function sort(item, cb) {
+
+            // Separate full pallet subgrids
             const full_pallets = item.subgrids.filter((v) => {
                 return v.fullpallet === 1 && (v.sorted_quantity || 0) < item.pallet_max_case;
             });
             
+            // From rollcages
             const rollcages = item.subgrids.filter((v) => {
                 return v.fullpallet === 0;
             });
@@ -103,7 +109,6 @@ describe('SORT: POST /item/sort', function () {
                 item.dc = rollcages[0].rollcage;
             }
             
-
             request
                 .post('/item/sort')
                 .set('x-access-token', token)
@@ -117,10 +122,44 @@ describe('SORT: POST /item/sort', function () {
                     if (err) {
                         throw err;
                     }
+
                     console.log('    ✓ Successfully sorted',item.container_id, ' to ', item.dc );
-                    chai.expect(result.body).not.to.have.property('errors');
-                    cb();
+
+                    if (full_pallets.length > 0) {
+
+                        // item.dc is the grid
+                        const data = {
+                            grid:   item.dc,
+                            pallet: item.container_id
+                        };
+
+                        assign_pallet_to_grid(data, cb);
+                    }
+
+                    else{
+                        chai.expect(result.body).not.to.have.property('errors');
+                        cb();
+                    }
                 });
+        }
+
+        function assign_pallet_to_grid (data, cb) {
+            request
+            .put('/grid-plan/pallet')
+            .set('x-access-token', token)
+            .type('json')
+            .send({
+                "grid":   data.grid,
+                "pallet": data.pallet
+            })
+            .expect(200, function (err, result) {
+                if (err) {
+                    console.log('x Failed to assign pallet to grid. Pallet already assigned');
+                    return cb();
+                }
+                console.log('✓ Successfully assigned pallet', data.pallet, ' to ', data.grid );
+                cb();
+            });
         }
 
     });
