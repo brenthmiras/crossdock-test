@@ -8,7 +8,7 @@ const expect = chai.expect;
 
 // Put all the sorters credentials here
 let sorters = [
-    {email: 'sorting@logistikus.com', password: 'secret'},
+    {email: 'sorting@logistikus.com', password: 'secret'}, 
     {email: 'azipagan@logistikus.com', password: 'secret'},
     {email: 'lrojas@logistikus.com', password: 'secret'},
     {email: 'mrivarez@logistikus.com', password: 'secret'},
@@ -21,13 +21,7 @@ let sorters = [
     {email: 'agrajeda@logistikus.com', password: 'secret'},
     {email: 'mgonzales@logistikus.com', password: 'secret'},
     {email: 'apaltao@logistikus.com', password: 'secret'},
-    {email: 'mdesmeralda@logistikus.com', password: 'secret'},
-    {email: 'rragoro@logistikus.com', password: 'secret'},
-    {email: 'epacurib@logistikus.com', password: 'secret'},
-    {email: 'junesorter@cdi.com', password: 'secret'},
-    {email: 'vincesorter@cdi.com', password: 'secret'},
-    {email: 'marksorter@cdi.com', password: 'secret'},
-    {email: 'chestersorter@cdi.com', password: 'secret'}    
+    {email: 'mdesmeralda@logistikus.com', password: 'secret'}
 ];
 
 describe('Login users to get token', function (done) {
@@ -80,7 +74,7 @@ describe('SORT: POST /item/sort', function () {
 
     let items = [];
 
-    before('Get all items to be sorted', function (done) {
+    it('Get all items to be sorted', function (done) {
         const token = sorters[0].token;
 
         request
@@ -102,7 +96,7 @@ describe('SORT: POST /item/sort', function () {
             });
     });
 
-    it.skip('it should sort all items to be sorted', function (done) {
+    it('it should sort all items to be sorted', function (done) {
 
         // Distribute the items to the N sorters
 
@@ -128,7 +122,7 @@ describe('SORT: POST /item/sort', function () {
             async.eachSeries(items, sort_item, cb);
 
             function sort_item(item, cb) {
-                console.log(`Sorter: ${sorter} is sorting ${items.length} items`);
+                console.log(`Sorter: ${email} is sorting ${items.length} items`);
 
                 // Before you can sort,
                 // Retrieve all customers for that item
@@ -198,6 +192,8 @@ describe('SORT: POST /item/sort', function () {
                     })
                     .expect(200, function (err, result) {
                         if (err) {
+                            console.log(`x ${email} Failed to sort `,item.container_id, ' to ', item.dc);
+                            console.log(result.body);
                             throw err;
                         }
     
