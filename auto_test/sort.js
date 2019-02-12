@@ -72,23 +72,30 @@ describe('Login users to get token', function (done) {
 
 describe('SORT: POST /item/sort', function () {
 
+    let result_items = [];
     let items = [];
+    let ship_to_codes = [];
 
     it('Get all items to be sorted', function (done) {
         const token = sorters[0].token;
 
         request
-            .get(`/staging?date=2019-02-11`)
+            .get(`/staging?date=2019-02-07`)
             .set('x-access-token', token)
             .send()
             .expect(200, function (err, result) {
                 if (err) {
                     throw err;
                 }
+
+
+                result_items = result.body.data.items;
+
                 items = result.body.data.items.map((s) => {return s.container_id;});
 
                 items = Array.from(new Set(items));
                 items = items.map((s) => { return { container_id: s};});
+                ship_to_codes = Array.from(new Set(result.body.data.items.map(i => i.ship_to_code)));
 
                 expect(items.length, 'No items to sort').to.be.above(0);
 
@@ -97,7 +104,7 @@ describe('SORT: POST /item/sort', function () {
     });
 
     it('it should sort all items to be sorted', function (done) {
-
+        /*
         // Distribute the items to the N sorters
 
         // 1.) Determine the number of items to be sorted by each sorter
@@ -109,6 +116,27 @@ describe('SORT: POST /item/sort', function () {
 
             sorter.items = taken;
 
+            return sorter;
+        });
+        */
+
+        //Distribute the items by ship to code
+        
+        // 1.) Distribute ship to codes
+        sorters = sorters.map((sorter, index) => {
+            sorter.ship_to_code = ship_to_codes[index];
+            return sorter;
+        });
+
+        // 2.) Distribute items
+        sorters = sorters.map((sorter, index) => {
+
+            const ship_to_items = result_items
+                    .filter(i => i.ship_to_code === sorter.ship_to_code)
+                    .map((s) => { return { container_id: s.container_id }; });
+
+            sorter.items = ship_to_items;
+            console.log(sorter);
             return sorter;
         });
 
@@ -133,7 +161,7 @@ describe('SORT: POST /item/sort', function () {
                         if (err) {
                             throw err;
                         }
-                        const customers = result.body.data.items;
+                        const customers = result.body.data.items.filter(i => i.ship_to_code === sorter.ship_to_code);
     
                         customers.forEach((v) => {
                             v.container_id = item.container_id;
